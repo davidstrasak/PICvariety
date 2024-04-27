@@ -14,7 +14,6 @@
 #include <stdio.h>
 #include <math.h>
 #define _XTAL_FREQ 32E6
-//#define CS LATBbits.LB3
 
 void SPI_write (uint8_t data);
 void putch(char data);
