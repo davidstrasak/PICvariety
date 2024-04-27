@@ -9667,6 +9667,65 @@ unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 2 3
 # 3 "./includes.h" 2
 
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\string.h" 1 3
+# 25 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\string.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 421 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct __locale_struct * locale_t;
+# 26 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\string.h" 2 3
+
+void *memcpy (void *restrict, const void *restrict, size_t);
+void *memmove (void *, const void *, size_t);
+void *memset (void *, int, size_t);
+int memcmp (const void *, const void *, size_t);
+void *memchr (const void *, int, size_t);
+
+char *strcpy (char *restrict, const char *restrict);
+char *strncpy (char *restrict, const char *restrict, size_t);
+
+char *strcat (char *restrict, const char *restrict);
+char *strncat (char *restrict, const char *restrict, size_t);
+
+int strcmp (const char *, const char *);
+int strncmp (const char *, const char *, size_t);
+
+int strcoll (const char *, const char *);
+size_t strxfrm (char *restrict, const char *restrict, size_t);
+
+char *strchr (const char *, int);
+char *strrchr (const char *, int);
+
+size_t strcspn (const char *, const char *);
+size_t strspn (const char *, const char *);
+char *strpbrk (const char *, const char *);
+char *strstr (const char *, const char *);
+char *strtok (char *restrict, const char *restrict);
+
+size_t strlen (const char *);
+
+char *strerror (int);
+
+
+
+
+char *strtok_r (char *restrict, const char *restrict, char **restrict);
+int strerror_r (int, char *, size_t);
+char *stpcpy(char *restrict, const char *restrict);
+char *stpncpy(char *restrict, const char *restrict, size_t);
+size_t strnlen (const char *, size_t);
+char *strdup (const char *);
+char *strndup (const char *, size_t);
+char *strsignal(int);
+char *strerror_l (int, locale_t);
+int strcoll_l (const char *, const char *, locale_t);
+size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
+
+
+
+
+void *memccpy (void *restrict, const void *restrict, int, size_t);
+# 4 "./includes.h" 2
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -9819,7 +9878,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 4 "./includes.h" 2
+# 5 "./includes.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\math.h" 1 3
 # 15 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\math.h" 3
@@ -10193,7 +10252,7 @@ double jn(int, double);
 double y0(double);
 double y1(double);
 double yn(int, double);
-# 5 "./includes.h" 2
+# 6 "./includes.h" 2
 
 # 1 "./lcd.h" 1
 
@@ -10205,7 +10264,7 @@ void LCD_ShowString(char line, char a[]);
 static void LCD_Send(unsigned char data);
 void LCD_Clear(void);
 void LCD_Reset(void);
-# 6 "./includes.h" 2
+# 7 "./includes.h" 2
 
 # 1 "./configs.h" 1
 
@@ -10213,112 +10272,45 @@ void LCD_Reset(void);
 #pragma config FOSC = HSMP
 #pragma config PLLCFG = ON
 #pragma config WDTEN = OFF
-# 7 "./includes.h" 2
+# 8 "./includes.h" 2
+
+# 1 "./DAC.h" 1
+
+void runDAC(void);
+void SPI_write (uint8_t data);
+# 9 "./includes.h" 2
+
+
+void putch(char data);
 # 8 "main.c" 2
 
 
-
-void SPI_write (uint8_t data);
-void putch(char data);
+uint8_t menuI = 0;
 
 void main(void) {
-
 
     TRISCbits.RC0 = 1;
     TRISAbits.RA4 = 1;
     TRISAbits.RA3 = 1;
+    TRISAbits.RA2 = 1;
     ANSELAbits.ANSA3 = 0;
+    ANSELAbits.ANSA2 = 0;
 
 
-    TRISBbits.RB3 = 0;
-    TRISCbits.RC3 = 0;
-    TRISCbits.RC5 = 0;
-
-    SSP1CON1bits.SSPM = 0b0010;
-    SSP1CON1bits.CKP = 0;
-    SSP1STATbits.CKE = 1;
-    SSP1CON1bits.SSPEN = 1;
+    LCD_Init();
+    char* menuItems[] = {"GPIO", "UART", "PWM", "ADC", "DAC", "GAME", "MUSIC", ""};
+    char menuItem1[17];
+    char menuItem2[17];
 
 
-    ANSELBbits.ANSB0 = 1;
-
-    ADCON2bits.ADFM = 0;
-    ADCON2bits.ADCS = 0b110;
-    ADCON2bits.ACQT = 0b110;
-    ADCON0bits.ADON = 1;
-
-
-    SPBRG1 = 51;
-    RCSTA1bits.SPEN = 1;
-    TXSTA1bits.SYNC = 0;
-    TXSTA1bits.TXEN = 1;
-    RCSTA1bits.CREN = 1;
-
-
-    LATBbits.LB3 = 1;
-
-    ADCON0bits.CHS = 12;
-
-    uint8_t selectMode = 1;
+    LCD_Reset;
+    sprintf(menuItem1, "%-*s", 16, menuItems[menuI]);
+    sprintf(menuItem2, "%-*s", 16, menuItems[menuI+1]);
+    LCD_ShowString((char)1, menuItem1);
+    LCD_ShowString((char)2, menuItem2);
 
     while(1){
-        for(uint8_t i = 0; 1; i++){
-        switch(selectMode){
-            case 1:
-                if(i<255/2){
-                    SPI_write(1.9*i);
-                }
-                if(i>=255/2){
-                    SPI_write(1.9*(255-i));
-                }
-                break;
-            case 2:
-                SPI_write((255/2*sinf(2*3.14*i/255)+255/2));
-                break;
-            case 3:
-                SPI_write(255 - i);
-                break;
-        }
-        GODONE = 1;
-        while(GODONE);
 
-        printf("%d \r", ADRESH);
-        if(PORTCbits.RC0){
-            selectMode = 1;
-        }
-        if(PORTAbits.RA4){
-            selectMode = 2;
-        }
-        if(PORTAbits.RA3){
-            selectMode = 3;
-        }
-
-        _delay((unsigned long)((10)*(32E6/4000.0)));
-        }
     }
     return;
-}
-
-void SPI_write (uint8_t data){
-    uint8_t MSB, LSB;
-
-    MSB = (uint8_t)(0b00110000 | (data >> 4));
-    LSB = (uint8_t)(data << 4);
-
-    LATBbits.LB3 = 0;
-
-    SSP1BUF = MSB;
-    while(!SSP1IF);
-    SSP1IF = 0;
-
-    SSP1BUF = LSB;
-    while(!SSP1IF);
-    SSP1IF = 0;
-
-    LATBbits.LB3 = 1;
-}
-
-void putch(char data){
-    while(!TX1IF);
-    TXREG1 = data;
 }

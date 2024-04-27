@@ -1,3 +1,6 @@
 build/default/production/lcd.p1:  \
 lcd.c  \
-lcd.h 
+includes.h  \
+lcd.h  \
+configs.h  \
+DAC.h 

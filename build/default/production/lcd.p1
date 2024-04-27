@@ -967,322 +967,328 @@ Version 4.0 HI-TECH Software Intermediate Code
 "17406
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 17406: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"6 lcd.c
-[; ;lcd.c: 6: void LCD_Init(void){
+"3 ./configs.h
+[p x FOSC  =  HSMP       ]
+"4
+[p x PLLCFG  =  ON       ]
+"5
+[p x WDTEN  =  OFF       ]
+"3 lcd.c
+[; ;lcd.c: 3: void LCD_Init(void){
 [v _LCD_Init `(v ~T0 @X0 1 ef ]
 {
 [e :U _LCD_Init ]
 [f ]
-"8
-[; ;lcd.c: 8:     ANSELDbits.ANSD0 = 0;
+"5
+[; ;lcd.c: 5:     ANSELDbits.ANSD0 = 0;
 [e = . . _ANSELDbits 0 0 -> -> 0 `i `uc ]
-"9
-[; ;lcd.c: 9:     ANSELDbits.ANSD1 = 0;
+"6
+[; ;lcd.c: 6:     ANSELDbits.ANSD1 = 0;
 [e = . . _ANSELDbits 0 1 -> -> 0 `i `uc ]
-"11
-[; ;lcd.c: 11:     TRISDbits.TRISD0 = 1;
+"8
+[; ;lcd.c: 8:     TRISDbits.TRISD0 = 1;
 [e = . . _TRISDbits 0 0 -> -> 1 `i `uc ]
-"12
-[; ;lcd.c: 12:     TRISDbits.TRISD1 = 1;
+"9
+[; ;lcd.c: 9:     TRISDbits.TRISD1 = 1;
 [e = . . _TRISDbits 0 1 -> -> 1 `i `uc ]
-"13
-[; ;lcd.c: 13:     TRISAbits.TRISA0 = 0;
+"10
+[; ;lcd.c: 10:     TRISAbits.TRISA0 = 0;
 [e = . . _TRISAbits 0 0 -> -> 0 `i `uc ]
-"14
-[; ;lcd.c: 14:     LATAbits.LATA0 = 1;
+"11
+[; ;lcd.c: 11:     LATAbits.LATA0 = 1;
 [e = . . _LATAbits 0 0 -> -> 1 `i `uc ]
-"17
-[; ;lcd.c: 17:     SSP2CON1bits.SSPM = 0b1000;
+"14
+[; ;lcd.c: 14:     SSP2CON1bits.SSPM = 0b1000;
 [e = . . _SSP2CON1bits 0 0 -> -> 8 `i `uc ]
-"18
-[; ;lcd.c: 18:     SSP2ADD = 19;
+"15
+[; ;lcd.c: 15:     SSP2ADD = 19;
 [e = _SSP2ADD -> -> 19 `i `uc ]
-"19
-[; ;lcd.c: 19:     SSP2CON1bits.SSPEN = 1;
+"16
+[; ;lcd.c: 16:     SSP2CON1bits.SSPEN = 1;
 [e = . . _SSP2CON1bits 0 2 -> -> 1 `i `uc ]
-"21
-[; ;lcd.c: 21:     _delay((unsigned long)((5)*(32E6/4000.0)));
+"18
+[; ;lcd.c: 18:     _delay((unsigned long)((5)*(32E6/4000.0)));
 [e ( __delay (1 -> * -> -> 5 `i `d / .32e6 .4000.0 `ul ]
-"23
-[; ;lcd.c: 23:     SSP2CON2bits.SEN = 1;
+"20
+[; ;lcd.c: 20:     SSP2CON2bits.SEN = 1;
 [e = . . _SSP2CON2bits 0 0 -> -> 1 `i `uc ]
-"24
-[; ;lcd.c: 24:     while (SSP2CON2bits.SEN);
-[e $U 857  ]
-[e :U 858 ]
-[e :U 857 ]
-[e $ != -> . . _SSP2CON2bits 0 0 `i -> 0 `i 858  ]
+"21
+[; ;lcd.c: 21:     while (SSP2CON2bits.SEN);
+[e $U 858  ]
 [e :U 859 ]
-"25
-[; ;lcd.c: 25:     SSP2IF = 0;
-[e = _SSP2IF -> -> 0 `i `b ]
-"30
-[; ;lcd.c: 30:     LCD_Send(0x7C);
-[e ( _LCD_Send (1 -> -> 124 `i `uc ]
-"31
-[; ;lcd.c: 31:     LCD_Send(0x80);
-[e ( _LCD_Send (1 -> -> 128 `i `uc ]
-"32
-[; ;lcd.c: 32:     LCD_Send(0x38);
-[e ( _LCD_Send (1 -> -> 56 `i `uc ]
-"33
-[; ;lcd.c: 33:     LCD_Send(0x80);
-[e ( _LCD_Send (1 -> -> 128 `i `uc ]
-"34
-[; ;lcd.c: 34:     LCD_Send(0x39);
-[e ( _LCD_Send (1 -> -> 57 `i `uc ]
-"35
-[; ;lcd.c: 35:     LCD_Send(0x80);
-[e ( _LCD_Send (1 -> -> 128 `i `uc ]
-"36
-[; ;lcd.c: 36:     LCD_Send(0x17);
-[e ( _LCD_Send (1 -> -> 23 `i `uc ]
-"37
-[; ;lcd.c: 37:     LCD_Send(0x80);
-[e ( _LCD_Send (1 -> -> 128 `i `uc ]
-"38
-[; ;lcd.c: 38:     LCD_Send(0x7A);
-[e ( _LCD_Send (1 -> -> 122 `i `uc ]
-"39
-[; ;lcd.c: 39:     LCD_Send(0x80);
-[e ( _LCD_Send (1 -> -> 128 `i `uc ]
-"40
-[; ;lcd.c: 40:     LCD_Send(0x5E);
-[e ( _LCD_Send (1 -> -> 94 `i `uc ]
-"41
-[; ;lcd.c: 41:     LCD_Send(0x80);
-[e ( _LCD_Send (1 -> -> 128 `i `uc ]
-"42
-[; ;lcd.c: 42:     LCD_Send(0x6B);
-[e ( _LCD_Send (1 -> -> 107 `i `uc ]
-"43
-[; ;lcd.c: 43:     LCD_Send(0x80);
-[e ( _LCD_Send (1 -> -> 128 `i `uc ]
-"44
-[; ;lcd.c: 44:     LCD_Send(0x0C);
-[e ( _LCD_Send (1 -> -> 12 `i `uc ]
-"45
-[; ;lcd.c: 45:     LCD_Send(0x80);
-[e ( _LCD_Send (1 -> -> 128 `i `uc ]
-"46
-[; ;lcd.c: 46:     LCD_Send(0x01);
-[e ( _LCD_Send (1 -> -> 1 `i `uc ]
-"47
-[; ;lcd.c: 47:     LCD_Send(0x80);
-[e ( _LCD_Send (1 -> -> 128 `i `uc ]
-"48
-[; ;lcd.c: 48:     LCD_Send(0x06);
-[e ( _LCD_Send (1 -> -> 6 `i `uc ]
-"49
-[; ;lcd.c: 49:     LCD_Send(0x80);
-[e ( _LCD_Send (1 -> -> 128 `i `uc ]
-"50
-[; ;lcd.c: 50:     LCD_Send(0x02);
-[e ( _LCD_Send (1 -> -> 2 `i `uc ]
-"52
-[; ;lcd.c: 52:     SSP2CON2bits.PEN = 1;
-[e = . . _SSP2CON2bits 0 2 -> -> 1 `i `uc ]
-"53
-[; ;lcd.c: 53:     while (SSP2CON2bits.PEN);
-[e $U 860  ]
-[e :U 861 ]
+[e :U 858 ]
+[e $ != -> . . _SSP2CON2bits 0 0 `i -> 0 `i 859  ]
 [e :U 860 ]
-[e $ != -> . . _SSP2CON2bits 0 2 `i -> 0 `i 861  ]
+"22
+[; ;lcd.c: 22:     SSP2IF = 0;
+[e = _SSP2IF -> -> 0 `i `b ]
+"27
+[; ;lcd.c: 27:     LCD_Send(0x7C);
+[e ( _LCD_Send (1 -> -> 124 `i `uc ]
+"28
+[; ;lcd.c: 28:     LCD_Send(0x80);
+[e ( _LCD_Send (1 -> -> 128 `i `uc ]
+"29
+[; ;lcd.c: 29:     LCD_Send(0x38);
+[e ( _LCD_Send (1 -> -> 56 `i `uc ]
+"30
+[; ;lcd.c: 30:     LCD_Send(0x80);
+[e ( _LCD_Send (1 -> -> 128 `i `uc ]
+"31
+[; ;lcd.c: 31:     LCD_Send(0x39);
+[e ( _LCD_Send (1 -> -> 57 `i `uc ]
+"32
+[; ;lcd.c: 32:     LCD_Send(0x80);
+[e ( _LCD_Send (1 -> -> 128 `i `uc ]
+"33
+[; ;lcd.c: 33:     LCD_Send(0x17);
+[e ( _LCD_Send (1 -> -> 23 `i `uc ]
+"34
+[; ;lcd.c: 34:     LCD_Send(0x80);
+[e ( _LCD_Send (1 -> -> 128 `i `uc ]
+"35
+[; ;lcd.c: 35:     LCD_Send(0x7A);
+[e ( _LCD_Send (1 -> -> 122 `i `uc ]
+"36
+[; ;lcd.c: 36:     LCD_Send(0x80);
+[e ( _LCD_Send (1 -> -> 128 `i `uc ]
+"37
+[; ;lcd.c: 37:     LCD_Send(0x5E);
+[e ( _LCD_Send (1 -> -> 94 `i `uc ]
+"38
+[; ;lcd.c: 38:     LCD_Send(0x80);
+[e ( _LCD_Send (1 -> -> 128 `i `uc ]
+"39
+[; ;lcd.c: 39:     LCD_Send(0x6B);
+[e ( _LCD_Send (1 -> -> 107 `i `uc ]
+"40
+[; ;lcd.c: 40:     LCD_Send(0x80);
+[e ( _LCD_Send (1 -> -> 128 `i `uc ]
+"41
+[; ;lcd.c: 41:     LCD_Send(0x0C);
+[e ( _LCD_Send (1 -> -> 12 `i `uc ]
+"42
+[; ;lcd.c: 42:     LCD_Send(0x80);
+[e ( _LCD_Send (1 -> -> 128 `i `uc ]
+"43
+[; ;lcd.c: 43:     LCD_Send(0x01);
+[e ( _LCD_Send (1 -> -> 1 `i `uc ]
+"44
+[; ;lcd.c: 44:     LCD_Send(0x80);
+[e ( _LCD_Send (1 -> -> 128 `i `uc ]
+"45
+[; ;lcd.c: 45:     LCD_Send(0x06);
+[e ( _LCD_Send (1 -> -> 6 `i `uc ]
+"46
+[; ;lcd.c: 46:     LCD_Send(0x80);
+[e ( _LCD_Send (1 -> -> 128 `i `uc ]
+"47
+[; ;lcd.c: 47:     LCD_Send(0x02);
+[e ( _LCD_Send (1 -> -> 2 `i `uc ]
+"49
+[; ;lcd.c: 49:     SSP2CON2bits.PEN = 1;
+[e = . . _SSP2CON2bits 0 2 -> -> 1 `i `uc ]
+"50
+[; ;lcd.c: 50:     while (SSP2CON2bits.PEN);
+[e $U 861  ]
 [e :U 862 ]
-"55
-[; ;lcd.c: 55:     _delay((unsigned long)((5)*(32E6/4000.0)));
+[e :U 861 ]
+[e $ != -> . . _SSP2CON2bits 0 2 `i -> 0 `i 862  ]
+[e :U 863 ]
+"52
+[; ;lcd.c: 52:     _delay((unsigned long)((5)*(32E6/4000.0)));
 [e ( __delay (1 -> * -> -> 5 `i `d / .32e6 .4000.0 `ul ]
-"56
-[; ;lcd.c: 56: }
-[e :UE 856 ]
+"53
+[; ;lcd.c: 53: }
+[e :UE 857 ]
 }
-"58
-[; ;lcd.c: 58: void LCD_ShowString(char lineNum, char textData[])
+"55
+[; ;lcd.c: 55: void LCD_ShowString(char lineNum, char textData[])
 [v _LCD_ShowString `(v ~T0 @X0 1 ef2`uc`*uc ]
-"59
-[; ;lcd.c: 59: {
+"56
+[; ;lcd.c: 56: {
 {
 [e :U _LCD_ShowString ]
-"58
-[; ;lcd.c: 58: void LCD_ShowString(char lineNum, char textData[])
+"55
+[; ;lcd.c: 55: void LCD_ShowString(char lineNum, char textData[])
 [v _lineNum `uc ~T0 @X0 1 r1 ]
 [v _textData `*uc ~T0 @X0 1 r2 ]
-"59
-[; ;lcd.c: 59: {
+"56
+[; ;lcd.c: 56: {
 [f ]
-"60
-[; ;lcd.c: 60:     unsigned char i;
+"57
+[; ;lcd.c: 57:     unsigned char i;
 [v _i `uc ~T0 @X0 1 a ]
-"61
-[; ;lcd.c: 61:     i = 0;
+"58
+[; ;lcd.c: 58:     i = 0;
 [e = _i -> -> 0 `i `uc ]
-"63
-[; ;lcd.c: 63:     SSP2CON2bits.SEN = 1;
+"60
+[; ;lcd.c: 60:     SSP2CON2bits.SEN = 1;
 [e = . . _SSP2CON2bits 0 0 -> -> 1 `i `uc ]
-"64
-[; ;lcd.c: 64:     while (SSP2CON2bits.SEN);
-[e $U 864  ]
-[e :U 865 ]
-[e :U 864 ]
-[e $ != -> . . _SSP2CON2bits 0 0 `i -> 0 `i 865  ]
+"61
+[; ;lcd.c: 61:     while (SSP2CON2bits.SEN);
+[e $U 865  ]
 [e :U 866 ]
-"65
-[; ;lcd.c: 65:     SSP2IF = 0;
+[e :U 865 ]
+[e $ != -> . . _SSP2CON2bits 0 0 `i -> 0 `i 866  ]
+[e :U 867 ]
+"62
+[; ;lcd.c: 62:     SSP2IF = 0;
 [e = _SSP2IF -> -> 0 `i `b ]
-"67
-[; ;lcd.c: 67:     LCD_Send(0x7c);
+"64
+[; ;lcd.c: 64:     LCD_Send(0x7c);
 [e ( _LCD_Send (1 -> -> 124 `i `uc ]
-"69
-[; ;lcd.c: 69:     LCD_Send(0x80);
+"66
+[; ;lcd.c: 66:     LCD_Send(0x80);
 [e ( _LCD_Send (1 -> -> 128 `i `uc ]
+"68
+[; ;lcd.c: 68:     if(lineNum == 1){
+[e $ ! == -> _lineNum `i -> 1 `i 868  ]
+{
+"69
+[; ;lcd.c: 69:         LCD_Send(0x80);
+[e ( _LCD_Send (1 -> -> 128 `i `uc ]
+"70
+[; ;lcd.c: 70:     }
+}
+[e $U 869  ]
 "71
-[; ;lcd.c: 71:     if(lineNum == 1){
-[e $ ! == -> _lineNum `i -> 1 `i 867  ]
+[; ;lcd.c: 71:     else if (lineNum == 2){
+[e :U 868 ]
+[e $ ! == -> _lineNum `i -> 2 `i 870  ]
 {
 "72
-[; ;lcd.c: 72:         LCD_Send(0x80);
-[e ( _LCD_Send (1 -> -> 128 `i `uc ]
+[; ;lcd.c: 72:         LCD_Send(0xC0);
+[e ( _LCD_Send (1 -> -> 192 `i `uc ]
 "73
 [; ;lcd.c: 73:     }
 }
-[e $U 868  ]
-"74
-[; ;lcd.c: 74:     else if (lineNum == 2){
-[e :U 867 ]
-[e $ ! == -> _lineNum `i -> 2 `i 869  ]
-{
-"75
-[; ;lcd.c: 75:         LCD_Send(0xC0);
-[e ( _LCD_Send (1 -> -> 192 `i `uc ]
-"76
-[; ;lcd.c: 76:     }
-}
+[e :U 870 ]
 [e :U 869 ]
-[e :U 868 ]
-"78
-[; ;lcd.c: 78:     LCD_Send(0x40);
+"75
+[; ;lcd.c: 75:     LCD_Send(0x40);
 [e ( _LCD_Send (1 -> -> 64 `i `uc ]
-"80
-[; ;lcd.c: 80:     for (i = 0; i<16; i++){
+"77
+[; ;lcd.c: 77:     for (i = 0; i<16; i++){
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 16 `i 870  ]
-[e $U 871  ]
-[e :U 870 ]
+[e $ < -> _i `i -> 16 `i 871  ]
+[e $U 872  ]
+[e :U 871 ]
 {
-"81
-[; ;lcd.c: 81:         LCD_Send(textData[i]);
+"78
+[; ;lcd.c: 78:         LCD_Send(textData[i]);
 [e ( _LCD_Send (1 -> *U + _textData * -> _i `ux -> -> # *U _textData `ui `ux `uc ]
-"82
-[; ;lcd.c: 82:     }
+"79
+[; ;lcd.c: 79:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 16 `i 870  ]
-[e :U 871 ]
+[e $ < -> _i `i -> 16 `i 871  ]
+[e :U 872 ]
 }
-"84
-[; ;lcd.c: 84:     SSP2CON2bits.PEN = 1;
+"81
+[; ;lcd.c: 81:     SSP2CON2bits.PEN = 1;
 [e = . . _SSP2CON2bits 0 2 -> -> 1 `i `uc ]
-"85
-[; ;lcd.c: 85:     while (SSP2CON2bits.PEN);
-[e $U 873  ]
-[e :U 874 ]
-[e :U 873 ]
-[e $ != -> . . _SSP2CON2bits 0 2 `i -> 0 `i 874  ]
+"82
+[; ;lcd.c: 82:     while (SSP2CON2bits.PEN);
+[e $U 874  ]
 [e :U 875 ]
-"86
-[; ;lcd.c: 86: }
-[e :UE 863 ]
+[e :U 874 ]
+[e $ != -> . . _SSP2CON2bits 0 2 `i -> 0 `i 875  ]
+[e :U 876 ]
+"83
+[; ;lcd.c: 83: }
+[e :UE 864 ]
 }
-"88
-[; ;lcd.c: 88: static void LCD_Send(unsigned char data){
+"85
+[; ;lcd.c: 85: static void LCD_Send(unsigned char data){
 [v _LCD_Send `(v ~T0 @X0 1 sf1`uc ]
 {
 [e :U _LCD_Send ]
 [v _data `uc ~T0 @X0 1 r1 ]
 [f ]
-"90
-[; ;lcd.c: 90:     SSP2BUF = data;
+"87
+[; ;lcd.c: 87:     SSP2BUF = data;
 [e = _SSP2BUF _data ]
-"91
-[; ;lcd.c: 91:     while(SSP2STATbits.BF);
-[e $U 877  ]
-[e :U 878 ]
-[e :U 877 ]
-[e $ != -> . . _SSP2STATbits 2 0 `i -> 0 `i 878  ]
+"88
+[; ;lcd.c: 88:     while(SSP2STATbits.BF);
+[e $U 878  ]
 [e :U 879 ]
-"92
-[; ;lcd.c: 92:     while(!SSP2IF);
-[e $U 880  ]
-[e :U 881 ]
+[e :U 878 ]
+[e $ != -> . . _SSP2STATbits 2 0 `i -> 0 `i 879  ]
 [e :U 880 ]
-[e $ ! _SSP2IF 881  ]
+"89
+[; ;lcd.c: 89:     while(!SSP2IF);
+[e $U 881  ]
 [e :U 882 ]
-"93
-[; ;lcd.c: 93:     SSP2IF = 0;
+[e :U 881 ]
+[e $ ! _SSP2IF 882  ]
+[e :U 883 ]
+"90
+[; ;lcd.c: 90:     SSP2IF = 0;
 [e = _SSP2IF -> -> 0 `i `b ]
-"95
-[; ;lcd.c: 95: }
-[e :UE 876 ]
+"92
+[; ;lcd.c: 92: }
+[e :UE 877 ]
 }
-"97
-[; ;lcd.c: 97: void LCD_Clear(void){
+"94
+[; ;lcd.c: 94: void LCD_Clear(void){
 [v _LCD_Clear `(v ~T0 @X0 1 ef ]
 {
 [e :U _LCD_Clear ]
 [f ]
-"98
-[; ;lcd.c: 98:     SSP2CON2bits.SEN = 1;
+"95
+[; ;lcd.c: 95:     SSP2CON2bits.SEN = 1;
 [e = . . _SSP2CON2bits 0 0 -> -> 1 `i `uc ]
-"99
-[; ;lcd.c: 99:     while (SSP2CON2bits.SEN);
-[e $U 884  ]
-[e :U 885 ]
-[e :U 884 ]
-[e $ != -> . . _SSP2CON2bits 0 0 `i -> 0 `i 885  ]
+"96
+[; ;lcd.c: 96:     while (SSP2CON2bits.SEN);
+[e $U 885  ]
 [e :U 886 ]
-"100
-[; ;lcd.c: 100:     SSP2IF = 0;
-[e = _SSP2IF -> -> 0 `i `b ]
-"102
-[; ;lcd.c: 102:     LCD_Send(0x7C);
-[e ( _LCD_Send (1 -> -> 124 `i `uc ]
-"103
-[; ;lcd.c: 103:     LCD_Send(0x80);
-[e ( _LCD_Send (1 -> -> 128 `i `uc ]
-"104
-[; ;lcd.c: 104:     LCD_Send(0x01);
-[e ( _LCD_Send (1 -> -> 1 `i `uc ]
-"106
-[; ;lcd.c: 106:     SSP2CON2bits.PEN = 1;
-[e = . . _SSP2CON2bits 0 2 -> -> 1 `i `uc ]
-"107
-[; ;lcd.c: 107:     while (SSP2CON2bits.PEN);
-[e $U 887  ]
-[e :U 888 ]
+[e :U 885 ]
+[e $ != -> . . _SSP2CON2bits 0 0 `i -> 0 `i 886  ]
 [e :U 887 ]
-[e $ != -> . . _SSP2CON2bits 0 2 `i -> 0 `i 888  ]
+"97
+[; ;lcd.c: 97:     SSP2IF = 0;
+[e = _SSP2IF -> -> 0 `i `b ]
+"99
+[; ;lcd.c: 99:     LCD_Send(0x7C);
+[e ( _LCD_Send (1 -> -> 124 `i `uc ]
+"100
+[; ;lcd.c: 100:     LCD_Send(0x80);
+[e ( _LCD_Send (1 -> -> 128 `i `uc ]
+"101
+[; ;lcd.c: 101:     LCD_Send(0x01);
+[e ( _LCD_Send (1 -> -> 1 `i `uc ]
+"103
+[; ;lcd.c: 103:     SSP2CON2bits.PEN = 1;
+[e = . . _SSP2CON2bits 0 2 -> -> 1 `i `uc ]
+"104
+[; ;lcd.c: 104:     while (SSP2CON2bits.PEN);
+[e $U 888  ]
 [e :U 889 ]
-"108
-[; ;lcd.c: 108: }
-[e :UE 883 ]
+[e :U 888 ]
+[e $ != -> . . _SSP2CON2bits 0 2 `i -> 0 `i 889  ]
+[e :U 890 ]
+"105
+[; ;lcd.c: 105: }
+[e :UE 884 ]
 }
-"110
-[; ;lcd.c: 110: void LCD_Reset(void){
+"107
+[; ;lcd.c: 107: void LCD_Reset(void){
 [v _LCD_Reset `(v ~T0 @X0 1 ef ]
 {
 [e :U _LCD_Reset ]
 [f ]
-"111
-[; ;lcd.c: 111:     LATAbits.LATA0 = 0;
+"108
+[; ;lcd.c: 108:     LATAbits.LATA0 = 0;
 [e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
-"112
-[; ;lcd.c: 112:     _delay((unsigned long)((100)*(32E6/4000000.0)));
+"109
+[; ;lcd.c: 109:     _delay((unsigned long)((100)*(32E6/4000000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / .32e6 .4000000.0 `ul ]
-"113
-[; ;lcd.c: 113:     LATAbits.LATA0 = 1;
+"110
+[; ;lcd.c: 110:     LATAbits.LATA0 = 1;
 [e = . . _LATAbits 0 0 -> -> 1 `i `uc ]
-"114
-[; ;lcd.c: 114: }
-[e :UE 890 ]
+"111
+[; ;lcd.c: 111: }
+[e :UE 891 ]
 }

@@ -1,58 +1,10 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[p mainexit ]
-"8515 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 8515:     struct {
-[s S407 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S407 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
-"8525
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 8525:     struct {
-[s S408 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S408 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
-"8514
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 8514: typedef union {
-[u S406 `S407 1 `S408 1 ]
-[n S406 . . . ]
-"8536
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 8536: extern volatile TRISCbits_t TRISCbits __attribute__((address(0xF94)));
-[v _TRISCbits `VS406 ~T0 @X0 0 e@3988 ]
-"8071
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 8071:     struct {
-[s S395 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S395 . TRISA0 TRISA1 TRISA2 TRISA3 TRISA4 TRISA5 TRISA6 TRISA7 ]
-"8081
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 8081:     struct {
-[s S396 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S396 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
-"8070
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 8070: typedef union {
-[u S394 `S395 1 `S396 1 ]
-[n S394 . . . ]
-"8092
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 8092: extern volatile TRISAbits_t TRISAbits __attribute__((address(0xF92)));
-[v _TRISAbits `VS394 ~T0 @X0 0 e@3986 ]
-"58
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 58:     struct {
-[s S7 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S7 . ANSA0 ANSA1 ANSA2 ANSA3 . ANSA5 ]
-"57
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 57: typedef union {
-[u S6 `S7 1 ]
-[n S6 . . ]
-"67
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 67: extern volatile ANSELAbits_t ANSELAbits __attribute__((address(0xF38)));
-[v _ANSELAbits `VS6 ~T0 @X0 0 e@3896 ]
-"5 ./lcd.h
-[; ;./lcd.h: 5: void LCD_Init(void);
-[v _LCD_Init `(v ~T0 @X0 0 ef ]
-"9
-[; ;./lcd.h: 9: void LCD_Reset(void);
-[v _LCD_Reset `(v ~T0 @X0 0 ef ]
-"121 C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\stdio.h
-[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\stdio.h: 121: int sprintf(char *restrict, const char *restrict, ...);
-[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
-"6 ./lcd.h
-[; ;./lcd.h: 6: void LCD_ShowString(char line, char a[]);
-[v _LCD_ShowString `(v ~T0 @X0 0 ef2`uc`*uc ]
+"20589 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 20589: extern volatile __bit TX1IF __attribute__((address(0x7CF4)));
+[v _TX1IF `Vb ~T0 @X0 0 e@31988 ]
+"11210
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 11210: extern volatile unsigned char TXREG1 __attribute__((address(0xFAD)));
+[v _TXREG1 `Vuc ~T0 @X0 0 e@4013 ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 54: __asm("ANSELA equ 0F38h");
 [; <" ANSELA equ 0F38h ;# ">
@@ -818,103 +770,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x PLLCFG  =  ON       ]
 "5
 [p x WDTEN  =  OFF       ]
-"10 main.c
-[; ;main.c: 10: uint8_t menuI = 0;
-[v _menuI `uc ~T0 @X0 1 e ]
-[i _menuI
--> -> 0 `i `uc
-]
-[v $root$_main `(v ~T0 @X0 0 e ]
-"12
-[; ;main.c: 12: void main(void) {
-[v _main `(v ~T0 @X0 1 ef ]
+"11 putch.c
+[; ;putch.c: 11: void putch(char data){
+[v _putch `(v ~T0 @X0 1 ef1`uc ]
 {
-[e :U _main ]
+[e :U _putch ]
+[v _data `uc ~T0 @X0 1 r1 ]
 [f ]
-"14
-[; ;main.c: 14:     TRISCbits.RC0 = 1;
-[e = . . _TRISCbits 1 0 -> -> 1 `i `uc ]
-"15
-[; ;main.c: 15:     TRISAbits.RA4 = 1;
-[e = . . _TRISAbits 1 4 -> -> 1 `i `uc ]
-"16
-[; ;main.c: 16:     TRISAbits.RA3 = 1;
-[e = . . _TRISAbits 1 3 -> -> 1 `i `uc ]
-"17
-[; ;main.c: 17:     TRISAbits.RA2 = 1;
-[e = . . _TRISAbits 1 2 -> -> 1 `i `uc ]
-"18
-[; ;main.c: 18:     ANSELAbits.ANSA3 = 0;
-[e = . . _ANSELAbits 0 3 -> -> 0 `i `uc ]
-"19
-[; ;main.c: 19:     ANSELAbits.ANSA2 = 0;
-[e = . . _ANSELAbits 0 2 -> -> 0 `i `uc ]
-"22
-[; ;main.c: 22:     LCD_Init();
-[e ( _LCD_Init ..  ]
-[v F6945 `*uc ~T0 @X0 -> 8 `i s ]
-[i F6945
-:U ..
-"23
-[; ;main.c: 23:     char* menuItems[] = {"GPIO", "UART", "PWM", "ADC", "DAC", "GAME", "MUSIC", ""};
-:s 1C
-:s 2C
-:s 3C
-:s 4C
-:s 5C
-:s 6C
-:s 7C
-:s 8C
-..
-]
-[v _menuItems `*uc ~T0 @X0 -> 8 `i a ]
-[e = _menuItems F6945 ]
-"24
-[; ;main.c: 24:     char menuItem1[17];
-[v _menuItem1 `uc ~T0 @X0 -> 17 `i a ]
-"25
-[; ;main.c: 25:     char menuItem2[17];
-[v _menuItem2 `uc ~T0 @X0 -> 17 `i a ]
-"28
-[; ;main.c: 28:     LCD_Reset;
-[e &U _LCD_Reset ]
-"29
-[; ;main.c: 29:     sprintf(menuItem1, "%-*s", 16, menuItems[menuI]);
-[e ( _sprintf (1 , , (. , &U _menuItem1 :s 9C -> 16 `i *U + &U _menuItems * -> _menuI `ux -> -> # *U &U _menuItems `ui `ux ]
-"30
-[; ;main.c: 30:     sprintf(menuItem2, "%-*s", 16, menuItems[menuI+1]);
-[e ( _sprintf (1 , , (. , &U _menuItem2 :s 10C -> 16 `i *U + &U _menuItems * -> -> + -> _menuI `i -> 1 `i `ui `ux -> -> # *U &U _menuItems `ui `ux ]
-"31
-[; ;main.c: 31:     LCD_ShowString((char)1, menuItem1);
-[e ( _LCD_ShowString (2 , -> -> 1 `i `uc &U _menuItem1 ]
-"32
-[; ;main.c: 32:     LCD_ShowString((char)2, menuItem2);
-[e ( _LCD_ShowString (2 , -> -> 2 `i `uc &U _menuItem2 ]
-"34
-[; ;main.c: 34:     while(1){
+"12
+[; ;putch.c: 12:     while(!TX1IF);
+[e $U 858  ]
 [e :U 859 ]
-{
-"36
-[; ;main.c: 36:     }
-}
 [e :U 858 ]
-[e $U 859  ]
+[e $ ! _TX1IF 859  ]
 [e :U 860 ]
-"37
-[; ;main.c: 37:     return;
-[e $UE 857  ]
-"38
-[; ;main.c: 38: }
+"13
+[; ;putch.c: 13:     TXREG1 = data;
+[e = _TXREG1 -> _data `uc ]
+"14
+[; ;putch.c: 14: }
 [e :UE 857 ]
 }
-[p f _sprintf 8814600 ]
-[a 9C 37 45 42 115 0 ]
-[a 10C 37 45 42 115 0 ]
-[a 2C 85 65 82 84 0 ]
-[a 1C 71 80 73 79 0 ]
-[a 3C 80 87 77 0 ]
-[a 6C 71 65 77 69 0 ]
-[a 7C 77 85 83 73 67 0 ]
-[a 4C 65 68 67 0 ]
-[a 5C 68 65 67 0 ]
-[a 8C 0 ]

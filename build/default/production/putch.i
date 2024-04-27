@@ -1,4 +1,4 @@
-# 1 "lcd.c"
+# 1 "putch.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,15 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "lcd.c" 2
+# 1 "putch.c" 2
+
+
+
+
+
+
+
+
 # 1 "./includes.h" 1
 
 
@@ -10275,115 +10283,10 @@ void SPI_write (uint8_t data);
 
 
 void putch(char data);
-# 1 "lcd.c" 2
+# 9 "putch.c" 2
 
 
-void LCD_Init(void){
-
-    ANSELDbits.ANSD0 = 0;
-    ANSELDbits.ANSD1 = 0;
-
-    TRISDbits.TRISD0 = 1;
-    TRISDbits.TRISD1 = 1;
-    TRISAbits.TRISA0 = 0;
-    LATAbits.LATA0 = 1;
-
-
-    SSP2CON1bits.SSPM = 0b1000;
-    SSP2ADD = 19;
-    SSP2CON1bits.SSPEN = 1;
-
-    _delay((unsigned long)((5)*(32E6/4000.0)));
-
-    SSP2CON2bits.SEN = 1;
-    while (SSP2CON2bits.SEN);
-    SSP2IF = 0;
-
-
-
-
-    LCD_Send(0x7C);
-    LCD_Send(0x80);
-    LCD_Send(0x38);
-    LCD_Send(0x80);
-    LCD_Send(0x39);
-    LCD_Send(0x80);
-    LCD_Send(0x17);
-    LCD_Send(0x80);
-    LCD_Send(0x7A);
-    LCD_Send(0x80);
-    LCD_Send(0x5E);
-    LCD_Send(0x80);
-    LCD_Send(0x6B);
-    LCD_Send(0x80);
-    LCD_Send(0x0C);
-    LCD_Send(0x80);
-    LCD_Send(0x01);
-    LCD_Send(0x80);
-    LCD_Send(0x06);
-    LCD_Send(0x80);
-    LCD_Send(0x02);
-
-    SSP2CON2bits.PEN = 1;
-    while (SSP2CON2bits.PEN);
-
-    _delay((unsigned long)((5)*(32E6/4000.0)));
-}
-
-void LCD_ShowString(char lineNum, char textData[])
-{
-    unsigned char i;
-    i = 0;
-
-    SSP2CON2bits.SEN = 1;
-    while (SSP2CON2bits.SEN);
-    SSP2IF = 0;
-
-    LCD_Send(0x7c);
-
-    LCD_Send(0x80);
-
-    if(lineNum == 1){
-        LCD_Send(0x80);
-    }
-    else if (lineNum == 2){
-        LCD_Send(0xC0);
-    }
-
-    LCD_Send(0x40);
-
-    for (i = 0; i<16; i++){
-        LCD_Send(textData[i]);
-    }
-
-    SSP2CON2bits.PEN = 1;
-    while (SSP2CON2bits.PEN);
-}
-
-static void LCD_Send(unsigned char data){
-
-    SSP2BUF = data;
-    while(SSP2STATbits.BF);
-    while(!SSP2IF);
-    SSP2IF = 0;
-
-}
-
-void LCD_Clear(void){
-    SSP2CON2bits.SEN = 1;
-    while (SSP2CON2bits.SEN);
-    SSP2IF = 0;
-
-    LCD_Send(0x7C);
-    LCD_Send(0x80);
-    LCD_Send(0x01);
-
-    SSP2CON2bits.PEN = 1;
-    while (SSP2CON2bits.PEN);
-}
-
-void LCD_Reset(void){
-    LATAbits.LATA0 = 0;
-    _delay((unsigned long)((100)*(32E6/4000000.0)));
-    LATAbits.LATA0 = 1;
+void putch(char data){
+    while(!TX1IF);
+    TXREG1 = data;
 }

@@ -1,7 +1,4 @@
-#include <xc.h>
-#include <stdio.h>
-#include "lcd.h"
-#define _XTAL_FREQ 32E6
+#include "includes.h"
 
 void LCD_Init(void){
     
