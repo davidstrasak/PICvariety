@@ -278,8 +278,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7699
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 7699: extern volatile LATBbits_t LATBbits __attribute__((address(0xF8A)));
 [v _LATBbits `VS382 ~T0 @X0 0 e@3978 ]
-"3 ./DAC.h
-[; ;./DAC.h: 3: void SPI_write (uint8_t data);
+"4 ./DAC.h
+[; ;./DAC.h: 4: void SPI_write (uint8_t data);
 [v _SPI_write `(v ~T0 @X0 0 ef1`uc ]
 "369 C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\math.h
 [; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\math.h: 369: float sinf(float);
@@ -1248,7 +1248,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _selectModeDAC `uc ~T0 @X0 1 a ]
 [e = _selectModeDAC -> -> 1 `i `uc ]
 "50
-[; ;DAC.c: 50:     char keepState;
+[; ;DAC.c: 50:     uint8_t keepState;
 [v _keepState `uc ~T0 @X0 1 a ]
 "51
 [; ;DAC.c: 51:     keepState = 1;

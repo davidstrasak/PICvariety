@@ -10276,14 +10276,22 @@ void LCD_Reset(void);
 
 # 1 "./DAC.h" 1
 
+
 void runDAC(void);
 void SPI_write (uint8_t data);
 # 9 "./includes.h" 2
 
 # 1 "./menu.h" 1
 
+
 uint8_t moveDisplay(uint8_t menuI, uint8_t where);
 # 10 "./includes.h" 2
+
+# 1 "./GPIO.h" 1
+
+
+void runGPIO(void);
+# 11 "./includes.h" 2
 
 
 void putch(char data);
@@ -10300,12 +10308,25 @@ void main(void) {
     ANSELAbits.ANSA2 = 0;
 
 
+    TRISDbits.RD2 = 0;
+    TRISDbits.RD3 = 0;
+    TRISCbits.RC4 = 0;
+    TRISDbits.RD4 = 0;
+    TRISDbits.RD5 = 0;
+    TRISDbits.RD6 = 0;
+    LATDbits.LD2 = 1;
+    LATDbits.LD3 = 1;
+    LATCbits.LC4 = 1;
+    LATDbits.LD4 = 1;
+    LATDbits.LD5 = 1;
+    LATDbits.LD6 = 1;
+
+
     LCD_Init();
     uint8_t menuI = 0;
     uint8_t setUpAgain = 0;
 
-
-    moveDisplay(menuI,0);
+    menuI = moveDisplay(menuI,0);
 
     while(1){
         if(PORTCbits.RC0){
@@ -10328,6 +10349,7 @@ void main(void) {
                 while(PORTAbits.RA3);
                 switch(menuI){
                     case 0:
+                        runGPIO();
                         break;
                     case 1:
                         break;

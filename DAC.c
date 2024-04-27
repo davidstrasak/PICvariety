@@ -47,7 +47,7 @@ void runDAC(void) {
     ADCON0bits.CHS = 12;
     
     uint8_t selectModeDAC = 1;
-    char keepState;
+    uint8_t keepState;
     keepState = 1;
     uint8_t DACindex = 0;
     

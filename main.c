@@ -7,7 +7,7 @@
 
 #include "includes.h"
 
-void main(void) {
+void main(void) {    
     // Menu GPIO
     TRISCbits.RC0 = 1;
     TRISAbits.RA4 = 1;
@@ -16,13 +16,26 @@ void main(void) {
     ANSELAbits.ANSA3 = 0;
     ANSELAbits.ANSA2 = 0;
     
+    //Turn off LEDs so they don't shine all the time
+    TRISDbits.RD2 = 0;
+    TRISDbits.RD3 = 0;
+    TRISCbits.RC4 = 0;
+    TRISDbits.RD4 = 0;
+    TRISDbits.RD5 = 0;
+    TRISDbits.RD6 = 0;
+    LED1 = 1;
+    LED2 = 1;
+    LED3 = 1;
+    LED4 = 1;
+    LED5 = 1;
+    LED6 = 1;
+    
     // Other initialising
     LCD_Init();
     uint8_t menuI = 0;
     uint8_t setUpAgain = 0;
-    
-    // Menu setup
-    moveDisplay(menuI,0);
+    //Display menu setup
+    menuI = moveDisplay(menuI,0);
     
     while(1){
         if(PORTCbits.RC0){
@@ -45,6 +58,7 @@ void main(void) {
                 while(PORTAbits.RA3);
                 switch(menuI){
                     case 0:
+                        runGPIO();
                         break;
                     case 1:
                         break;

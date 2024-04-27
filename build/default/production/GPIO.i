@@ -1,4 +1,4 @@
-# 1 "putch.c"
+# 1 "GPIO.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "putch.c" 2
-
+# 1 "GPIO.c" 2
 
 
 
@@ -10296,10 +10295,73 @@ void runGPIO(void);
 
 
 void putch(char data);
-# 9 "putch.c" 2
+# 8 "GPIO.c" 2
 
 
-void putch(char data){
-    while(!TX1IF);
-    TXREG1 = data;
+    void LED1_Control(unsigned char state) { LATDbits.LD2 = state; }
+    void LED2_Control(unsigned char state) { LATDbits.LD3 = state; }
+    void LED3_Control(unsigned char state) { LATCbits.LC4 = state; }
+    void LED4_Control(unsigned char state) { LATDbits.LD4 = state; }
+    void LED5_Control(unsigned char state) { LATDbits.LD5 = state; }
+    void LED6_Control(unsigned char state) { LATDbits.LD6 = state; }
+# 31 "GPIO.c"
+void runGPIO(void){
+
+    TRISDbits.RD2 = 0;
+    TRISDbits.RD3 = 0;
+    TRISCbits.RC4 = 0;
+    TRISDbits.RD4 = 0;
+    TRISDbits.RD5 = 0;
+    TRISDbits.RD6 = 0;
+    LATDbits.LD2 = 1;
+    LATDbits.LD3 = 1;
+    LATCbits.LC4 = 1;
+    LATDbits.LD4 = 1;
+    LATDbits.LD5 = 1;
+    LATDbits.LD6 = 1;
+
+
+    TRISAbits.RA2 = 1;
+    ANSELAbits.ANSA2 = 0;
+
+
+    uint8_t keepState;
+    keepState = 1;
+    uint8_t GPIOindex;
+    GPIOindex = 0;
+    uint8_t GPIOreverse;
+    GPIOreverse = 0;
+
+    void (*LEDControl[])(unsigned char) = {LED1_Control, LED2_Control, LED3_Control, LED4_Control, LED5_Control, LED6_Control};
+
+    while(keepState){
+
+    unsigned char states[] = {0b100000, 0b110000, 0b011000, 0b001100, 0b000110, 0b000011, 0b000001, 0b000011, 0b000110, 0b001100, 0b011000, 0b110000};
+    int numStates = sizeof(states) / sizeof(states[0]);
+
+    for(int i = 0; i < numStates; i++) {
+
+        for(int j = 0; j < 6; j++) {
+            (*LEDControl[j])(!((states[i] >> (5 - j)) & 0x1));
+        }
+        _delay((unsigned long)((500)*(32E6/4000.0)));
+    }
+
+        if(PORTAbits.RA2){
+            _delay((unsigned long)((50)*(32E6/4000.0)));
+            if(PORTAbits.RA2){
+                while(PORTAbits.RA2);
+                keepState = 0;
+            }
+        }
+    }
+
+
+    LATDbits.LD2 = 1;
+    LATDbits.LD3 = 1;
+    LATCbits.LC4 = 1;
+    LATDbits.LD4 = 1;
+    LATDbits.LD5 = 1;
+    LATDbits.LD6 = 1;
+    return;
 }
