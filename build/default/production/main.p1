@@ -145,6 +145,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6365
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 6365: extern volatile PORTAbits_t PORTAbits __attribute__((address(0xF80)));
 [v _PORTAbits `VS331 ~T0 @X0 0 e@3968 ]
+"6 ./lcd.h
+[; ;./lcd.h: 6: void LCD_ShowString(char line, char a[]);
+[v _LCD_ShowString `(v ~T0 @X0 0 ef2`uc`*uc ]
+"2 ./DAC.h
+[; ;./DAC.h: 2: void runDAC(void);
+[v _runDAC `(v ~T0 @X0 0 ef ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 54: __asm("ANSELA equ 0F38h");
 [; <" ANSELA equ 0F38h ;# ">
@@ -942,97 +948,214 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 21:     uint8_t menuI = 0;
 [v _menuI `uc ~T0 @X0 1 a ]
 [e = _menuI -> -> 0 `i `uc ]
-"24
-[; ;main.c: 24:     moveDisplay(menuI,0);
+"22
+[; ;main.c: 22:     uint8_t setUpAgain = 0;
+[v _setUpAgain `uc ~T0 @X0 1 a ]
+[e = _setUpAgain -> -> 0 `i `uc ]
+"25
+[; ;main.c: 25:     moveDisplay(menuI,0);
 [e ( _moveDisplay (2 , _menuI -> -> 0 `i `uc ]
-"26
-[; ;main.c: 26:     while(1){
+"27
+[; ;main.c: 27:     while(1){
 [e :U 859 ]
 {
-"27
-[; ;main.c: 27:         if(PORTCbits.RC0){
+"28
+[; ;main.c: 28:         if(PORTCbits.RC0){
 [e $ ! != -> . . _PORTCbits 0 0 `i -> 0 `i 861  ]
 {
-"28
-[; ;main.c: 28:             _delay((unsigned long)((50)*(32E6/4000.0)));
-[e ( __delay (1 -> * -> -> 50 `i `d / .32e6 .4000.0 `ul ]
 "29
-[; ;main.c: 29:             if(PORTCbits.RC0){
+[; ;main.c: 29:             _delay((unsigned long)((50)*(32E6/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / .32e6 .4000.0 `ul ]
+"30
+[; ;main.c: 30:             if(PORTCbits.RC0){
 [e $ ! != -> . . _PORTCbits 0 0 `i -> 0 `i 862  ]
 {
-"30
-[; ;main.c: 30:                 while(PORTCbits.RC0);
+"31
+[; ;main.c: 31:                 while(PORTCbits.RC0);
 [e $U 863  ]
 [e :U 864 ]
 [e :U 863 ]
 [e $ != -> . . _PORTCbits 0 0 `i -> 0 `i 864  ]
 [e :U 865 ]
-"31
-[; ;main.c: 31:                 menuI = moveDisplay(menuI,2);
-[e = _menuI ( _moveDisplay (2 , _menuI -> -> 2 `i `uc ]
 "32
-[; ;main.c: 32:             }
+[; ;main.c: 32:                 menuI = moveDisplay(menuI,2);
+[e = _menuI ( _moveDisplay (2 , _menuI -> -> 2 `i `uc ]
+"33
+[; ;main.c: 33:             }
 }
 [e :U 862 ]
-"33
-[; ;main.c: 33:         }
+"34
+[; ;main.c: 34:         }
 }
 [e :U 861 ]
-"34
-[; ;main.c: 34:         if(PORTAbits.RA4){
+"35
+[; ;main.c: 35:         if(PORTAbits.RA4){
 [e $ ! != -> . . _PORTAbits 0 4 `i -> 0 `i 866  ]
 {
-"35
-[; ;main.c: 35:             _delay((unsigned long)((50)*(32E6/4000.0)));
-[e ( __delay (1 -> * -> -> 50 `i `d / .32e6 .4000.0 `ul ]
 "36
-[; ;main.c: 36:             if(PORTAbits.RA4){
+[; ;main.c: 36:             _delay((unsigned long)((50)*(32E6/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / .32e6 .4000.0 `ul ]
+"37
+[; ;main.c: 37:             if(PORTAbits.RA4){
 [e $ ! != -> . . _PORTAbits 0 4 `i -> 0 `i 867  ]
 {
-"37
-[; ;main.c: 37:                 while(PORTAbits.RA4);
+"38
+[; ;main.c: 38:                 while(PORTAbits.RA4);
 [e $U 868  ]
 [e :U 869 ]
 [e :U 868 ]
 [e $ != -> . . _PORTAbits 0 4 `i -> 0 `i 869  ]
 [e :U 870 ]
-"38
-[; ;main.c: 38:                 menuI = moveDisplay(menuI,1);
-[e = _menuI ( _moveDisplay (2 , _menuI -> -> 1 `i `uc ]
 "39
-[; ;main.c: 39:             }
+[; ;main.c: 39:                 menuI = moveDisplay(menuI,1);
+[e = _menuI ( _moveDisplay (2 , _menuI -> -> 1 `i `uc ]
+"40
+[; ;main.c: 40:             }
 }
 [e :U 867 ]
-"40
-[; ;main.c: 40:         }
+"41
+[; ;main.c: 41:         }
 }
 [e :U 866 ]
-"41
-[; ;main.c: 41:         if(PORTAbits.RA3){
+"42
+[; ;main.c: 42:         if(PORTAbits.RA3){
 [e $ ! != -> . . _PORTAbits 0 3 `i -> 0 `i 871  ]
 {
 "43
-[; ;main.c: 43:         }
-}
-[e :U 871 ]
+[; ;main.c: 43:             _delay((unsigned long)((50)*(32E6/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / .32e6 .4000.0 `ul ]
 "44
-[; ;main.c: 44:         if(PORTAbits.RA2){
-[e $ ! != -> . . _PORTAbits 0 2 `i -> 0 `i 872  ]
+[; ;main.c: 44:             if(PORTAbits.RA3){
+[e $ ! != -> . . _PORTAbits 0 3 `i -> 0 `i 872  ]
 {
+"45
+[; ;main.c: 45:                 while(PORTAbits.RA3);
+[e $U 873  ]
+[e :U 874 ]
+[e :U 873 ]
+[e $ != -> . . _PORTAbits 0 3 `i -> 0 `i 874  ]
+[e :U 875 ]
 "46
-[; ;main.c: 46:         }
+[; ;main.c: 46:                 switch(menuI){
+[e $U 877  ]
+{
+"47
+[; ;main.c: 47:                     case 0:
+[e :U 878 ]
+"48
+[; ;main.c: 48:                         break;
+[e $U 876  ]
+"49
+[; ;main.c: 49:                     case 1:
+[e :U 879 ]
+"50
+[; ;main.c: 50:                         break;
+[e $U 876  ]
+"51
+[; ;main.c: 51:                     case 2:
+[e :U 880 ]
+"52
+[; ;main.c: 52:                         break;
+[e $U 876  ]
+"53
+[; ;main.c: 53:                     case 3:
+[e :U 881 ]
+"54
+[; ;main.c: 54:                         break;
+[e $U 876  ]
+"55
+[; ;main.c: 55:                     case 4:
+[e :U 882 ]
+"56
+[; ;main.c: 56:                         LCD_ShowString((char)1, "RB0-A2, BR: 9600");
+[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 1C ]
+"57
+[; ;main.c: 57:                         LCD_ShowString((char)2, "1:tr,2:sin,3:pil");
+[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 2C ]
+"58
+[; ;main.c: 58:                         runDAC();
+[e ( _runDAC ..  ]
+"59
+[; ;main.c: 59:                         setUpAgain = 1;
+[e = _setUpAgain -> -> 1 `i `uc ]
+"60
+[; ;main.c: 60:                         break;
+[e $U 876  ]
+"61
+[; ;main.c: 61:                     case 5:
+[e :U 883 ]
+"62
+[; ;main.c: 62:                         break;
+[e $U 876  ]
+"63
+[; ;main.c: 63:                     case 6:
+[e :U 884 ]
+"64
+[; ;main.c: 64:                         break;
+[e $U 876  ]
+"65
+[; ;main.c: 65:                     case 7:
+[e :U 885 ]
+"66
+[; ;main.c: 66:                         break;
+[e $U 876  ]
+"67
+[; ;main.c: 67:                 }
+}
+[e $U 876  ]
+[e :U 877 ]
+[e [\ _menuI , $ -> 0 `i 878
+ , $ -> 1 `i 879
+ , $ -> 2 `i 880
+ , $ -> 3 `i 881
+ , $ -> 4 `i 882
+ , $ -> 5 `i 883
+ , $ -> 6 `i 884
+ , $ -> 7 `i 885
+ 876 ]
+[e :U 876 ]
+"68
+[; ;main.c: 68:             }
 }
 [e :U 872 ]
-"47
-[; ;main.c: 47:     }
+"70
+[; ;main.c: 70:         }
+}
+[e :U 871 ]
+"71
+[; ;main.c: 71:         if(PORTAbits.RA2){
+[e $ ! != -> . . _PORTAbits 0 2 `i -> 0 `i 886  ]
+{
+"73
+[; ;main.c: 73:         }
+}
+[e :U 886 ]
+"75
+[; ;main.c: 75:         if(setUpAgain){
+[e $ ! != -> _setUpAgain `i -> 0 `i 887  ]
+{
+"76
+[; ;main.c: 76:         menuI = moveDisplay(menuI,0);
+[e = _menuI ( _moveDisplay (2 , _menuI -> -> 0 `i `uc ]
+"77
+[; ;main.c: 77:         setUpAgain = 0;
+[e = _setUpAgain -> -> 0 `i `uc ]
+"78
+[; ;main.c: 78:         }
+}
+[e :U 887 ]
+"79
+[; ;main.c: 79:     }
 }
 [e :U 858 ]
 [e $U 859  ]
 [e :U 860 ]
-"48
-[; ;main.c: 48:     return;
+"80
+[; ;main.c: 80:     return;
 [e $UE 857  ]
-"49
-[; ;main.c: 49: }
+"81
+[; ;main.c: 81: }
 [e :UE 857 ]
 }
+[a 2C 49 58 116 114 44 50 58 115 105 110 44 51 58 112 105 108 0 ]
+[a 1C 82 66 48 45 65 50 44 32 66 82 58 32 57 54 48 48 0 ]

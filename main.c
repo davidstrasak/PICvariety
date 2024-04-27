@@ -19,6 +19,7 @@ void main(void) {
     // Other initialising
     LCD_Init();
     uint8_t menuI = 0;
+    uint8_t setUpAgain = 0;
     
     // Menu setup
     moveDisplay(menuI,0);
@@ -42,12 +43,38 @@ void main(void) {
             __delay_ms(50);
             if(PORTAbits.RA3){
                 while(PORTAbits.RA3);
-                
+                switch(menuI){
+                    case 0:
+                        break;
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        LCD_ShowString((char)1, "RB0-A2, BR: 9600");
+                        LCD_ShowString((char)2, "1:tr,2:sin,3:pil");
+                        runDAC();
+                        setUpAgain = 1;
+                        break;
+                    case 5:
+                        break;
+                    case 6:
+                        break;
+                    case 7:
+                        break;
+                }
             }
             
         }
         if(PORTAbits.RA2){
             
+        }
+        
+        if(setUpAgain){
+        menuI = moveDisplay(menuI,0);
+        setUpAgain = 0;
         }
     }
     return;

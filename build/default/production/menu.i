@@ -10292,6 +10292,7 @@ void putch(char data);
 
 
 uint8_t moveDisplay(uint8_t menuI, uint8_t where){
+    LCD_Clear();
     char* menuItems[] = {"GPIO", "UART", "PWM", "ADC", "DAC", "GAME", "MUSIC", ""};
     switch (where){
         case 0:
