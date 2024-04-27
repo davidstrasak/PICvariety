@@ -8,6 +8,7 @@
       <itemPath>configs.h</itemPath>
       <itemPath>includes.h</itemPath>
       <itemPath>lcd.h</itemPath>
+      <itemPath>menu.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -25,6 +26,7 @@
       <itemPath>lcd.c</itemPath>
       <itemPath>DAC.c</itemPath>
       <itemPath>putch.c</itemPath>
+      <itemPath>menu.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>

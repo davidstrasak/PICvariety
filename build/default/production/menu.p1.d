@@ -1,5 +1,5 @@
-build/default/production/putch.p1:  \
-putch.c  \
+build/default/production/menu.p1:  \
+menu.c  \
 includes.h  \
 lcd.h  \
 configs.h  \

@@ -10279,6 +10279,11 @@ void runDAC(void);
 void SPI_write (uint8_t data);
 # 9 "./includes.h" 2
 
+# 1 "./menu.h" 1
+
+uint8_t moveDisplay(uint8_t menuI, uint8_t where);
+# 10 "./includes.h" 2
+
 
 void putch(char data);
 # 7 "DAC.c" 2

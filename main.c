@@ -7,8 +7,6 @@
 
 #include "includes.h"
 
-uint8_t menuI = 0;
-
 void main(void) {
     // Menu GPIO
     TRISCbits.RC0 = 1;
@@ -20,19 +18,37 @@ void main(void) {
     
     // Other initialising
     LCD_Init();
-    char* menuItems[] = {"GPIO", "UART", "PWM", "ADC", "DAC", "GAME", "MUSIC", ""};
-    char menuItem1[17];
-    char menuItem2[17];
+    uint8_t menuI = 0;
     
     // Menu setup
-    LCD_Reset;
-    sprintf(menuItem1, "%-*s", 16, menuItems[menuI]);
-    sprintf(menuItem2, "%-*s", 16, menuItems[menuI+1]);  
-    LCD_ShowString((char)1, menuItem1);
-    LCD_ShowString((char)2, menuItem2);
+    moveDisplay(menuI,0);
     
     while(1){
-        
+        if(PORTCbits.RC0){
+            __delay_ms(50);
+            if(PORTCbits.RC0){
+                while(PORTCbits.RC0);
+                menuI = moveDisplay(menuI,2);
+            }
+        }
+        if(PORTAbits.RA4){
+            __delay_ms(50);
+            if(PORTAbits.RA4){
+                while(PORTAbits.RA4);
+                menuI = moveDisplay(menuI,1);
+            }
+        }
+        if(PORTAbits.RA3){
+            __delay_ms(50);
+            if(PORTAbits.RA3){
+                while(PORTAbits.RA3);
+                
+            }
+            
+        }
+        if(PORTAbits.RA2){
+            
+        }
     }
     return;
 }

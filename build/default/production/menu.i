@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "menu.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
+# 1 "menu.c" 2
+
 
 
 
@@ -10287,46 +10288,31 @@ uint8_t moveDisplay(uint8_t menuI, uint8_t where);
 
 
 void putch(char data);
-# 8 "main.c" 2
+# 9 "menu.c" 2
 
 
-void main(void) {
-
-    TRISCbits.RC0 = 1;
-    TRISAbits.RA4 = 1;
-    TRISAbits.RA3 = 1;
-    TRISAbits.RA2 = 1;
-    ANSELAbits.ANSA3 = 0;
-    ANSELAbits.ANSA2 = 0;
-
-
-    LCD_Init();
-    uint8_t menuI = 0;
-
-
-    moveDisplay(menuI,0);
-
-    while(1){
-        if(PORTCbits.RC0){
-            _delay((unsigned long)((50)*(32E6/4000.0)));
-            if(PORTCbits.RC0){
-                while(PORTCbits.RC0);
-                menuI = moveDisplay(menuI,2);
+uint8_t moveDisplay(uint8_t menuI, uint8_t where){
+    char* menuItems[] = {"GPIO", "UART", "PWM", "ADC", "DAC", "GAME", "MUSIC", ""};
+    switch (where){
+        case 0:
+            break;
+        case 1:
+            if(menuI<6){
+            menuI++;
             }
-        }
-        if(PORTAbits.RA4){
-            _delay((unsigned long)((50)*(32E6/4000.0)));
-            if(PORTAbits.RA4){
-                while(PORTAbits.RA4);
-                menuI = moveDisplay(menuI,1);
+            break;
+        case 2:
+            if(menuI>0){
+            menuI--;
             }
-        }
-        if(PORTAbits.RA3){
-
-        }
-        if(PORTAbits.RA2){
-
-        }
+            break;
     }
-    return;
+    char menuItem1[17];
+    char menuItem2[17];
+    sprintf(menuItem1, ">%-*s", 15, menuItems[menuI]);
+    sprintf(menuItem2, "%-*s", 16, menuItems[menuI+1]);
+    LCD_ShowString((char)1, menuItem1);
+    LCD_ShowString((char)2, menuItem2);
+
+    return menuI;
 }

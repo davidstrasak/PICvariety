@@ -11,30 +11,31 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$dist/default/production\Strasak_David_219502.X.production.o
-cinit CODE 0 1702 1702 42 1 2
-text0 CODE 0 1682 1682 80 1 2
-text1 CODE 0 1786 1786 36 1 2
-text2 CODE 0 1744 1744 42 1 2
-text3 CODE 0 1074 1074 1D8 1 2
-text4 CODE 0 124C 124C 16E 1 2
-text5 CODE 0 1494 1494 BA 1 2
-text6 CODE 0 1808 1808 16 1 2
-text7 CODE 0 154E 154E A6 1 2
-text8 CODE 0 17BC 17BC 26 1 2
-text9 CODE 0 15F4 15F4 8E 1 2
-text10 CODE 0 13BA 13BA DA 1 2
-text11 CODE 0 17E2 17E2 26 1 2
-cstackCOMRAM COMRAM 1 1 1 36 1 1
-cstackBANK0 BANK0 1 60 60 2A 1 1
-bssBANK0 BANK0 1 8A 8A 21 1 1
-smallconst SMALLCONST 0 1000 1000 74 1 2
-idataBANK0 CODE 0 181E 181E 8 1 1
-dataBANK0 BANK0 1 AB AB 8 1 1
-bssCOMRAM COMRAM 1 37 37 D 1 1
-config CONFIG 4 300000 300000 4 1 1
-$C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_14.o
+$C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_14.o
 init CODE 0 0 0 4 1 2
+config CONFIG 4 300000 300000 4 1 1
+$dist/default/production\Strasak_David_219502.X.production.o
+cinit CODE 0 1830 1830 42 1 2
+text0 CODE 0 157A 157A C8 1 2
+text1 CODE 0 13BC 13BC E4 1 2
+text2 CODE 0 18B4 18B4 36 1 2
+text3 CODE 0 1872 1872 42 1 2
+text4 CODE 0 1076 1076 1D8 1 2
+text5 CODE 0 124E 124E 16E 1 2
+text6 CODE 0 1642 1642 BA 1 2
+text7 CODE 0 1936 1936 16 1 2
+text8 CODE 0 16FC 16FC A6 1 2
+text9 CODE 0 18EA 18EA 26 1 2
+text10 CODE 0 17A2 17A2 8E 1 2
+text11 CODE 0 14A0 14A0 DA 1 2
+text12 CODE 0 1910 1910 26 1 2
+idataCOMRAM CODE 0 194C 194C 8 1 1
+cstackCOMRAM COMRAM 1 1 1 3C 1 1
+cstackBANK0 BANK0 1 60 60 2B 1 1
+bssBANK0 BANK0 1 8B 8B 20 1 1
+smallconst SMALLCONST 0 1000 1000 76 1 2
+dataCOMRAM COMRAM 1 4A 4A 8 1 1
+bssCOMRAM COMRAM 1 3D 3D D 1 1
 config CONFIG 4 300000 300000 4 1 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -42,9 +43,9 @@ config CONFIG 4 300000 300000 4 1 1
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM B3-F37 1
+RAM AB-F37 1
 SFR F38-FFF 1
-BANK0 B3-FF 1
+BANK0 AB-FF 1
 BANK1 100-1FF 1
 BANK2 200-2FF 1
 BANK3 300-3FF 1
@@ -55,24 +56,24 @@ BANK7 700-7FF 1
 BANK8 800-8FF 1
 BANK9 900-9FF 1
 CONST 4-FFF 1
-CONST 1826-FFFF 1
+CONST 1954-FFFF 1
 IDLOC 200000-200007 1
-SMALLCONST 1826-FFFF 1
+SMALLCONST 1954-FFFF 1
 CODE 4-FFF 1
-CODE 1826-FFFF 1
+CODE 1954-FFFF 1
 BANK10 A00-AFF 1
 BANK11 B00-BFF 1
 BANK12 C00-CFF 1
 BANK13 D00-DFF 1
 BANK14 E00-EFF 1
 BANK15 F00-F37 1
-BIGRAM 44-5F 1
-BIGRAM B3-F37 1
+BIGRAM 52-5F 1
+BIGRAM AB-F37 1
 BIGSFR F38-FFF 1
-COMRAM 44-5F 1
+COMRAM 52-5F 1
 CONFIG 300004-30000D 1
 EEDATA F00000-F003FF 1
-MEDIUMCONST 1826-FFFF 1
+MEDIUMCONST 1954-FFFF 1
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -87,216 +88,241 @@ MEDIUMCONST 1826-FFFF 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Strasak_David_219502.X.production.o
-17E2 text11 CODE >85:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-17E4 text11 CODE >87:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-17E8 text11 CODE >88:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-17F6 text11 CODE >89:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-1804 text11 CODE >90:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-1806 text11 CODE >92:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-13BA text10 CODE >3:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-13BA text10 CODE >5:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-13BE text10 CODE >6:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-13C0 text10 CODE >8:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-13C2 text10 CODE >9:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-13C4 text10 CODE >10:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-13C6 text10 CODE >11:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-13C8 text10 CODE >14:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-13D0 text10 CODE >15:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-13D4 text10 CODE >16:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-13D6 text10 CODE >18:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-13E4 text10 CODE >20:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-13E6 text10 CODE >21:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-13F4 text10 CODE >22:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-13F6 text10 CODE >27:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-13FC text10 CODE >28:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-1402 text10 CODE >29:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-1408 text10 CODE >30:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-140E text10 CODE >31:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-1414 text10 CODE >32:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-141A text10 CODE >33:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-1420 text10 CODE >34:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-1426 text10 CODE >35:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-142C text10 CODE >36:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-1432 text10 CODE >37:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-1438 text10 CODE >38:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-143E text10 CODE >39:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-1444 text10 CODE >40:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-144A text10 CODE >41:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-1450 text10 CODE >42:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-1456 text10 CODE >43:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-145C text10 CODE >44:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-1462 text10 CODE >45:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-1468 text10 CODE >46:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-146E text10 CODE >47:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-1474 text10 CODE >49:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-1476 text10 CODE >50:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-1484 text10 CODE >52:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-1492 text10 CODE >53:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-15F4 text9 CODE >55:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-15F6 text9 CODE >58:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-15F6 text9 CODE >60:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-15F8 text9 CODE >61:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-1606 text9 CODE >62:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-1608 text9 CODE >64:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-160E text9 CODE >66:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-1614 text9 CODE >68:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-1624 text9 CODE >69:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-162A text9 CODE >70:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-162E text9 CODE >71:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-1640 text9 CODE >72:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-1646 text9 CODE >73:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-1646 text9 CODE >75:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-164C text9 CODE >77:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-1650 text9 CODE >78:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-165E text9 CODE >79:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-1670 text9 CODE >81:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-1672 text9 CODE >82:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-1680 text9 CODE >83:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
-17BC text8 CODE >15:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\Umul16.c
-17BC text8 CODE >37:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\Umul16.c
-17C8 text8 CODE >38:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\Umul16.c
-17D0 text8 CODE >39:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\Umul16.c
-17D8 text8 CODE >52:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\Umul16.c
-17E0 text8 CODE >53:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\Umul16.c
-154E text7 CODE >1158:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-154E text7 CODE >1159:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-1556 text7 CODE >1160:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-1578 text7 CODE >1161:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-1580 text7 CODE >1162:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-1598 text7 CODE >1163:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-159C text7 CODE >1166:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-15BC text7 CODE >1167:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-15C4 text7 CODE >1165:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-15EA text7 CODE >1169:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-15EA text7 CODE >1170:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-15F2 text7 CODE >1171:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-1808 text6 CODE >11:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\putch.c
-180A text6 CODE >12:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\putch.c
-1818 text6 CODE >13:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\putch.c
-181C text6 CODE >14:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\putch.c
-1494 text5 CODE >8:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_fputc.c
-1494 text5 CODE >12:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_fputc.c
-14B8 text5 CODE >13:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_fputc.c
-14BE text5 CODE >14:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_fputc.c
-14C2 text5 CODE >15:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_fputc.c
-1516 text5 CODE >18:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_fputc.c
-153A text5 CODE >20:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_fputc.c
-154C text5 CODE >24:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_fputc.c
-124C text4 CODE >942:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-124C text4 CODE >951:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-1254 text4 CODE >952:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-1266 text4 CODE >953:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-1272 text4 CODE >957:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-127E text4 CODE >959:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-12C0 text4 CODE >965:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-12C8 text4 CODE >969:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-12D0 text4 CODE >970:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-12E2 text4 CODE >972:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-12F6 text4 CODE >973:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-12FA text4 CODE >971:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-131C text4 CODE >980:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-1352 text4 CODE >981:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-1356 text4 CODE >979:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-1370 text4 CODE >986:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-1382 text4 CODE >988:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-1396 text4 CODE >989:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-139A text4 CODE >987:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-13B8 text4 CODE >997:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-1074 text3 CODE >1177:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-1074 text3 CODE >1201:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-1096 text3 CODE >1202:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-109E text3 CODE >1204:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-10AA text3 CODE >1205:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-10AE text3 CODE >1209:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-10B2 text3 CODE >1210:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-10B6 text3 CODE >1214:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-10B8 text3 CODE >1215:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-10C0 text3 CODE >1216:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-10C4 text3 CODE >1243:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-10C8 text3 CODE >1244:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-10CC text3 CODE >1245:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-10E0 text3 CODE >1245:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-10EA text3 CODE >1210:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-10FA text3 CODE >1256:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-110E text3 CODE >1257:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-111C text3 CODE >1258:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-111E text3 CODE >1259:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-1126 text3 CODE >1656:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-112A text3 CODE >1657:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-114C text3 CODE >1658:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-1154 text3 CODE >1659:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-1158 text3 CODE >1660:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-115C text3 CODE >1661:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-11D2 text3 CODE >1662:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-11E0 text3 CODE >1665:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-11F0 text3 CODE >1682:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-1218 text3 CODE >1806:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-1224 text3 CODE >1811:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-124A text3 CODE >1814:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-1744 text2 CODE >1817:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-1744 text2 CODE >1822:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-1748 text2 CODE >1826:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-174C text2 CODE >1830:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-1760 text2 CODE >1826:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-177C text2 CODE >1835:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-1784 text2 CODE >1840:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-1786 text1 CODE >9:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_sprintf.c
-1786 text1 CODE >15:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_sprintf.c
-178A text1 CODE >16:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_sprintf.c
-178E text1 CODE >17:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_sprintf.c
-1796 text1 CODE >18:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_sprintf.c
-179E text1 CODE >19:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_sprintf.c
-17B0 text1 CODE >20:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_sprintf.c
-17BA text1 CODE >23:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_sprintf.c
-1682 text0 CODE >12:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\main.c
-1682 text0 CODE >14:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\main.c
-1684 text0 CODE >15:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\main.c
-1686 text0 CODE >16:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\main.c
-1688 text0 CODE >17:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\main.c
-168A text0 CODE >18:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\main.c
-168E text0 CODE >19:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\main.c
-1690 text0 CODE >22:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\main.c
-1694 text0 CODE >23:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\main.c
-16A6 text0 CODE >29:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\main.c
-16C6 text0 CODE >30:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\main.c
-16E6 text0 CODE >31:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\main.c
-16F0 text0 CODE >32:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\main.c
-16FA text0 CODE >34:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\main.c
-16FA text0 CODE >36:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\main.c
-1702 cinit CODE >2450:C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_1.s
-1702 cinit CODE >2452:C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_1.s
-1702 cinit CODE >2455:C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_1.s
-1702 cinit CODE >2490:C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_1.s
-1704 cinit CODE >2491:C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_1.s
-1706 cinit CODE >2492:C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_1.s
-1708 cinit CODE >2493:C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_1.s
-170A cinit CODE >2494:C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_1.s
-170C cinit CODE >2495:C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_1.s
-170E cinit CODE >2496:C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_1.s
-1712 cinit CODE >2497:C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_1.s
-1716 cinit CODE >2498:C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_1.s
-1716 cinit CODE >2499:C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_1.s
-1718 cinit CODE >2500:C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_1.s
-171C cinit CODE >2501:C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_1.s
-171E cinit CODE >2502:C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_1.s
-1720 cinit CODE >2503:C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_1.s
-1722 cinit CODE >2507:C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_1.s
-1726 cinit CODE >2508:C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_1.s
-1728 cinit CODE >2509:C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_1.s
-1728 cinit CODE >2510:C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_1.s
-172A cinit CODE >2511:C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_1.s
-172C cinit CODE >2512:C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_1.s
-172E cinit CODE >2515:C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_1.s
-1732 cinit CODE >2516:C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_1.s
-1734 cinit CODE >2517:C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_1.s
-1734 cinit CODE >2518:C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_1.s
-1736 cinit CODE >2519:C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_1.s
-1738 cinit CODE >2520:C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_1.s
-173A cinit CODE >2526:C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_1.s
-173A cinit CODE >2529:C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_1.s
-173C cinit CODE >2530:C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_1.s
-173E cinit CODE >2531:C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_1.s
-1740 cinit CODE >2532:C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_1.s
+1910 text12 CODE >85:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+1912 text12 CODE >87:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+1916 text12 CODE >88:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+1924 text12 CODE >89:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+1932 text12 CODE >90:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+1934 text12 CODE >92:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+14A0 text11 CODE >3:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+14A0 text11 CODE >5:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+14A4 text11 CODE >6:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+14A6 text11 CODE >8:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+14A8 text11 CODE >9:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+14AA text11 CODE >10:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+14AC text11 CODE >11:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+14AE text11 CODE >14:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+14B6 text11 CODE >15:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+14BA text11 CODE >16:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+14BC text11 CODE >18:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+14CA text11 CODE >20:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+14CC text11 CODE >21:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+14DA text11 CODE >22:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+14DC text11 CODE >27:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+14E2 text11 CODE >28:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+14E8 text11 CODE >29:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+14EE text11 CODE >30:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+14F4 text11 CODE >31:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+14FA text11 CODE >32:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+1500 text11 CODE >33:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+1506 text11 CODE >34:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+150C text11 CODE >35:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+1512 text11 CODE >36:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+1518 text11 CODE >37:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+151E text11 CODE >38:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+1524 text11 CODE >39:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+152A text11 CODE >40:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+1530 text11 CODE >41:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+1536 text11 CODE >42:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+153C text11 CODE >43:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+1542 text11 CODE >44:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+1548 text11 CODE >45:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+154E text11 CODE >46:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+1554 text11 CODE >47:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+155A text11 CODE >49:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+155C text11 CODE >50:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+156A text11 CODE >52:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+1578 text11 CODE >53:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+17A2 text10 CODE >55:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+17A4 text10 CODE >58:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+17A4 text10 CODE >60:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+17A6 text10 CODE >61:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+17B4 text10 CODE >62:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+17B6 text10 CODE >64:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+17BC text10 CODE >66:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+17C2 text10 CODE >68:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+17D2 text10 CODE >69:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+17D8 text10 CODE >70:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+17DC text10 CODE >71:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+17EE text10 CODE >72:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+17F4 text10 CODE >73:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+17F4 text10 CODE >75:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+17FA text10 CODE >77:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+17FE text10 CODE >78:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+180C text10 CODE >79:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+181E text10 CODE >81:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+1820 text10 CODE >82:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+182E text10 CODE >83:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\lcd.c
+18EA text9 CODE >15:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\Umul16.c
+18EA text9 CODE >37:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\Umul16.c
+18F6 text9 CODE >38:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\Umul16.c
+18FE text9 CODE >39:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\Umul16.c
+1906 text9 CODE >52:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\Umul16.c
+190E text9 CODE >53:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\Umul16.c
+16FC text8 CODE >1158:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+16FC text8 CODE >1159:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+1704 text8 CODE >1160:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+1726 text8 CODE >1161:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+172E text8 CODE >1162:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+1746 text8 CODE >1163:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+174A text8 CODE >1166:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+176A text8 CODE >1167:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+1772 text8 CODE >1165:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+1798 text8 CODE >1169:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+1798 text8 CODE >1170:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+17A0 text8 CODE >1171:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+1936 text7 CODE >11:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\putch.c
+1938 text7 CODE >12:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\putch.c
+1946 text7 CODE >13:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\putch.c
+194A text7 CODE >14:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\putch.c
+1642 text6 CODE >8:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_fputc.c
+1642 text6 CODE >12:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_fputc.c
+1666 text6 CODE >13:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_fputc.c
+166C text6 CODE >14:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_fputc.c
+1670 text6 CODE >15:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_fputc.c
+16C4 text6 CODE >18:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_fputc.c
+16E8 text6 CODE >20:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_fputc.c
+16FA text6 CODE >24:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_fputc.c
+124E text5 CODE >942:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+124E text5 CODE >951:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+1256 text5 CODE >952:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+1268 text5 CODE >953:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+1274 text5 CODE >957:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+1280 text5 CODE >959:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+12C2 text5 CODE >965:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+12CA text5 CODE >969:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+12D2 text5 CODE >970:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+12E4 text5 CODE >972:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+12F8 text5 CODE >973:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+12FC text5 CODE >971:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+131E text5 CODE >980:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+1354 text5 CODE >981:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+1358 text5 CODE >979:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+1372 text5 CODE >986:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+1384 text5 CODE >988:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+1398 text5 CODE >989:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+139C text5 CODE >987:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+13BA text5 CODE >997:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+1076 text4 CODE >1177:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+1076 text4 CODE >1201:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+1098 text4 CODE >1202:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+10A0 text4 CODE >1204:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+10AC text4 CODE >1205:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+10B0 text4 CODE >1209:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+10B4 text4 CODE >1210:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+10B8 text4 CODE >1214:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+10BA text4 CODE >1215:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+10C2 text4 CODE >1216:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+10C6 text4 CODE >1243:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+10CA text4 CODE >1244:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+10CE text4 CODE >1245:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+10E2 text4 CODE >1245:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+10EC text4 CODE >1210:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+10FC text4 CODE >1256:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+1110 text4 CODE >1257:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+111E text4 CODE >1258:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+1120 text4 CODE >1259:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+1128 text4 CODE >1656:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+112C text4 CODE >1657:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+114E text4 CODE >1658:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+1156 text4 CODE >1659:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+115A text4 CODE >1660:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+115E text4 CODE >1661:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+11D4 text4 CODE >1662:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+11E2 text4 CODE >1665:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+11F2 text4 CODE >1682:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+121A text4 CODE >1806:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+1226 text4 CODE >1811:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+124C text4 CODE >1814:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+1872 text3 CODE >1817:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+1872 text3 CODE >1822:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+1876 text3 CODE >1826:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+187A text3 CODE >1830:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+188E text3 CODE >1826:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+18AA text3 CODE >1835:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+18B2 text3 CODE >1840:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
+18B4 text2 CODE >9:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_sprintf.c
+18B4 text2 CODE >15:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_sprintf.c
+18B8 text2 CODE >16:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_sprintf.c
+18BC text2 CODE >17:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_sprintf.c
+18C4 text2 CODE >18:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_sprintf.c
+18CC text2 CODE >19:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_sprintf.c
+18DE text2 CODE >20:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_sprintf.c
+18E8 text2 CODE >23:C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_sprintf.c
+13BC text1 CODE >11:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\menu.c
+13C0 text1 CODE >12:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\menu.c
+13D2 text1 CODE >13:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\menu.c
+13D6 text1 CODE >17:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\menu.c
+13E8 text1 CODE >18:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\menu.c
+13EE text1 CODE >22:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\menu.c
+1400 text1 CODE >23:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\menu.c
+1406 text1 CODE >26:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\menu.c
+140A text1 CODE >26:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\menu.c
+1412 text1 CODE >26:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\menu.c
+141A text1 CODE >26:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\menu.c
+1424 text1 CODE >29:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\menu.c
+1452 text1 CODE >30:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\menu.c
+1486 text1 CODE >31:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\menu.c
+1490 text1 CODE >32:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\menu.c
+149A text1 CODE >34:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\menu.c
+149E text1 CODE >35:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\menu.c
+157A text0 CODE >10:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\main.c
+157A text0 CODE >12:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\main.c
+157C text0 CODE >13:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\main.c
+157E text0 CODE >14:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\main.c
+1580 text0 CODE >15:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\main.c
+1582 text0 CODE >16:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\main.c
+1586 text0 CODE >17:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\main.c
+1588 text0 CODE >20:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\main.c
+158C text0 CODE >21:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\main.c
+1590 text0 CODE >24:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\main.c
+159A text0 CODE >27:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\main.c
+15A8 text0 CODE >28:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\main.c
+15C0 text0 CODE >29:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\main.c
+15CE text0 CODE >30:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\main.c
+15DC text0 CODE >31:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\main.c
+15E8 text0 CODE >34:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\main.c
+15F6 text0 CODE >35:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\main.c
+160E text0 CODE >36:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\main.c
+161C text0 CODE >37:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\main.c
+162A text0 CODE >38:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\main.c
+1636 text0 CODE >41:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\main.c
+1638 text0 CODE >43:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\main.c
+1638 text0 CODE >44:D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\main.c
+1830 cinit CODE >2958:C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_1.s
+1830 cinit CODE >2960:C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_1.s
+1830 cinit CODE >2963:C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_1.s
+1830 cinit CODE >2995:C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_1.s
+1832 cinit CODE >2996:C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_1.s
+1834 cinit CODE >2997:C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_1.s
+1836 cinit CODE >2998:C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_1.s
+1838 cinit CODE >2999:C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_1.s
+183A cinit CODE >3000:C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_1.s
+183C cinit CODE >3001:C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_1.s
+1840 cinit CODE >3002:C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_1.s
+1844 cinit CODE >3003:C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_1.s
+1844 cinit CODE >3004:C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_1.s
+1846 cinit CODE >3005:C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_1.s
+184A cinit CODE >3006:C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_1.s
+184C cinit CODE >3007:C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_1.s
+184E cinit CODE >3008:C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_1.s
+1850 cinit CODE >3012:C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_1.s
+1854 cinit CODE >3013:C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_1.s
+1856 cinit CODE >3014:C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_1.s
+1856 cinit CODE >3015:C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_1.s
+1858 cinit CODE >3016:C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_1.s
+185A cinit CODE >3017:C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_1.s
+185C cinit CODE >3020:C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_1.s
+1860 cinit CODE >3021:C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_1.s
+1862 cinit CODE >3022:C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_1.s
+1862 cinit CODE >3023:C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_1.s
+1864 cinit CODE >3024:C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_1.s
+1866 cinit CODE >3025:C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_1.s
+1868 cinit CODE >3031:C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_1.s
+1868 cinit CODE >3034:C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_1.s
+186A cinit CODE >3035:C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_1.s
+186C cinit CODE >3036:C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_1.s
+186E cinit CODE >3037:C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_1.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -310,68 +336,72 @@ $dist/default/production\Strasak_David_219502.X.production.o
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
 putch@data 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Strasak_David_219502.X.production.o
-__LdataBANK0 0 0 ABS 0 dataBANK0 dist/default/production\Strasak_David_219502.X.production.o
 __Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\Strasak_David_219502.X.production.o
-__Hspace_0 1826 0 ABS 0 - dist/default/production\Strasak_David_219502.X.production.o
-__Hspace_1 B3 0 ABS 0 - dist/default/production\Strasak_David_219502.X.production.o
+__Hspace_0 1954 0 ABS 0 - dist/default/production\Strasak_David_219502.X.production.o
+__Hspace_1 AB 0 ABS 0 - dist/default/production\Strasak_David_219502.X.production.o
 __Hspace_2 0 0 ABS 0 - dist/default/production\Strasak_David_219502.X.production.o
 __Hspace_4 600004 0 ABS 0 - dist/default/production\Strasak_David_219502.X.production.o
-__HidataBANK0 0 0 ABS 0 idataBANK0 dist/default/production\Strasak_David_219502.X.production.o
 _SSP1STATbits FC7 0 ABS 0 - dist/default/production\Strasak_David_219502.X.production.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\Strasak_David_219502.X.production.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_14.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_14.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\Strasak_David_219502.X.production.o
 __L__absolute__ 0 0 ABS 0 __absolute__ dist/default/production\Strasak_David_219502.X.production.o
 ?_vfprintf 1F 0 COMRAM 1 cstackCOMRAM dist/default/production\Strasak_David_219502.X.production.o
 __Lsmallconst 1000 0 SMALLCONST 0 smallconst dist/default/production\Strasak_David_219502.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_14.o
-_main 1682 0 CODE 0 text0 dist/default/production\Strasak_David_219502.X.production.o
-_prec 41 0 COMRAM 1 bssCOMRAM dist/default/production\Strasak_David_219502.X.production.o
-_stoa 124C 0 CODE 0 text4 dist/default/production\Strasak_David_219502.X.production.o
-___stack_hi 0 0 STACK 2 stack C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_14.o
-___stack_lo 0 0 STACK 2 stack C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_14.o
+___sp 0 0 STACK 2 stack C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_14.o
+_main 157A 0 CODE 0 text0 dist/default/production\Strasak_David_219502.X.production.o
+_prec 47 0 COMRAM 1 bssCOMRAM dist/default/production\Strasak_David_219502.X.production.o
+_stoa 124E 0 CODE 0 text5 dist/default/production\Strasak_David_219502.X.production.o
+___stack_hi 0 0 STACK 2 stack C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_14.o
+___stack_lo 0 0 STACK 2 stack C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_14.o
 read_prec_or_width@c 9 0 COMRAM 1 cstackCOMRAM dist/default/production\Strasak_David_219502.X.production.o
 read_prec_or_width@n A 0 COMRAM 1 cstackCOMRAM dist/default/production\Strasak_David_219502.X.production.o
-start 0 0 CODE 0 init C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_14.o
+start 0 0 CODE 0 init C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_14.o
 __HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\Strasak_David_219502.X.production.o
 ?___wmul 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Strasak_David_219502.X.production.o
-__LidataBANK0 0 0 ABS 0 idataBANK0 dist/default/production\Strasak_David_219502.X.production.o
-_LCD_Init 13BA 0 CODE 0 text10 dist/default/production\Strasak_David_219502.X.production.o
-_LCD_Send 17E2 0 CODE 0 text11 dist/default/production\Strasak_David_219502.X.production.o
+_LCD_Init 14A0 0 CODE 0 text11 dist/default/production\Strasak_David_219502.X.production.o
+_LCD_Send 1910 0 CODE 0 text12 dist/default/production\Strasak_David_219502.X.production.o
 __Hpowerup 0 0 CODE 0 powerup dist/default/production\Strasak_David_219502.X.production.o
 stoa@l 17 0 COMRAM 1 cstackCOMRAM dist/default/production\Strasak_David_219502.X.production.o
 stoa@p 11 0 COMRAM 1 cstackCOMRAM dist/default/production\Strasak_David_219502.X.production.o
 stoa@s D 0 COMRAM 1 cstackCOMRAM dist/default/production\Strasak_David_219502.X.production.o
 stoa@w 13 0 COMRAM 1 cstackCOMRAM dist/default/production\Strasak_David_219502.X.production.o
-__end_of_vfpfcnvrt 124C 0 CODE 0 text3 dist/default/production\Strasak_David_219502.X.production.o
-__accesstop 60 0 ABS 0 - C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_14.o
-__end_of_LCD_Init 1494 0 CODE 0 text10 dist/default/production\Strasak_David_219502.X.production.o
-intlevel0 0 0 CODE 0 text C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_14.o
-intlevel1 0 0 CODE 0 text C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_14.o
-intlevel2 0 0 CODE 0 text C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_14.o
-intlevel3 0 0 CODE 0 text C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_14.o
-__end_of_LCD_Send 1808 0 CODE 0 text11 dist/default/production\Strasak_David_219502.X.production.o
+__end_of_vfpfcnvrt 124E 0 CODE 0 text4 dist/default/production\Strasak_David_219502.X.production.o
+__HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\Strasak_David_219502.X.production.o
+__accesstop 60 0 ABS 0 - C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_14.o
+__end_of_LCD_Init 157A 0 CODE 0 text11 dist/default/production\Strasak_David_219502.X.production.o
+intlevel0 0 0 CODE 0 text C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_14.o
+intlevel1 0 0 CODE 0 text C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_14.o
+intlevel2 0 0 CODE 0 text C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_14.o
+intlevel3 0 0 CODE 0 text C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_14.o
+__end_of_LCD_Send 1936 0 CODE 0 text12 dist/default/production\Strasak_David_219502.X.production.o
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\Strasak_David_219502.X.production.o
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\Strasak_David_219502.X.production.o
 LCD_ShowString@textData 2 0 COMRAM 1 cstackCOMRAM dist/default/production\Strasak_David_219502.X.production.o
 __Hifardata 0 0 CODE 0 ifardata dist/default/production\Strasak_David_219502.X.production.o
 __Hclrtext 0 0 ABS 0 clrtext dist/default/production\Strasak_David_219502.X.production.o
-_vfpfcnvrt 1074 0 CODE 0 text3 dist/default/production\Strasak_David_219502.X.production.o
+_vfpfcnvrt 1076 0 CODE 0 text4 dist/default/production\Strasak_David_219502.X.production.o
+__pidataCOMRAM 194C 0 CODE 0 idataCOMRAM dist/default/production\Strasak_David_219502.X.production.o
+moveDisplay@menuItem1 60 0 BANK0 1 cstackBANK0 dist/default/production\Strasak_David_219502.X.production.o
+moveDisplay@menuItem2 71 0 BANK0 1 cstackBANK0 dist/default/production\Strasak_David_219502.X.production.o
+moveDisplay@menuItems 82 0 BANK0 1 cstackBANK0 dist/default/production\Strasak_David_219502.X.production.o
 ___wmul@multiplicand 3 0 COMRAM 1 cstackCOMRAM dist/default/production\Strasak_David_219502.X.production.o
 _ADRESH FC4 0 ABS 0 - dist/default/production\Strasak_David_219502.X.production.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_14.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_14.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_14.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_14.o
+__LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\Strasak_David_219502.X.production.o
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\Strasak_David_219502.X.production.o
-__end_of___wmul 17E2 0 CODE 0 text8 dist/default/production\Strasak_David_219502.X.production.o
+__end_of___wmul 1910 0 CODE 0 text9 dist/default/production\Strasak_David_219502.X.production.o
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\Strasak_David_219502.X.production.o
 _TXSTA1bits FAC 0 ABS 0 - dist/default/production\Strasak_David_219502.X.production.o
 __Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\Strasak_David_219502.X.production.o
 __Hintcodelo 0 0 CODE 0 intcodelo dist/default/production\Strasak_David_219502.X.production.o
 _GODONE 7E11 0 ABS 0 - dist/default/production\Strasak_David_219502.X.production.o
 LCD_ShowString@lineNum 3 0 COMRAM 1 cstackCOMRAM dist/default/production\Strasak_David_219502.X.production.o
+__LidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/default/production\Strasak_David_219502.X.production.o
 __Lintcodelo 0 0 CODE 0 intcodelo dist/default/production\Strasak_David_219502.X.production.o
 _SSP2CON1bits F6C 0 ABS 0 - dist/default/production\Strasak_David_219502.X.production.o
-start_initialization 1702 0 CODE 0 cinit dist/default/production\Strasak_David_219502.X.production.o
+start_initialization 1830 0 CODE 0 cinit dist/default/production\Strasak_David_219502.X.production.o
 _SSP2CON2bits F6B 0 ABS 0 - dist/default/production\Strasak_David_219502.X.production.o
 __HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\Strasak_David_219502.X.production.o
 _TRISAbits F92 0 ABS 0 - dist/default/production\Strasak_David_219502.X.production.o
@@ -393,7 +423,8 @@ _SSP1IF 7CF3 0 ABS 0 - dist/default/production\Strasak_David_219502.X.production
 _SSP2IF 7D27 0 ABS 0 - dist/default/production\Strasak_David_219502.X.production.o
 _TXREG1 FAD 0 ABS 0 - dist/default/production\Strasak_David_219502.X.production.o
 __end_of_pio2_1 1019 0 SMALLCONST 0 smallconst dist/default/production\Strasak_David_219502.X.production.o
-isa$xinst 0 0 ABS 0 - C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_14.o
+isa$xinst 0 0 ABS 0 - C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_14.o
+_moveDisplay 13BC 0 CODE 0 text1 dist/default/production\Strasak_David_219502.X.production.o
 __end_of_s1pio2 1041 0 SMALLCONST 0 smallconst dist/default/production\Strasak_David_219502.X.production.o
 __end_of_s2pio2 103D 0 SMALLCONST 0 smallconst dist/default/production\Strasak_David_219502.X.production.o
 __end_of_s3pio2 1039 0 SMALLCONST 0 smallconst dist/default/production\Strasak_David_219502.X.production.o
@@ -415,6 +446,7 @@ __Hcinit 0 0 ABS 0 cinit dist/default/production\Strasak_David_219502.X.producti
 __Hconst 0 0 CONST 0 const dist/default/production\Strasak_David_219502.X.production.o
 __Hidata 0 0 CODE 0 idata dist/default/production\Strasak_David_219502.X.production.o
 __Hidloc 0 0 ABS 0 idloc dist/default/production\Strasak_David_219502.X.production.o
+moveDisplay@F6949 4A 0 COMRAM 1 dataCOMRAM dist/default/production\Strasak_David_219502.X.production.o
 __Hnvbit 0 0 COMRAM 1 nvbit dist/default/production\Strasak_David_219502.X.production.o
 __Hparam 0 0 COMRAM 1 rparam dist/default/production\Strasak_David_219502.X.production.o
 __Hrdata 0 0 COMRAM 1 rdata dist/default/production\Strasak_David_219502.X.production.o
@@ -439,8 +471,10 @@ __Hbank15 0 0 ABS 0 bank15 dist/default/production\Strasak_David_219502.X.produc
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\Strasak_David_219502.X.production.o
 __Hbigram 0 0 ABS 0 bigram dist/default/production\Strasak_David_219502.X.production.o
 __Hbigsfr 0 0 ABS 0 bigsfr dist/default/production\Strasak_David_219502.X.production.o
-__smallconst 1000 0 SMALLCONST 0 smallconst C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_14.o
-__end_of_sprintf 17BC 0 CODE 0 text1 dist/default/production\Strasak_David_219502.X.production.o
+moveDisplay@menuI 8A 0 BANK0 1 cstackBANK0 dist/default/production\Strasak_David_219502.X.production.o
+__smallconst 1000 0 SMALLCONST 0 smallconst C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_14.o
+moveDisplay@where 37 0 COMRAM 1 cstackCOMRAM dist/default/production\Strasak_David_219502.X.production.o
+__end_of_sprintf 18EA 0 CODE 0 text2 dist/default/production\Strasak_David_219502.X.production.o
 __Hcomram 0 0 ABS 0 comram dist/default/production\Strasak_David_219502.X.production.o
 __Hconfig 300004 0 CONFIG 4 config dist/default/production\Strasak_David_219502.X.production.o
 __Lbank0 0 0 ABS 0 bank0 dist/default/production\Strasak_David_219502.X.production.o
@@ -492,31 +526,33 @@ __Lrbit 0 0 COMRAM 1 rbit dist/default/production\Strasak_David_219502.X.product
 __Lrbss 0 0 COMRAM 1 rbss dist/default/production\Strasak_David_219502.X.production.o
 __Ltemp 0 0 COMRAM 1 temp dist/default/production\Strasak_David_219502.X.production.o
 __Ltext 0 0 ABS 0 text dist/default/production\Strasak_David_219502.X.production.o
-___wmul 17BC 0 CODE 0 text8 dist/default/production\Strasak_David_219502.X.production.o
+___wmul 18EA 0 CODE 0 text9 dist/default/production\Strasak_David_219502.X.production.o
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/production\Strasak_David_219502.X.production.o
 _SSP2STATbits F6D 0 ABS 0 - dist/default/production\Strasak_David_219502.X.production.o
 __HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\Strasak_David_219502.X.production.o
 __Hintret 0 0 ABS 0 intret dist/default/production\Strasak_David_219502.X.production.o
 __Hirdata 0 0 CODE 0 irdata dist/default/production\Strasak_David_219502.X.production.o
-__S0 1826 0 ABS 0 - dist/default/production\Strasak_David_219502.X.production.o
-__S1 B3 0 ABS 0 - dist/default/production\Strasak_David_219502.X.production.o
+__S0 1954 0 ABS 0 - dist/default/production\Strasak_David_219502.X.production.o
+__S1 AB 0 ABS 0 - dist/default/production\Strasak_David_219502.X.production.o
 __S4 0 0 ABS 0 - dist/default/production\Strasak_David_219502.X.production.o
 __S5 0 0 ABS 0 - dist/default/production\Strasak_David_219502.X.production.o
+__HidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/default/production\Strasak_David_219502.X.production.o
 __Lbigdata 0 0 BIGRAM 1 bigdata dist/default/production\Strasak_David_219502.X.production.o
 __Hnvrram 0 0 COMRAM 1 nvrram dist/default/production\Strasak_David_219502.X.production.o
 sprintf@fmt 25 0 COMRAM 1 cstackCOMRAM dist/default/production\Strasak_David_219502.X.production.o
 __Lintentry 0 0 ABS 0 intentry dist/default/production\Strasak_David_219502.X.production.o
 __Hramtop 1000 0 RAM 0 ramtop dist/default/production\Strasak_David_219502.X.production.o
 __Hrparam 0 0 COMRAM 1 rparam dist/default/production\Strasak_David_219502.X.production.o
-__pdataBANK0 AB 0 BANK0 1 dataBANK0 dist/default/production\Strasak_David_219502.X.production.o
 __activetblptr 2 0 ABS 0 - dist/default/production\Strasak_David_219502.X.production.o
 __Hstruct 0 0 COMRAM 1 struct dist/default/production\Strasak_David_219502.X.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 dist/default/production\Strasak_David_219502.X.production.o
 __Htext10 0 0 ABS 0 text10 dist/default/production\Strasak_David_219502.X.production.o
 __Htext11 0 0 ABS 0 text11 dist/default/production\Strasak_David_219502.X.production.o
+__Htext12 0 0 ABS 0 text12 dist/default/production\Strasak_David_219502.X.production.o
 vfpfcnvrt@fmt 1B 0 COMRAM 1 cstackCOMRAM dist/default/production\Strasak_David_219502.X.production.o
-__ptext10 13BA 0 CODE 0 text10 dist/default/production\Strasak_David_219502.X.production.o
-__ptext11 17E2 0 CODE 0 text11 dist/default/production\Strasak_David_219502.X.production.o
+__ptext10 17A2 0 CODE 0 text10 dist/default/production\Strasak_David_219502.X.production.o
+__ptext11 14A0 0 CODE 0 text11 dist/default/production\Strasak_David_219502.X.production.o
+__ptext12 1910 0 CODE 0 text12 dist/default/production\Strasak_David_219502.X.production.o
 __Lbank10 0 0 ABS 0 bank10 dist/default/production\Strasak_David_219502.X.production.o
 __Lbank11 0 0 ABS 0 bank11 dist/default/production\Strasak_David_219502.X.production.o
 __Lbank12 0 0 ABS 0 bank12 dist/default/production\Strasak_David_219502.X.production.o
@@ -533,37 +569,34 @@ _LATAbits F89 0 ABS 0 - dist/default/production\Strasak_David_219502.X.productio
 _LATBbits F8A 0 ABS 0 - dist/default/production\Strasak_David_219502.X.production.o
 __Lsivt_hi 0 0 CODE 0 sivt_hi dist/default/production\Strasak_David_219502.X.production.o
 __Lsivt_lo 0 0 CODE 0 sivt_lo dist/default/production\Strasak_David_219502.X.production.o
-__end_of_read_prec_or_width 15F4 0 CODE 0 text7 dist/default/production\Strasak_David_219502.X.production.o
-main@F6945 AB 0 BANK0 1 dataBANK0 dist/default/production\Strasak_David_219502.X.production.o
+__end_of_read_prec_or_width 17A2 0 CODE 0 text8 dist/default/production\Strasak_David_219502.X.production.o
 _RCSTA1bits FAB 0 ABS 0 - dist/default/production\Strasak_David_219502.X.production.o
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production\Strasak_David_219502.X.production.o
-___inthi_stack_hi 0 0 STACK 2 stack C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_14.o
-___inthi_stack_lo 0 0 STACK 2 stack C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_14.o
+___inthi_stack_hi 0 0 STACK 2 stack C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_14.o
+___inthi_stack_lo 0 0 STACK 2 stack C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_14.o
+main@menuI 3C 0 COMRAM 1 cstackCOMRAM dist/default/production\Strasak_David_219502.X.production.o
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\Strasak_David_219502.X.production.o
-isa$std 1 0 ABS 0 - C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_14.o
-stackhi 0 0 ABS 0 - C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_14.o
-stacklo 0 0 ABS 0 - C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_14.o
+isa$std 1 0 ABS 0 - C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_14.o
+stackhi 0 0 ABS 0 - C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_14.o
+stacklo 0 0 ABS 0 - C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_14.o
 stoa@cp 15 0 COMRAM 1 cstackCOMRAM dist/default/production\Strasak_David_219502.X.production.o
 stoa@fp B 0 COMRAM 1 cstackCOMRAM dist/default/production\Strasak_David_219502.X.production.o
 __Lintcode 0 0 CODE 0 intcode dist/default/production\Strasak_David_219502.X.production.o
 __Lintret 0 0 ABS 0 intret dist/default/production\Strasak_David_219502.X.production.o
 __Lirdata 0 0 CODE 0 irdata dist/default/production\Strasak_David_219502.X.production.o
-_LCD_ShowString 15F4 0 CODE 0 text9 dist/default/production\Strasak_David_219502.X.production.o
+_LCD_ShowString 17A2 0 CODE 0 text10 dist/default/production\Strasak_David_219502.X.production.o
 _ADCON0bits FC2 0 ABS 0 - dist/default/production\Strasak_David_219502.X.production.o
 _ADCON2bits FC0 0 ABS 0 - dist/default/production\Strasak_David_219502.X.production.o
 __Lspace_0 0 0 ABS 0 - dist/default/production\Strasak_David_219502.X.production.o
 __Lspace_1 0 0 ABS 0 - dist/default/production\Strasak_David_219502.X.production.o
 __Lspace_2 0 0 ABS 0 - dist/default/production\Strasak_David_219502.X.production.o
 __Lspace_4 0 0 ABS 0 - dist/default/production\Strasak_David_219502.X.production.o
-__pbssCOMRAM 37 0 COMRAM 1 bssCOMRAM dist/default/production\Strasak_David_219502.X.production.o
+__pbssCOMRAM 3D 0 COMRAM 1 bssCOMRAM dist/default/production\Strasak_David_219502.X.production.o
 LCD_Send@data 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Strasak_David_219502.X.production.o
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/production\Strasak_David_219502.X.production.o
-main@menuItem1 60 0 BANK0 1 cstackBANK0 dist/default/production\Strasak_David_219502.X.production.o
-main@menuItem2 71 0 BANK0 1 cstackBANK0 dist/default/production\Strasak_David_219502.X.production.o
-main@menuItems 82 0 BANK0 1 cstackBANK0 dist/default/production\Strasak_David_219502.X.production.o
 __LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\Strasak_David_219502.X.production.o
-end_of_initialization 173A 0 CODE 0 cinit dist/default/production\Strasak_David_219502.X.production.o
-_read_prec_or_width 154E 0 CODE 0 text7 dist/default/production\Strasak_David_219502.X.production.o
+end_of_initialization 1868 0 CODE 0 cinit dist/default/production\Strasak_David_219502.X.production.o
+_read_prec_or_width 16FC 0 CODE 0 text8 dist/default/production\Strasak_David_219502.X.production.o
 __Lnvrram 0 0 COMRAM 1 nvrram dist/default/production\Strasak_David_219502.X.production.o
 __Hintentry 0 0 ABS 0 intentry dist/default/production\Strasak_David_219502.X.production.o
 fputc@c 2 0 COMRAM 1 cstackCOMRAM dist/default/production\Strasak_David_219502.X.production.o
@@ -572,46 +605,47 @@ __Hreset_vec 0 0 CODE 0 reset_vec dist/default/production\Strasak_David_219502.X
 __HbssBANK0 0 0 ABS 0 bssBANK0 dist/default/production\Strasak_David_219502.X.production.o
 __Lramtop 1000 0 RAM 0 ramtop dist/default/production\Strasak_David_219502.X.production.o
 __Lrparam 0 0 COMRAM 1 rparam dist/default/production\Strasak_David_219502.X.production.o
-__pcinit 1702 0 CODE 0 cinit dist/default/production\Strasak_David_219502.X.production.o
+__pcinit 1830 0 CODE 0 cinit dist/default/production\Strasak_David_219502.X.production.o
 vfpfcnvrt@ap 1C 0 COMRAM 1 cstackCOMRAM dist/default/production\Strasak_David_219502.X.production.o
 vfpfcnvrt@fp 19 0 COMRAM 1 cstackCOMRAM dist/default/production\Strasak_David_219502.X.production.o
-__ptext0 1682 0 CODE 0 text0 dist/default/production\Strasak_David_219502.X.production.o
-__ptext1 1786 0 CODE 0 text1 dist/default/production\Strasak_David_219502.X.production.o
-__ptext2 1744 0 CODE 0 text2 dist/default/production\Strasak_David_219502.X.production.o
-__ptext3 1074 0 CODE 0 text3 dist/default/production\Strasak_David_219502.X.production.o
-__ptext4 124C 0 CODE 0 text4 dist/default/production\Strasak_David_219502.X.production.o
-__ptext5 1494 0 CODE 0 text5 dist/default/production\Strasak_David_219502.X.production.o
-__ptext6 1808 0 CODE 0 text6 dist/default/production\Strasak_David_219502.X.production.o
-__ptext7 154E 0 CODE 0 text7 dist/default/production\Strasak_David_219502.X.production.o
-__ptext8 17BC 0 CODE 0 text8 dist/default/production\Strasak_David_219502.X.production.o
-__ptext9 15F4 0 CODE 0 text9 dist/default/production\Strasak_David_219502.X.production.o
+__ptext0 157A 0 CODE 0 text0 dist/default/production\Strasak_David_219502.X.production.o
+__ptext1 13BC 0 CODE 0 text1 dist/default/production\Strasak_David_219502.X.production.o
+__ptext2 18B4 0 CODE 0 text2 dist/default/production\Strasak_David_219502.X.production.o
+__ptext3 1872 0 CODE 0 text3 dist/default/production\Strasak_David_219502.X.production.o
+__ptext4 1076 0 CODE 0 text4 dist/default/production\Strasak_David_219502.X.production.o
+__ptext5 124E 0 CODE 0 text5 dist/default/production\Strasak_David_219502.X.production.o
+__ptext6 1642 0 CODE 0 text6 dist/default/production\Strasak_David_219502.X.production.o
+__ptext7 1936 0 CODE 0 text7 dist/default/production\Strasak_David_219502.X.production.o
+__ptext8 16FC 0 CODE 0 text8 dist/default/production\Strasak_David_219502.X.production.o
+__ptext9 18EA 0 CODE 0 text9 dist/default/production\Strasak_David_219502.X.production.o
 __Lstruct 0 0 COMRAM 1 struct dist/default/production\Strasak_David_219502.X.production.o
 vfprintf@ap 22 0 COMRAM 1 cstackCOMRAM dist/default/production\Strasak_David_219502.X.production.o
 vfprintf@fp 1F 0 COMRAM 1 cstackCOMRAM dist/default/production\Strasak_David_219502.X.production.o
 vfprintf@cfmt 23 0 COMRAM 1 cstackCOMRAM dist/default/production\Strasak_David_219502.X.production.o
 __Ltext10 0 0 ABS 0 text10 dist/default/production\Strasak_David_219502.X.production.o
 __Ltext11 0 0 ABS 0 text11 dist/default/production\Strasak_David_219502.X.production.o
+__Ltext12 0 0 ABS 0 text12 dist/default/production\Strasak_David_219502.X.production.o
+__end_of_moveDisplay 14A0 0 CODE 0 text1 dist/default/production\Strasak_David_219502.X.production.o
 LCD_ShowString@i 4 0 COMRAM 1 cstackCOMRAM dist/default/production\Strasak_David_219502.X.production.o
-__ramtop 1000 0 RAM 0 ramtop C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_14.o
-_sprintf 1786 0 CODE 0 text1 dist/default/production\Strasak_David_219502.X.production.o
-_vfprintf 1744 0 CODE 0 text2 dist/default/production\Strasak_David_219502.X.production.o
+__ramtop 1000 0 RAM 0 ramtop C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_14.o
+_sprintf 18B4 0 CODE 0 text2 dist/default/production\Strasak_David_219502.X.production.o
+_vfprintf 1872 0 CODE 0 text3 dist/default/production\Strasak_David_219502.X.production.o
 __Lpowerup 0 0 CODE 0 powerup dist/default/production\Strasak_David_219502.X.production.o
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\Strasak_David_219502.X.production.o
 sprintf@ap 2A 0 COMRAM 1 cstackCOMRAM dist/default/production\Strasak_David_219502.X.production.o
 __H__absolute__ 0 0 ABS 0 __absolute__ dist/default/production\Strasak_David_219502.X.production.o
-__end_of_LCD_ShowString 1682 0 CODE 0 text9 dist/default/production\Strasak_David_219502.X.production.o
+__end_of_LCD_ShowString 1830 0 CODE 0 text10 dist/default/production\Strasak_David_219502.X.production.o
 __psmallconst 1000 0 SMALLCONST 0 smallconst dist/default/production\Strasak_David_219502.X.production.o
 __Lreset_vec 0 0 CODE 0 reset_vec dist/default/production\Strasak_David_219502.X.production.o
-__end_of_vfprintf 1786 0 CODE 0 text2 dist/default/production\Strasak_David_219502.X.production.o
-___heap_hi 0 0 ABS 0 - C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_14.o
-___heap_lo 0 0 ABS 0 - C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_14.o
+__end_of_vfprintf 18B4 0 CODE 0 text3 dist/default/production\Strasak_David_219502.X.production.o
+___heap_hi 0 0 ABS 0 - C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_14.o
+___heap_lo 0 0 ABS 0 - C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_14.o
 ___param_bank 0 0 ABS 0 - dist/default/production\Strasak_David_219502.X.production.o
-___intlo_stack_hi 0 0 STACK 2 stack C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_14.o
-___intlo_stack_lo 0 0 STACK 2 stack C:\Users\David\AppData\Local\Temp\xcAsftk.\driver_tmp_14.o
+___intlo_stack_hi 0 0 STACK 2 stack C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_14.o
+___intlo_stack_lo 0 0 STACK 2 stack C:\Users\David\AppData\Local\Temp\xcAshi8.\driver_tmp_14.o
 __Hbigdata 0 0 BIGRAM 1 bigdata dist/default/production\Strasak_David_219502.X.production.o
-__end_of__initialization 173A 0 CODE 0 cinit dist/default/production\Strasak_David_219502.X.production.o
+__end_of__initialization 1868 0 CODE 0 cinit dist/default/production\Strasak_David_219502.X.production.o
 __Libigdata 0 0 CODE 0 ibigdata dist/default/production\Strasak_David_219502.X.production.o
-__pidataBANK0 181E 0 CODE 0 idataBANK0 dist/default/production\Strasak_David_219502.X.production.o
 __Lclrtext 0 0 ABS 0 clrtext dist/default/production\Strasak_David_219502.X.production.o
 _SSP1CON1bits FC6 0 ABS 0 - dist/default/production\Strasak_David_219502.X.production.o
 __pcstackCOMRAM 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Strasak_David_219502.X.production.o
@@ -621,12 +655,12 @@ _SSP2BUF F6F 0 ABS 0 - dist/default/production\Strasak_David_219502.X.production
 sprintf@f 2B 0 COMRAM 1 cstackCOMRAM dist/default/production\Strasak_David_219502.X.production.o
 sprintf@s 24 0 COMRAM 1 cstackCOMRAM dist/default/production\Strasak_David_219502.X.production.o
 __end_of_half 1021 0 SMALLCONST 0 smallconst dist/default/production\Strasak_David_219502.X.production.o
-__end_of_main 1702 0 CODE 0 text0 dist/default/production\Strasak_David_219502.X.production.o
-__end_of_stoa 13BA 0 CODE 0 text4 dist/default/production\Strasak_David_219502.X.production.o
-__end_of_fputc 154E 0 CODE 0 text5 dist/default/production\Strasak_David_219502.X.production.o
+__end_of_main 1642 0 CODE 0 text0 dist/default/production\Strasak_David_219502.X.production.o
+__end_of_stoa 13BC 0 CODE 0 text5 dist/default/production\Strasak_David_219502.X.production.o
+__end_of_fputc 16FC 0 CODE 0 text6 dist/default/production\Strasak_David_219502.X.production.o
 ?_sprintf 24 0 COMRAM 1 cstackCOMRAM dist/default/production\Strasak_David_219502.X.production.o
 _TX1IF 7CF4 0 ABS 0 - dist/default/production\Strasak_David_219502.X.production.o
-__end_of_putch 181E 0 CODE 0 text6 dist/default/production\Strasak_David_219502.X.production.o
+__end_of_putch 194C 0 CODE 0 text7 dist/default/production\Strasak_David_219502.X.production.o
 __HRAM 0 0 ABS 0 - dist/default/production\Strasak_David_219502.X.production.o
 __Hbss 0 0 RAM 1 bss dist/default/production\Strasak_David_219502.X.production.o
 __Hram 0 0 ABS 0 ram dist/default/production\Strasak_David_219502.X.production.o
@@ -635,20 +669,19 @@ __LRAM 1 0 ABS 0 - dist/default/production\Strasak_David_219502.X.production.o
 __Lbss 0 0 RAM 1 bss dist/default/production\Strasak_David_219502.X.production.o
 __Lram 0 0 ABS 0 ram dist/default/production\Strasak_David_219502.X.production.o
 __Lsfr 0 0 ABS 0 sfr dist/default/production\Strasak_David_219502.X.production.o
-_flags 43 0 COMRAM 1 bssCOMRAM dist/default/production\Strasak_David_219502.X.production.o
-_fputc 1494 0 CODE 0 text5 dist/default/production\Strasak_David_219502.X.production.o
-_menuI AA 0 BANK0 1 bssBANK0 dist/default/production\Strasak_David_219502.X.production.o
-_putch 1808 0 CODE 0 text6 dist/default/production\Strasak_David_219502.X.production.o
+_flags 49 0 COMRAM 1 bssCOMRAM dist/default/production\Strasak_David_219502.X.production.o
+_fputc 1642 0 CODE 0 text6 dist/default/production\Strasak_David_219502.X.production.o
+_putch 1936 0 CODE 0 text7 dist/default/production\Strasak_David_219502.X.production.o
 read_prec_or_width@fmt 7 0 COMRAM 1 cstackCOMRAM dist/default/production\Strasak_David_219502.X.production.o
-_width 3F 0 COMRAM 1 bssCOMRAM dist/default/production\Strasak_David_219502.X.production.o
-__HdataBANK0 0 0 ABS 0 dataBANK0 dist/default/production\Strasak_David_219502.X.production.o
+_width 45 0 COMRAM 1 bssCOMRAM dist/default/production\Strasak_David_219502.X.production.o
 __Hsivt_hi 0 0 CODE 0 sivt_hi dist/default/production\Strasak_David_219502.X.production.o
 __Hsivt_lo 0 0 CODE 0 sivt_lo dist/default/production\Strasak_David_219502.X.production.o
-__initialization 1702 0 CODE 0 cinit dist/default/production\Strasak_David_219502.X.production.o
-__pbssBANK0 8A 0 BANK0 1 bssBANK0 dist/default/production\Strasak_David_219502.X.production.o
+__initialization 1830 0 CODE 0 cinit dist/default/production\Strasak_David_219502.X.production.o
+__pbssBANK0 8B 0 BANK0 1 bssBANK0 dist/default/production\Strasak_David_219502.X.production.o
+__pdataCOMRAM 4A 0 COMRAM 1 dataCOMRAM dist/default/production\Strasak_David_219502.X.production.o
 __Hfardata 0 0 FARRAM 0 fardata dist/default/production\Strasak_David_219502.X.production.o
 ___wmul@product 5 0 COMRAM 1 cstackCOMRAM dist/default/production\Strasak_David_219502.X.production.o
-__Hsmallconst 1074 0 SMALLCONST 0 smallconst dist/default/production\Strasak_David_219502.X.production.o
+__Hsmallconst 1076 0 SMALLCONST 0 smallconst dist/default/production\Strasak_David_219502.X.production.o
 __Lifardata 0 0 CODE 0 ifardata dist/default/production\Strasak_David_219502.X.production.o
 _ANSELAbits F38 0 ABS 0 - dist/default/production\Strasak_David_219502.X.production.o
 _ANSELBbits F39 0 ABS 0 - dist/default/production\Strasak_David_219502.X.production.o
@@ -680,11 +713,11 @@ read_prec_or_width@ap 8 0 COMRAM 1 cstackCOMRAM dist/default/production\Strasak_
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-text3 0 1074 1074 7B2 1
-cstackCOMRAM 1 1 1 43 1
-cstackBANK0 1 60 60 53 1
+text4 0 1076 1076 8DE 1
+cstackCOMRAM 1 1 1 51 1
+cstackBANK0 1 60 60 4B 1
 reset_vec 0 0 0 4 1
-smallconst 0 1000 1000 74 1
+smallconst 0 1000 1000 76 1
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section
 # is indicated by %NOTES. The first line indicates the name and decimal

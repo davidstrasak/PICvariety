@@ -7,6 +7,7 @@
 #include "lcd.h"
 #include "configs.h"
 #include "DAC.h"
+#include "menu.h"
 #define _XTAL_FREQ 32E6
 void putch(char data);
 #endif

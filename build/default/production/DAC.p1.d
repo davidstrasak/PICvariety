@@ -3,4 +3,5 @@ DAC.c  \
 includes.h  \
 lcd.h  \
 configs.h  \
-DAC.h 
+DAC.h  \
+menu.h 
