@@ -10223,6 +10223,7 @@ void putch(char data);
 
 void main(void) {
 
+
     TRISCbits.RC0 = 1;
     TRISAbits.RA4 = 1;
     TRISAbits.RA3 = 1;

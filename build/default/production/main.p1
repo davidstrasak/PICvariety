@@ -1176,143 +1176,143 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _main ]
 [f ]
-"16
-[; ;main.c: 16:     TRISCbits.RC0 = 1;
-[e = . . _TRISCbits 1 0 -> -> 1 `i `uc ]
 "17
-[; ;main.c: 17:     TRISAbits.RA4 = 1;
-[e = . . _TRISAbits 1 4 -> -> 1 `i `uc ]
+[; ;main.c: 17:     TRISCbits.RC0 = 1;
+[e = . . _TRISCbits 1 0 -> -> 1 `i `uc ]
 "18
-[; ;main.c: 18:     TRISAbits.RA3 = 1;
-[e = . . _TRISAbits 1 3 -> -> 1 `i `uc ]
+[; ;main.c: 18:     TRISAbits.RA4 = 1;
+[e = . . _TRISAbits 1 4 -> -> 1 `i `uc ]
 "19
-[; ;main.c: 19:     ANSELAbits.ANSA3 = 0;
+[; ;main.c: 19:     TRISAbits.RA3 = 1;
+[e = . . _TRISAbits 1 3 -> -> 1 `i `uc ]
+"20
+[; ;main.c: 20:     ANSELAbits.ANSA3 = 0;
 [e = . . _ANSELAbits 0 3 -> -> 0 `i `uc ]
-"22
-[; ;main.c: 22:     TRISBbits.RB3 = 0;
-[e = . . _TRISBbits 1 3 -> -> 0 `i `uc ]
 "23
-[; ;main.c: 23:     TRISCbits.RC3 = 0;
-[e = . . _TRISCbits 1 3 -> -> 0 `i `uc ]
+[; ;main.c: 23:     TRISBbits.RB3 = 0;
+[e = . . _TRISBbits 1 3 -> -> 0 `i `uc ]
 "24
-[; ;main.c: 24:     TRISCbits.RC5 = 0;
+[; ;main.c: 24:     TRISCbits.RC3 = 0;
+[e = . . _TRISCbits 1 3 -> -> 0 `i `uc ]
+"25
+[; ;main.c: 25:     TRISCbits.RC5 = 0;
 [e = . . _TRISCbits 1 5 -> -> 0 `i `uc ]
-"26
-[; ;main.c: 26:     SSP1CON1bits.SSPM = 0b0010;
-[e = . . _SSP1CON1bits 0 0 -> -> 2 `i `uc ]
 "27
-[; ;main.c: 27:     SSP1CON1bits.CKP = 0;
-[e = . . _SSP1CON1bits 0 1 -> -> 0 `i `uc ]
+[; ;main.c: 27:     SSP1CON1bits.SSPM = 0b0010;
+[e = . . _SSP1CON1bits 0 0 -> -> 2 `i `uc ]
 "28
-[; ;main.c: 28:     SSP1STATbits.CKE = 1;
-[e = . . _SSP1STATbits 2 6 -> -> 1 `i `uc ]
+[; ;main.c: 28:     SSP1CON1bits.CKP = 0;
+[e = . . _SSP1CON1bits 0 1 -> -> 0 `i `uc ]
 "29
-[; ;main.c: 29:     SSP1CON1bits.SSPEN = 1;
+[; ;main.c: 29:     SSP1STATbits.CKE = 1;
+[e = . . _SSP1STATbits 2 6 -> -> 1 `i `uc ]
+"30
+[; ;main.c: 30:     SSP1CON1bits.SSPEN = 1;
 [e = . . _SSP1CON1bits 0 2 -> -> 1 `i `uc ]
-"32
-[; ;main.c: 32:     ANSELBbits.ANSB0 = 1;
+"33
+[; ;main.c: 33:     ANSELBbits.ANSB0 = 1;
 [e = . . _ANSELBbits 0 0 -> -> 1 `i `uc ]
-"34
-[; ;main.c: 34:     ADCON2bits.ADFM = 0;
-[e = . . _ADCON2bits 0 3 -> -> 0 `i `uc ]
 "35
-[; ;main.c: 35:     ADCON2bits.ADCS = 0b110;
-[e = . . _ADCON2bits 0 0 -> -> 6 `i `uc ]
+[; ;main.c: 35:     ADCON2bits.ADFM = 0;
+[e = . . _ADCON2bits 0 3 -> -> 0 `i `uc ]
 "36
-[; ;main.c: 36:     ADCON2bits.ACQT = 0b110;
-[e = . . _ADCON2bits 0 1 -> -> 6 `i `uc ]
+[; ;main.c: 36:     ADCON2bits.ADCS = 0b110;
+[e = . . _ADCON2bits 0 0 -> -> 6 `i `uc ]
 "37
-[; ;main.c: 37:     ADCON0bits.ADON = 1;
+[; ;main.c: 37:     ADCON2bits.ACQT = 0b110;
+[e = . . _ADCON2bits 0 1 -> -> 6 `i `uc ]
+"38
+[; ;main.c: 38:     ADCON0bits.ADON = 1;
 [e = . . _ADCON0bits 1 0 -> -> 1 `i `uc ]
-"40
-[; ;main.c: 40:     SPBRG1 = 51;
-[e = _SPBRG1 -> -> 51 `i `uc ]
 "41
-[; ;main.c: 41:     RCSTA1bits.SPEN = 1;
-[e = . . _RCSTA1bits 0 7 -> -> 1 `i `uc ]
+[; ;main.c: 41:     SPBRG1 = 51;
+[e = _SPBRG1 -> -> 51 `i `uc ]
 "42
-[; ;main.c: 42:     TXSTA1bits.SYNC = 0;
-[e = . . _TXSTA1bits 0 4 -> -> 0 `i `uc ]
+[; ;main.c: 42:     RCSTA1bits.SPEN = 1;
+[e = . . _RCSTA1bits 0 7 -> -> 1 `i `uc ]
 "43
-[; ;main.c: 43:     TXSTA1bits.TXEN = 1;
-[e = . . _TXSTA1bits 0 5 -> -> 1 `i `uc ]
+[; ;main.c: 43:     TXSTA1bits.SYNC = 0;
+[e = . . _TXSTA1bits 0 4 -> -> 0 `i `uc ]
 "44
-[; ;main.c: 44:     RCSTA1bits.CREN = 1;
+[; ;main.c: 44:     TXSTA1bits.TXEN = 1;
+[e = . . _TXSTA1bits 0 5 -> -> 1 `i `uc ]
+"45
+[; ;main.c: 45:     RCSTA1bits.CREN = 1;
 [e = . . _RCSTA1bits 0 4 -> -> 1 `i `uc ]
-"47
-[; ;main.c: 47:     LATBbits.LB3 = 1;
+"48
+[; ;main.c: 48:     LATBbits.LB3 = 1;
 [e = . . _LATBbits 1 3 -> -> 1 `i `uc ]
-"49
-[; ;main.c: 49:     ADCON0bits.CHS = 12;
+"50
+[; ;main.c: 50:     ADCON0bits.CHS = 12;
 [e = . . _ADCON0bits 1 2 -> -> 12 `i `uc ]
-"51
-[; ;main.c: 51:     uint8_t selectMode = 1;
+"52
+[; ;main.c: 52:     uint8_t selectMode = 1;
 [v _selectMode `uc ~T0 @X0 1 a ]
 [e = _selectMode -> -> 1 `i `uc ]
-"53
-[; ;main.c: 53:     while(1){
+"54
+[; ;main.c: 54:     while(1){
 [e :U 858 ]
 {
-"54
-[; ;main.c: 54:         for(uint8_t i = 0; 1; i++){
+"55
+[; ;main.c: 55:         for(uint8_t i = 0; 1; i++){
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
 [e $U 863  ]
 [e :U 860 ]
 {
-"55
-[; ;main.c: 55:         switch(selectMode){
+"56
+[; ;main.c: 56:         switch(selectMode){
 [e $U 865  ]
 {
-"56
-[; ;main.c: 56:             case 1:
-[e :U 866 ]
 "57
-[; ;main.c: 57:                 if(i<255/2){
+[; ;main.c: 57:             case 1:
+[e :U 866 ]
+"58
+[; ;main.c: 58:                 if(i<255/2){
 [e $ ! < -> _i `i / -> 255 `i -> 2 `i 867  ]
 {
-"58
-[; ;main.c: 58:                     SPI_write(1.9*i);
-[e ( _SPI_write (1 -> * .1.9 -> -> _i `i `d `uc ]
 "59
-[; ;main.c: 59:                 }
+[; ;main.c: 59:                     SPI_write(1.9*i);
+[e ( _SPI_write (1 -> * .1.9 -> -> _i `i `d `uc ]
+"60
+[; ;main.c: 60:                 }
 }
 [e :U 867 ]
-"60
-[; ;main.c: 60:                 if(i>=255/2){
+"61
+[; ;main.c: 61:                 if(i>=255/2){
 [e $ ! >= -> _i `i / -> 255 `i -> 2 `i 868  ]
 {
-"61
-[; ;main.c: 61:                     SPI_write(1.9*(255-i));
-[e ( _SPI_write (1 -> * .1.9 -> - -> 255 `i -> _i `i `d `uc ]
 "62
-[; ;main.c: 62:                 }
+[; ;main.c: 62:                     SPI_write(1.9*(255-i));
+[e ( _SPI_write (1 -> * .1.9 -> - -> 255 `i -> _i `i `d `uc ]
+"63
+[; ;main.c: 63:                 }
 }
 [e :U 868 ]
-"63
-[; ;main.c: 63:                 break;
-[e $U 864  ]
 "64
-[; ;main.c: 64:             case 2:
-[e :U 869 ]
+[; ;main.c: 64:                 break;
+[e $U 864  ]
 "65
-[; ;main.c: 65:                 SPI_write((255/2*sinf(2*3.14*i/255)+255/2));
-[e ( _SPI_write (1 -> + * -> / -> 255 `i -> 2 `i `f ( _sinf (1 -> / * * -> -> 2 `i `d .3.14 -> -> _i `i `d -> -> 255 `i `d `f -> / -> 255 `i -> 2 `i `f `uc ]
+[; ;main.c: 65:             case 2:
+[e :U 869 ]
 "66
-[; ;main.c: 66:                 break;
-[e $U 864  ]
+[; ;main.c: 66:                 SPI_write((255/2*sinf(2*3.14*i/255)+255/2));
+[e ( _SPI_write (1 -> + * -> / -> 255 `i -> 2 `i `f ( _sinf (1 -> / * * -> -> 2 `i `d .3.14 -> -> _i `i `d -> -> 255 `i `d `f -> / -> 255 `i -> 2 `i `f `uc ]
 "67
-[; ;main.c: 67:             case 3:
-[e :U 870 ]
-"68
-[; ;main.c: 68:                 SPI_write(255 - i);
-[e ( _SPI_write (1 -> - -> 255 `i -> _i `i `uc ]
-"69
-[; ;main.c: 69:                 break;
+[; ;main.c: 67:                 break;
 [e $U 864  ]
+"68
+[; ;main.c: 68:             case 3:
+[e :U 870 ]
+"69
+[; ;main.c: 69:                 SPI_write(255 - i);
+[e ( _SPI_write (1 -> - -> 255 `i -> _i `i `uc ]
 "70
-[; ;main.c: 70:         }
+[; ;main.c: 70:                 break;
+[e $U 864  ]
+"71
+[; ;main.c: 71:         }
 }
 [e $U 864  ]
 [e :U 865 ]
@@ -1321,148 +1321,148 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 3 `i 870
  864 ]
 [e :U 864 ]
-"71
-[; ;main.c: 71:         GODONE = 1;
-[e = _GODONE -> -> 1 `i `b ]
 "72
-[; ;main.c: 72:         while(GODONE);
+[; ;main.c: 72:         GODONE = 1;
+[e = _GODONE -> -> 1 `i `b ]
+"73
+[; ;main.c: 73:         while(GODONE);
 [e $U 871  ]
 [e :U 872 ]
 [e :U 871 ]
 [e $ _GODONE 872  ]
 [e :U 873 ]
-"74
-[; ;main.c: 74:         printf("%d \r", ADRESH);
-[e ( _printf , (. :s 1C -> _ADRESH `i ]
 "75
-[; ;main.c: 75:         if(PORTCbits.RC0){
+[; ;main.c: 75:         printf("%d \r", ADRESH);
+[e ( _printf , (. :s 1C -> _ADRESH `i ]
+"76
+[; ;main.c: 76:         if(PORTCbits.RC0){
 [e $ ! != -> . . _PORTCbits 0 0 `i -> 0 `i 874  ]
 {
-"76
-[; ;main.c: 76:             selectMode = 1;
-[e = _selectMode -> -> 1 `i `uc ]
 "77
-[; ;main.c: 77:         }
+[; ;main.c: 77:             selectMode = 1;
+[e = _selectMode -> -> 1 `i `uc ]
+"78
+[; ;main.c: 78:         }
 }
 [e :U 874 ]
-"78
-[; ;main.c: 78:         if(PORTAbits.RA4){
+"79
+[; ;main.c: 79:         if(PORTAbits.RA4){
 [e $ ! != -> . . _PORTAbits 0 4 `i -> 0 `i 875  ]
 {
-"79
-[; ;main.c: 79:             selectMode = 2;
-[e = _selectMode -> -> 2 `i `uc ]
 "80
-[; ;main.c: 80:         }
+[; ;main.c: 80:             selectMode = 2;
+[e = _selectMode -> -> 2 `i `uc ]
+"81
+[; ;main.c: 81:         }
 }
 [e :U 875 ]
-"81
-[; ;main.c: 81:         if(PORTAbits.RA3){
+"82
+[; ;main.c: 82:         if(PORTAbits.RA3){
 [e $ ! != -> . . _PORTAbits 0 3 `i -> 0 `i 876  ]
 {
-"82
-[; ;main.c: 82:             selectMode = 3;
-[e = _selectMode -> -> 3 `i `uc ]
 "83
-[; ;main.c: 83:         }
+[; ;main.c: 83:             selectMode = 3;
+[e = _selectMode -> -> 3 `i `uc ]
+"84
+[; ;main.c: 84:         }
 }
 [e :U 876 ]
-"85
-[; ;main.c: 85:         _delay((unsigned long)((10)*(32E6/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / .32e6 .4000.0 `ul ]
 "86
-[; ;main.c: 86:         }
+[; ;main.c: 86:         _delay((unsigned long)((10)*(32E6/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / .32e6 .4000.0 `ul ]
+"87
+[; ;main.c: 87:         }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e :U 863 ]
 [e $ != -> 1 `i -> 0 `i 860  ]
 [e :U 861 ]
 }
-"87
-[; ;main.c: 87:     }
+"88
+[; ;main.c: 88:     }
 }
 [e :U 857 ]
 [e $U 858  ]
 [e :U 859 ]
-"88
-[; ;main.c: 88:     return;
-[e $UE 856  ]
 "89
-[; ;main.c: 89: }
+[; ;main.c: 89:     return;
+[e $UE 856  ]
+"90
+[; ;main.c: 90: }
 [e :UE 856 ]
 }
-"91
-[; ;main.c: 91: void SPI_write (uint8_t data){
+"92
+[; ;main.c: 92: void SPI_write (uint8_t data){
 [v _SPI_write `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _SPI_write ]
 [v _data `uc ~T0 @X0 1 r1 ]
 [f ]
-"92
-[; ;main.c: 92:     uint8_t MSB, LSB;
+"93
+[; ;main.c: 93:     uint8_t MSB, LSB;
 [v _MSB `uc ~T0 @X0 1 a ]
 [v _LSB `uc ~T0 @X0 1 a ]
-"94
-[; ;main.c: 94:     MSB = (uint8_t)(0b00110000 | (data >> 4));
-[e = _MSB -> | -> 48 `i >> -> _data `i -> 4 `i `uc ]
 "95
-[; ;main.c: 95:     LSB = (uint8_t)(data << 4);
+[; ;main.c: 95:     MSB = (uint8_t)(0b00110000 | (data >> 4));
+[e = _MSB -> | -> 48 `i >> -> _data `i -> 4 `i `uc ]
+"96
+[; ;main.c: 96:     LSB = (uint8_t)(data << 4);
 [e = _LSB -> << -> _data `i -> 4 `i `uc ]
-"97
-[; ;main.c: 97:     LATBbits.LB3 = 0;
+"98
+[; ;main.c: 98:     LATBbits.LB3 = 0;
 [e = . . _LATBbits 1 3 -> -> 0 `i `uc ]
-"99
-[; ;main.c: 99:     SSP1BUF = MSB;
-[e = _SSP1BUF _MSB ]
 "100
-[; ;main.c: 100:     while(!SSP1IF);
+[; ;main.c: 100:     SSP1BUF = MSB;
+[e = _SSP1BUF _MSB ]
+"101
+[; ;main.c: 101:     while(!SSP1IF);
 [e $U 878  ]
 [e :U 879 ]
 [e :U 878 ]
 [e $ ! _SSP1IF 879  ]
 [e :U 880 ]
-"101
-[; ;main.c: 101:     SSP1IF = 0;
+"102
+[; ;main.c: 102:     SSP1IF = 0;
 [e = _SSP1IF -> -> 0 `i `b ]
-"103
-[; ;main.c: 103:     SSP1BUF = LSB;
-[e = _SSP1BUF _LSB ]
 "104
-[; ;main.c: 104:     while(!SSP1IF);
+[; ;main.c: 104:     SSP1BUF = LSB;
+[e = _SSP1BUF _LSB ]
+"105
+[; ;main.c: 105:     while(!SSP1IF);
 [e $U 881  ]
 [e :U 882 ]
 [e :U 881 ]
 [e $ ! _SSP1IF 882  ]
 [e :U 883 ]
-"105
-[; ;main.c: 105:     SSP1IF = 0;
+"106
+[; ;main.c: 106:     SSP1IF = 0;
 [e = _SSP1IF -> -> 0 `i `b ]
-"107
-[; ;main.c: 107:     LATBbits.LB3 = 1;
-[e = . . _LATBbits 1 3 -> -> 1 `i `uc ]
 "108
-[; ;main.c: 108: }
+[; ;main.c: 108:     LATBbits.LB3 = 1;
+[e = . . _LATBbits 1 3 -> -> 1 `i `uc ]
+"109
+[; ;main.c: 109: }
 [e :UE 877 ]
 }
-"110
-[; ;main.c: 110: void putch(char data){
+"111
+[; ;main.c: 111: void putch(char data){
 [v _putch `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _putch ]
 [v _data `uc ~T0 @X0 1 r1 ]
 [f ]
-"111
-[; ;main.c: 111:     while(!TX1IF);
+"112
+[; ;main.c: 112:     while(!TX1IF);
 [e $U 885  ]
 [e :U 886 ]
 [e :U 885 ]
 [e $ ! _TX1IF 886  ]
 [e :U 887 ]
-"112
-[; ;main.c: 112:     TXREG1 = data;
-[e = _TXREG1 -> _data `uc ]
 "113
-[; ;main.c: 113: }
+[; ;main.c: 113:     TXREG1 = data;
+[e = _TXREG1 -> _data `uc ]
+"114
+[; ;main.c: 114: }
 [e :UE 884 ]
 }
 [p f _printf 8388736 ]

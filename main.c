@@ -12,6 +12,7 @@ void SPI_write (uint8_t data);
 void putch(char data);
 
 void main(void) {
+    
     //GPIO
     TRISCbits.RC0 = 1;
     TRISAbits.RA4 = 1;

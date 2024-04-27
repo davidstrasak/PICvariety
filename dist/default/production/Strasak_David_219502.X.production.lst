@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.46 build 20240104201356 
-                                                                                               Sat Apr 27 21:54:21 2024
+                                                                                               Sat Apr 27 21:59:08 2024
 
 Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1 
      1                           	processor	18F46K22
@@ -779,115 +779,115 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
    760   002598                     _main:
    761                           	callstack 26
    762   002598                     
-   763                           ;main.c: 16:     TRISCbits.RC0 = 1;
+   763                           ;main.c: 17:     TRISCbits.RC0 = 1;
    764   002598  8094               	bsf	148,0,c	;volatile
    765                           
-   766                           ;main.c: 17:     TRISAbits.RA4 = 1;
+   766                           ;main.c: 18:     TRISAbits.RA4 = 1;
    767   00259A  8892               	bsf	146,4,c	;volatile
    768                           
-   769                           ;main.c: 18:     TRISAbits.RA3 = 1;
+   769                           ;main.c: 19:     TRISAbits.RA3 = 1;
    770   00259C  8692               	bsf	146,3,c	;volatile
    771                           
-   772                           ;main.c: 19:     ANSELAbits.ANSA3 = 0;
+   772                           ;main.c: 20:     ANSELAbits.ANSA3 = 0;
    773   00259E  010F               	movlb	15	; () banked
    774   0025A0  9738               	bcf	56,3,b	;volatile
    775                           
-   776                           ;main.c: 22:     TRISBbits.RB3 = 0;
+   776                           ;main.c: 23:     TRISBbits.RB3 = 0;
    777   0025A2  9693               	bcf	147,3,c	;volatile
    778                           
-   779                           ;main.c: 23:     TRISCbits.RC3 = 0;
+   779                           ;main.c: 24:     TRISCbits.RC3 = 0;
    780   0025A4  9694               	bcf	148,3,c	;volatile
    781                           
-   782                           ;main.c: 24:     TRISCbits.RC5 = 0;
+   782                           ;main.c: 25:     TRISCbits.RC5 = 0;
    783   0025A6  9A94               	bcf	148,5,c	;volatile
    784   0025A8                     
    785                           ; BSR set to: 15
-   786                           ;main.c: 26:     SSP1CON1bits.SSPM = 0b0010;
+   786                           ;main.c: 27:     SSP1CON1bits.SSPM = 0b0010;
    787   0025A8  50C6               	movf	198,w,c	;volatile
    788   0025AA  0BF0               	andlw	-16
    789   0025AC  0902               	iorlw	2
    790   0025AE  6EC6               	movwf	198,c	;volatile
    791   0025B0                     
    792                           ; BSR set to: 15
-   793                           ;main.c: 27:     SSP1CON1bits.CKP = 0;
+   793                           ;main.c: 28:     SSP1CON1bits.CKP = 0;
    794   0025B0  98C6               	bcf	198,4,c	;volatile
    795   0025B2                     
    796                           ; BSR set to: 15
-   797                           ;main.c: 28:     SSP1STATbits.CKE = 1;
+   797                           ;main.c: 29:     SSP1STATbits.CKE = 1;
    798   0025B2  8CC7               	bsf	199,6,c	;volatile
    799   0025B4                     
    800                           ; BSR set to: 15
-   801                           ;main.c: 29:     SSP1CON1bits.SSPEN = 1;
+   801                           ;main.c: 30:     SSP1CON1bits.SSPEN = 1;
    802   0025B4  8AC6               	bsf	198,5,c	;volatile
    803   0025B6                     
    804                           ; BSR set to: 15
-   805                           ;main.c: 32:     ANSELBbits.ANSB0 = 1;
+   805                           ;main.c: 33:     ANSELBbits.ANSB0 = 1;
    806   0025B6  8139               	bsf	57,0,b	;volatile
    807   0025B8                     
    808                           ; BSR set to: 15
-   809                           ;main.c: 34:     ADCON2bits.ADFM = 0;
+   809                           ;main.c: 35:     ADCON2bits.ADFM = 0;
    810   0025B8  9EC0               	bcf	192,7,c	;volatile
    811                           
-   812                           ;main.c: 35:     ADCON2bits.ADCS = 0b110;
+   812                           ;main.c: 36:     ADCON2bits.ADCS = 0b110;
    813   0025BA  50C0               	movf	192,w,c	;volatile
    814   0025BC  0BF8               	andlw	-8
    815   0025BE  0906               	iorlw	6
    816   0025C0  6EC0               	movwf	192,c	;volatile
    817                           
-   818                           ;main.c: 36:     ADCON2bits.ACQT = 0b110;
+   818                           ;main.c: 37:     ADCON2bits.ACQT = 0b110;
    819   0025C2  50C0               	movf	192,w,c	;volatile
    820   0025C4  0BC7               	andlw	-57
    821   0025C6  0930               	iorlw	48
    822   0025C8  6EC0               	movwf	192,c	;volatile
    823   0025CA                     
    824                           ; BSR set to: 15
-   825                           ;main.c: 37:     ADCON0bits.ADON = 1;
+   825                           ;main.c: 38:     ADCON0bits.ADON = 1;
    826   0025CA  80C2               	bsf	194,0,c	;volatile
    827                           
-   828                           ;main.c: 40:     SPBRG1 = 51;
+   828                           ;main.c: 41:     SPBRG1 = 51;
    829   0025CC  0E33               	movlw	51
    830   0025CE  6EAF               	movwf	175,c	;volatile
    831   0025D0                     
    832                           ; BSR set to: 15
-   833                           ;main.c: 41:     RCSTA1bits.SPEN = 1;
+   833                           ;main.c: 42:     RCSTA1bits.SPEN = 1;
    834   0025D0  8EAB               	bsf	171,7,c	;volatile
    835   0025D2                     
    836                           ; BSR set to: 15
-   837                           ;main.c: 42:     TXSTA1bits.SYNC = 0;
+   837                           ;main.c: 43:     TXSTA1bits.SYNC = 0;
    838   0025D2  98AC               	bcf	172,4,c	;volatile
    839   0025D4                     
    840                           ; BSR set to: 15
-   841                           ;main.c: 43:     TXSTA1bits.TXEN = 1;
+   841                           ;main.c: 44:     TXSTA1bits.TXEN = 1;
    842   0025D4  8AAC               	bsf	172,5,c	;volatile
    843   0025D6                     
    844                           ; BSR set to: 15
-   845                           ;main.c: 44:     RCSTA1bits.CREN = 1;
+   845                           ;main.c: 45:     RCSTA1bits.CREN = 1;
    846   0025D6  88AB               	bsf	171,4,c	;volatile
    847   0025D8                     
    848                           ; BSR set to: 15
-   849                           ;main.c: 47:     LATBbits.LB3 = 1;
+   849                           ;main.c: 48:     LATBbits.LB3 = 1;
    850   0025D8  868A               	bsf	138,3,c	;volatile
    851                           
-   852                           ;main.c: 49:     ADCON0bits.CHS = 12;
+   852                           ;main.c: 50:     ADCON0bits.CHS = 12;
    853   0025DA  50C2               	movf	194,w,c	;volatile
    854   0025DC  0B83               	andlw	-125
    855   0025DE  0930               	iorlw	48
    856   0025E0  6EC2               	movwf	194,c	;volatile
    857                           
-   858                           ;main.c: 51:     uint8_t selectMode = 1;
+   858                           ;main.c: 52:     uint8_t selectMode = 1;
    859   0025E2  0E01               	movlw	1
    860   0025E4  0100               	movlb	0	; () banked
    861   0025E6  6FBC               	movwf	main@selectMode& (0+255),b
    862   0025E8                     
    863                           ; BSR set to: 0
-   864                           ;main.c: 54:         for(uint8_t i = 0; 1; i++){
+   864                           ;main.c: 55:         for(uint8_t i = 0; 1; i++){
    865   0025E8  0E00               	movlw	0
    866   0025EA  6FBD               	movwf	main@i& (0+255),b
    867   0025EC  EFDB  F013         	goto	l2990
    868   0025F0                     l2972:
    869                           
    870                           ; BSR set to: 0
-   871                           ;main.c: 57:                 if(i<255/2){
+   871                           ;main.c: 58:                 if(i<255/2){
    872   0025F0  0E7F               	movlw	127
    873   0025F2  61BD               	cpfslt	main@i& (0+255),b
    874   0025F4  EFFE  F012         	goto	u3141
@@ -897,7 +897,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
    878   002600                     u3140:
    879   002600                     
    880                           ; BSR set to: 0
-   881                           ;main.c: 58:                     SPI_write(1.9*i);
+   881                           ;main.c: 59:                     SPI_write(1.9*i);
    882   002600  0E33               	movlw	51
    883   002602  6E13               	movwf	___flmul@a^0,c
    884   002604  0E33               	movlw	51
@@ -927,7 +927,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
    908   00264A  ECDE  F019         	call	_SPI_write
    909   00264E                     l2976:
    910                           
-   911                           ;main.c: 60:                 if(i>=255/2){
+   911                           ;main.c: 61:                 if(i>=255/2){
    912   00264E  0E7E               	movlw	126
    913   002650  0100               	movlb	0	; () banked
    914   002652  65BD               	cpfsgt	main@i& (0+255),b
@@ -938,7 +938,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
    919   002660                     u3150:
    920   002660                     
    921                           ; BSR set to: 0
-   922                           ;main.c: 61:                     SPI_write(1.9*(255-i));
+   922                           ;main.c: 62:                     SPI_write(1.9*(255-i));
    923   002660  0E33               	movlw	51
    924   002662  6E13               	movwf	___flmul@a^0,c
    925   002664  0E33               	movlw	51
@@ -973,7 +973,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
    954   0026B8                     l2980:
    955                           
    956                           ; BSR set to: 0
-   957                           ;main.c: 65:                 SPI_write((255/2*sinf(2*3.14*i/255)+255/2));
+   957                           ;main.c: 66:                 SPI_write((255/2*sinf(2*3.14*i/255)+255/2));
    958   0026B8  0E00               	movlw	0
    959   0026BA  6E2C               	movwf	___fldiv@a^0,c
    960   0026BC  0E00               	movlw	0
@@ -1012,7 +1012,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
    993   002718  C02A  F0B6         	movff	?___fldiv+2,_main$2423+2
    994   00271C  C02B  F0B7         	movff	?___fldiv+3,_main$2423+3
    995   002720                     
-   996                           ;main.c: 65:                 SPI_write((255/2*sinf(2*3.14*i/255)+255/2));
+   996                           ;main.c: 66:                 SPI_write((255/2*sinf(2*3.14*i/255)+255/2));
    997   002720  C0B4  F09A         	movff	_main$2423,sinf@x
    998   002724  C0B5  F09B         	movff	_main$2423+1,sinf@x+1
    999   002728  C0B6  F09C         	movff	_main$2423+2,sinf@x+2
@@ -1023,7 +1023,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   1004   00273C  C09C  F0BA         	movff	?_sinf+2,_main$2424+2
   1005   002740  C09D  F0BB         	movff	?_sinf+3,_main$2424+3
   1006   002744                     
-  1007                           ;main.c: 65:                 SPI_write((255/2*sinf(2*3.14*i/255)+255/2));
+  1007                           ;main.c: 66:                 SPI_write((255/2*sinf(2*3.14*i/255)+255/2));
   1008   002744  0E00               	movlw	0
   1009   002746  6E45               	movwf	___fladd@a^0,c
   1010   002748  0E00               	movlw	0
@@ -1058,17 +1058,17 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   1039   0027A0  5051               	movf	?___fltol^0,w,c
   1040   0027A2  ECDE  F019         	call	_SPI_write
   1041                           
-  1042                           ;main.c: 66:                 break;
+  1042                           ;main.c: 67:                 break;
   1043   0027A6  EFEA  F013         	goto	l62
   1044   0027AA                     l2986:
   1045                           
   1046                           ; BSR set to: 0
-  1047                           ;main.c: 68:                 SPI_write(255 - i);
+  1047                           ;main.c: 69:                 SPI_write(255 - i);
   1048   0027AA  51BD               	movf	main@i& (0+255),w,b
   1049   0027AC  0AFF               	xorlw	255
   1050   0027AE  ECDE  F019         	call	_SPI_write
   1051                           
-  1052                           ;main.c: 69:                 break;
+  1052                           ;main.c: 70:                 break;
   1053   0027B2  EFEA  F013         	goto	l62
   1054   0027B6                     l2990:
   1055                           
@@ -1093,7 +1093,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   1074   0027D0  EFEA  F013         	goto	l62
   1075   0027D4                     l62:
   1076                           
-  1077                           ;main.c: 71:         GODONE = 1;
+  1077                           ;main.c: 72:         GODONE = 1;
   1078   0027D4  82C2               	bsf	4034,1,c	;volatile
   1079   0027D6                     l65:
   1080   0027D6  B2C2               	btfsc	4034,1,c	;volatile
@@ -1103,14 +1103,14 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   1084   0027E0  EFEB  F013         	goto	l65
   1085   0027E4                     u3160:
   1086   0027E4                     
-  1087                           ;main.c: 74:         printf("%d \r", ADRESH);
+  1087                           ;main.c: 75:         printf("%d \r", ADRESH);
   1088   0027E4  0E41               	movlw	low STR_1
   1089   0027E6  6E1C               	movwf	printf@fmt^0,c
   1090   0027E8  CFC4 F01D          	movff	4036,?_printf+1	;volatile
   1091   0027EC  6A1E               	clrf	(?_printf+2)^0,c
   1092   0027EE  EC4E  F01A         	call	_printf	;wreg free
   1093   0027F2                     
-  1094                           ;main.c: 75:         if(PORTCbits.RC0){
+  1094                           ;main.c: 76:         if(PORTCbits.RC0){
   1095   0027F2  A082               	btfss	130,0,c	;volatile
   1096   0027F4  EFFE  F013         	goto	u3171
   1097   0027F8  EF00  F014         	goto	u3170
@@ -1118,13 +1118,13 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   1099   0027FC  EF03  F014         	goto	l2998
   1100   002800                     u3170:
   1101   002800                     
-  1102                           ;main.c: 76:             selectMode = 1;
+  1102                           ;main.c: 77:             selectMode = 1;
   1103   002800  0E01               	movlw	1
   1104   002802  0100               	movlb	0	; () banked
   1105   002804  6FBC               	movwf	main@selectMode& (0+255),b
   1106   002806                     l2998:
   1107                           
-  1108                           ;main.c: 78:         if(PORTAbits.RA4){
+  1108                           ;main.c: 79:         if(PORTAbits.RA4){
   1109   002806  A880               	btfss	128,4,c	;volatile
   1110   002808  EF08  F014         	goto	u3181
   1111   00280C  EF0A  F014         	goto	u3180
@@ -1132,13 +1132,13 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   1113   002810  EF0D  F014         	goto	l3002
   1114   002814                     u3180:
   1115   002814                     
-  1116                           ;main.c: 79:             selectMode = 2;
+  1116                           ;main.c: 80:             selectMode = 2;
   1117   002814  0E02               	movlw	2
   1118   002816  0100               	movlb	0	; () banked
   1119   002818  6FBC               	movwf	main@selectMode& (0+255),b
   1120   00281A                     l3002:
   1121                           
-  1122                           ;main.c: 81:         if(PORTAbits.RA3){
+  1122                           ;main.c: 82:         if(PORTAbits.RA3){
   1123   00281A  A680               	btfss	128,3,c	;volatile
   1124   00281C  EF12  F014         	goto	u3191
   1125   002820  EF14  F014         	goto	u3190
@@ -1146,13 +1146,13 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   1127   002824  EF17  F014         	goto	l3006
   1128   002828                     u3190:
   1129   002828                     
-  1130                           ;main.c: 82:             selectMode = 3;
+  1130                           ;main.c: 83:             selectMode = 3;
   1131   002828  0E03               	movlw	3
   1132   00282A  0100               	movlb	0	; () banked
   1133   00282C  6FBC               	movwf	main@selectMode& (0+255),b
   1134   00282E                     l3006:
   1135                           
-  1136                           ;main.c: 85:         _delay((unsigned long)((10)*(32E6/4000.0)));
+  1136                           ;main.c: 86:         _delay((unsigned long)((10)*(32E6/4000.0)));
   1137   00282E  0E68               	movlw	104
   1138   002830  6E5D               	movwf	??_main^0,c
   1139   002832  0EE4               	movlw	228
@@ -1163,7 +1163,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   1144   00283A  D7FC               	bra	u3207
   1145   00283C  D000               	nop2	
   1146   00283E                     
-  1147                           ;main.c: 86:         }
+  1147                           ;main.c: 87:         }
   1148   00283E  0100               	movlb	0	; () banked
   1149   002840  2BBD               	incf	main@i& (0+255),f,b
   1150   002842  EFDB  F013         	goto	l2990
@@ -4904,7 +4904,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4779                           
   4780 ;; *************** function _putch *****************
   4781 ;; Defined at:
-  4782 ;;		line 110 in file "main.c"
+  4782 ;;		line 111 in file "main.c"
   4783 ;; Parameters:    Size  Location     Type
   4784 ;;  data            1    wreg     unsigned char 
   4785 ;; Auto vars:     Size  Location     Type
@@ -4953,7 +4953,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4823   0034DA  EF68  F01A         	goto	l86
   4824   0034DE                     u1660:
   4825   0034DE                     
-  4826                           ;main.c: 112:     TXREG1 = data;
+  4826                           ;main.c: 113:     TXREG1 = data;
   4827   0034DE  C001  FFAD         	movff	putch@data,4013	;volatile
   4828   0034E2  0012               	return		;funcret
   4829   0034E4                     __end_of_putch:
@@ -5778,7 +5778,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   5628                           
   5629 ;; *************** function _SPI_write *****************
   5630 ;; Defined at:
-  5631 ;;		line 91 in file "main.c"
+  5631 ;;		line 92 in file "main.c"
   5632 ;; Parameters:    Size  Location     Type
   5633 ;;  data            1    wreg     unsigned char 
   5634 ;; Auto vars:     Size  Location     Type
@@ -5822,22 +5822,22 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   5667                           ;SPI_write@data stored from wreg
   5668   0033BC  6E03               	movwf	SPI_write@data^0,c
   5669   0033BE                     
-  5670                           ;main.c: 92:     uint8_t MSB, LSB;;main.c: 94:     MSB = (uint8_t)(0b00110000 | (data >>
+  5670                           ;main.c: 93:     uint8_t MSB, LSB;;main.c: 95:     MSB = (uint8_t)(0b00110000 | (data >>
       +                           4));
   5671   0033BE  3803               	swapf	SPI_write@data^0,w,c
   5672   0033C0  0B0F               	andlw	15
   5673   0033C2  0930               	iorlw	48
   5674   0033C4  6E01               	movwf	SPI_write@MSB^0,c
   5675                           
-  5676                           ;main.c: 95:     LSB = (uint8_t)(data << 4);
+  5676                           ;main.c: 96:     LSB = (uint8_t)(data << 4);
   5677   0033C6  3803               	swapf	SPI_write@data^0,w,c
   5678   0033C8  0BF0               	andlw	240
   5679   0033CA  6E02               	movwf	SPI_write@LSB^0,c
   5680   0033CC                     
-  5681                           ;main.c: 97:     LATBbits.LB3 = 0;
+  5681                           ;main.c: 98:     LATBbits.LB3 = 0;
   5682   0033CC  968A               	bcf	138,3,c	;volatile
   5683   0033CE                     
-  5684                           ;main.c: 99:     SSP1BUF = MSB;
+  5684                           ;main.c: 100:     SSP1BUF = MSB;
   5685   0033CE  C001  FFC9         	movff	SPI_write@MSB,4041	;volatile
   5686   0033D2                     l77:
   5687   0033D2  A69E               	btfss	3998,3,c	;volatile
@@ -5847,10 +5847,10 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   5691   0033DC  EFE9  F019         	goto	l77
   5692   0033E0                     u2760:
   5693   0033E0                     
-  5694                           ;main.c: 101:     SSP1IF = 0;
+  5694                           ;main.c: 102:     SSP1IF = 0;
   5695   0033E0  969E               	bcf	3998,3,c	;volatile
   5696                           
-  5697                           ;main.c: 103:     SSP1BUF = LSB;
+  5697                           ;main.c: 104:     SSP1BUF = LSB;
   5698   0033E2  C002  FFC9         	movff	SPI_write@LSB,4041	;volatile
   5699   0033E6                     l80:
   5700   0033E6  A69E               	btfss	3998,3,c	;volatile
@@ -5860,10 +5860,10 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   5704   0033F0  EFF3  F019         	goto	l80
   5705   0033F4                     u2770:
   5706   0033F4                     
-  5707                           ;main.c: 105:     SSP1IF = 0;
+  5707                           ;main.c: 106:     SSP1IF = 0;
   5708   0033F4  969E               	bcf	3998,3,c	;volatile
   5709                           
-  5710                           ;main.c: 107:     LATBbits.LB3 = 1;
+  5710                           ;main.c: 108:     LATBbits.LB3 = 1;
   5711   0033F6  868A               	bsf	138,3,c	;volatile
   5712   0033F8  0012               	return		;funcret
   5713   0033FA                     __end_of_SPI_write:
@@ -6351,7 +6351,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.46 build 20240104201356 
-Symbol Table                                                                                   Sat Apr 27 21:54:21 2024
+Symbol Table                                                                                   Sat Apr 27 21:59:08 2024
 
            ___fldiv@aexp 0040             ___fldiv@bexp 003F             ___fldiv@sign 0038  
                      _C0 102D                       _C1 1029                       _C2 1025  

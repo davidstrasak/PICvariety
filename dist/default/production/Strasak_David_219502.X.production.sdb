@@ -63,9 +63,9 @@
 [v _LCD_Send LCD_Send `(v  1 s 1 LCD_Send ]
 "14 D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"91
+"92
 [v _SPI_write SPI_write `(v  1 e 1 0 ]
-"110
+"111
 [v _putch putch `(v  1 e 1 0 ]
 [s S104 . 1 `uc 1 ANSA0 1 0 :1:0 
 `uc 1 ANSA1 1 0 :1:1 
@@ -679,11 +679,11 @@
 "14 D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"54
+"55
 [v main@i i `uc  1 a 1 93 ]
-"51
+"52
 [v main@selectMode selectMode `uc  1 a 1 92 ]
-"89
+"90
 } 0
 "27 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\sinf.c
 [v _sinf sinf `(f  1 e 4 0 ]
@@ -886,13 +886,13 @@
 [v fputc@fp fp `*.39S2036  1 p 2 3 ]
 "24
 } 0
-"110 D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\main.c
+"111 D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\main.c
 [v _putch putch `(v  1 e 1 0 ]
 {
 [v putch@data data `uc  1 a 1 wreg ]
 [v putch@data data `uc  1 a 1 wreg ]
 [v putch@data data `uc  1 a 1 0 ]
-"113
+"114
 } 0
 "1 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\abs.c
 [v _abs abs `(i  1 e 2 0 ]
@@ -944,16 +944,16 @@
 [v ___fldiv@a a `d  1 p 4 43 ]
 "185
 } 0
-"91 D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\main.c
+"92 D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\main.c
 [v _SPI_write SPI_write `(v  1 e 1 0 ]
 {
 [v SPI_write@data data `uc  1 a 1 wreg ]
-"92
+"93
 [v SPI_write@LSB LSB `uc  1 a 1 1 ]
 [v SPI_write@MSB MSB `uc  1 a 1 0 ]
-"91
+"92
 [v SPI_write@data data `uc  1 a 1 wreg ]
-"94
+"95
 [v SPI_write@data data `uc  1 a 1 2 ]
-"108
+"109
 } 0

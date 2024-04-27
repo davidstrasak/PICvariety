@@ -7,6 +7,7 @@
       <itemPath>lcd.h</itemPath>
       <itemPath>includes.h</itemPath>
       <itemPath>configs.h</itemPath>
+      <itemPath>DAC.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -22,6 +23,7 @@
                    projectFiles="true">
       <itemPath>main.c</itemPath>
       <itemPath>lcd.c</itemPath>
+      <itemPath>DAC.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -71,6 +73,8 @@
         <makeCustomizationEnableLongLines>false</makeCustomizationEnableLongLines>
         <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
       </makeCustomizationType>
+      <item path="DAC.c" ex="true" overriding="false">
+      </item>
       <HI-TECH-COMP>
         <property key="additional-warnings" value="true"/>
         <property key="asmlist" value="true"/>
