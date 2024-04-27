@@ -6,10 +6,10 @@ Linker command line:
   --edf=C:\Program Files\Microchip\xc8\v2.46\pic\dat\20240104201356_en.msgs \
   -cn -h+dist/default/production\Strasak_David_219502.X.production.sym \
   --cmf=dist/default/production\Strasak_David_219502.X.production.cmf -z \
-  -Q18F46K22 -oC:\Users\David\AppData\Local\Temp\xcAse98.\driver_tmp_3.o \
+  -Q18F46K22 -oC:\Users\David\AppData\Local\Temp\xcBsg9c.1\driver_tmp_3.o \
   --defsym=__MPLAB_BUILD=1 --fixupoverflow=error \
   -Mdist/default/production/Strasak_David_219502.X.production.map \
-  --md=C:\Users\David\AppData\Local\Temp\xcAse98.\driver_tmp_0.dat -E1 \
+  --md=C:\Users\David\AppData\Local\Temp\xcBsg9c.1\driver_tmp_0.dat -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ACODE=00h-0FFFFh -ACONST=00h-0FFFFh \
   -ASMALLCONST=01000h-010FFhx240 -AMEDIUMCONST=01000h-0FFFFh \
   -ACOMRAM=01h-05Fh -AABS1=00h-0F37h -ABIGRAM=01h-0F37h \
@@ -29,7 +29,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\David\AppData\Local\Temp\xcAse98.\driver_tmp_14.o \
+  C:\Users\David\AppData\Local\Temp\xcBsg9c.1\driver_tmp_14.o \
   dist/default/production\Strasak_David_219502.X.production.o 
 
 Object code version is 3.11
@@ -39,7 +39,7 @@ Machine type is 18F46K22
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\David\AppData\Local\Temp\xcAse98.\driver_tmp_14.o
+C:\Users\David\AppData\Local\Temp\xcBsg9c.1\driver_tmp_14.o
                 config                           300000   300000        4        0       4
                 init                                  0        0        4        0       0
 dist/default/production\Strasak_David_219502.X.production.o
@@ -241,7 +241,9 @@ _ADCON2bits              (abs)        000FC0
 _ADRESH                  (abs)        000FC4
 _ANSELAbits              (abs)        000F38
 _ANSELBbits              (abs)        000F39
+_ANSELDbits              (abs)        000F3B
 _GODONE                  (abs)        007E11
+_LATAbits                (abs)        000F89
 _LATBbits                (abs)        000F8A
 _PORTAbits               (abs)        000F80
 _PORTCbits               (abs)        000F82
@@ -252,9 +254,16 @@ _SSP1BUF                 (abs)        000FC9
 _SSP1CON1bits            (abs)        000FC6
 _SSP1IF                  (abs)        007CF3
 _SSP1STATbits            (abs)        000FC7
+_SSP2ADD                 (abs)        000F6E
+_SSP2BUF                 (abs)        000F6F
+_SSP2CON1bits            (abs)        000F6C
+_SSP2CON2bits            (abs)        000F6B
+_SSP2IF                  (abs)        007D27
+_SSP2STATbits            (abs)        000F6D
 _TRISAbits               (abs)        000F92
 _TRISBbits               (abs)        000F93
 _TRISCbits               (abs)        000F94
+_TRISDbits               (abs)        000F95
 _TX1IF                   (abs)        007CF4
 _TXREG1                  (abs)        000FAD
 _TXSTA1bits              (abs)        000FAC
@@ -468,9 +477,9 @@ ___awmod@dividend        cstackCOMRAM 000001
 ___awmod@divisor         cstackCOMRAM 000003
 ___awmod@sign            cstackCOMRAM 000006
 ___cosdf                 text9        002A7C
-___cosdf$1884            cstackBANK0  000064
-___cosdf$1885            cstackBANK0  000068
-___cosdf$1886            cstackBANK0  00006C
+___cosdf$2426            cstackBANK0  000064
+___cosdf$2427            cstackBANK0  000068
+___cosdf$2428            cstackBANK0  00006C
 ___cosdf@r               cstackBANK0  000060
 ___cosdf@w               cstackBANK0  000070
 ___cosdf@x               cstackCOMRAM 000051
@@ -519,7 +528,7 @@ ___intlo_stack_hi        stack        000000
 ___intlo_stack_lo        stack        000000
 ___param_bank            (abs)        000000
 ___rem_pio2f             text3        001E3C
-___rem_pio2f$1887        cstackBANK0  000085
+___rem_pio2f$2429        cstackBANK0  000085
 ___rem_pio2f@F526        bssBANK0     0000E2
 ___rem_pio2f@fn          cstackBANK0  00008E
 ___rem_pio2f@n           cstackBANK0  000096
@@ -531,9 +540,9 @@ ___rem_pio2f@x           cstackBANK0  00007C
 ___rem_pio2f@y           cstackBANK0  000080
 ___rparam_used           (abs)        000001
 ___sindf                 text2        00284A
-___sindf$1888            cstackBANK0  000068
-___sindf$1889            cstackBANK0  00006C
-___sindf$1890            cstackBANK0  000070
+___sindf$2430            cstackBANK0  000068
+___sindf$2431            cstackBANK0  00006C
+___sindf$2432            cstackBANK0  000070
 ___sindf@r               cstackBANK0  000060
 ___sindf@s               cstackBANK0  000074
 ___sindf@w               cstackBANK0  000064
@@ -626,15 +635,15 @@ _fabsf                   text4        003434
 _flags                   bssCOMRAM    00005E
 _fputc                   text15       0030F6
 _main                    text0        002598
-_main$1881               cstackBANK0  0000B4
-_main$1882               cstackBANK0  0000B8
+_main$2423               cstackBANK0  0000B4
+_main$2424               cstackBANK0  0000B8
 _prec                    bssBANK0     0000E8
 _printf                  text12       00349C
 _putch                   text16       0034CE
 _sinf                    text1        001048
-_sinf$1647               cstackBANK0  00009E
-_sinf$1648               cstackBANK0  0000A2
-_sinf$1883               cstackBANK0  0000A8
+_sinf$2177               cstackBANK0  00009E
+_sinf$2178               cstackBANK0  0000A2
+_sinf$2425               cstackBANK0  0000A8
 _vfpfcnvrt               text14       002C7A
 _vfprintf                text13       00337A
 _width                   bssBANK0     0000E6

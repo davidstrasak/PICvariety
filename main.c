@@ -5,15 +5,8 @@
  * Created on 22 April 2024, 14:16
  */
 
-#pragma config FOSC = HSMP      // Oscillator Selection bits (HS oscillator (medium power 4-16 MHz))
-#pragma config PLLCFG = ON      // 4X PLL Enable (Oscillator multiplied by 4)
-#pragma config WDTEN = OFF      // Watchdog Timer Enable bits (Watch dog timer is always disabled. SWDTEN has no effect.)
+#include "includes.h"
 
-
-#include <xc.h>
-#include <stdio.h>
-#include <math.h>
-#define _XTAL_FREQ 32E6
 
 void SPI_write (uint8_t data);
 void putch(char data);
