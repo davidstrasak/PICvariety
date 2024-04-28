@@ -10307,6 +10307,12 @@ uint8_t GPIOIE;
 void runADC(void);
 # 13 "./includes.h" 2
 
+# 1 "./PWM.h" 1
+
+
+void runPWM(void);
+# 14 "./includes.h" 2
+
 
 void putch(char data);
 # 8 "GPIO.c" 2

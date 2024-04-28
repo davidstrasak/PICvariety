@@ -71,6 +71,10 @@ void main(void) {
                     case 1: // UART
                         break;
                     case 2: // PWM
+                        LCD_ShowString((char)1, "Zmacknete BTN2  ");
+                        LCD_ShowString((char)2, "                ");
+                        runPWM();
+                        setUpAgain = 1;
                         break;
                     case 3: // ADC
                         LCD_ShowString((char)1, "Volty na POT:   ");

@@ -10307,6 +10307,12 @@ uint8_t GPIOIE;
 void runADC(void);
 # 13 "./includes.h" 2
 
+# 1 "./PWM.h" 1
+
+
+void runPWM(void);
+# 14 "./includes.h" 2
+
 
 void putch(char data);
 # 8 "main.c" 2
@@ -10376,6 +10382,10 @@ void main(void) {
                     case 1:
                         break;
                     case 2:
+                        LCD_ShowString((char)1, "Zmacknete BTN2  ");
+                        LCD_ShowString((char)2, "                ");
+                        runPWM();
+                        setUpAgain = 1;
                         break;
                     case 3:
                         LCD_ShowString((char)1, "Volty na POT:   ");

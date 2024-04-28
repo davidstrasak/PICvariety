@@ -7,4 +7,5 @@ DAC.h  \
 menu.h  \
 GPIO.h  \
 interrupt.h  \
-ADC.h 
+ADC.h  \
+PWM.h 

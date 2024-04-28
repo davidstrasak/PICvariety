@@ -1,4 +1,4 @@
-# 1 "ADC.c"
+# 1 "PWM.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "ADC.c" 2
+# 1 "PWM.c" 2
 
 
 
@@ -10316,54 +10316,70 @@ void runPWM(void);
 
 
 void putch(char data);
-# 9 "ADC.c" 2
+# 9 "PWM.c" 2
 
 
+void runPWM(void){
+
+    TRISCbits.RC2 = 1;
+    CCPTMRS0bits.C1TSEL = 0b00;
+    PR2 = 199;
+    CCP1CONbits.CCP1M |= 0b1100;
+    CCP1CONbits.P1M = 0b10;
+    CCPR1L = 0;
+    TMR2IF = 0;
+    TMR2ON = 1;
+    while(!TMR2IF);
+    TRISCbits.RC2 = 1;
 
 
-void runADC(void){
+    TRISAbits.RA4 = 1;
+    TRISAbits.RA2 = 1;
 
+    TRISDbits.RD2 = 0;
+    TRISDbits.RD3 = 0;
+    TRISCbits.RC4 = 0;
+    TRISDbits.RD4 = 0;
+    TRISDbits.RD5 = 0;
+    TRISDbits.RD6 = 0;
+    LATDbits.LD2 = 1;
+    LATDbits.LD3 = 1;
+    LATCbits.LC4 = 1;
+    LATDbits.LD4 = 1;
+    LATDbits.LD5 = 1;
+    LATDbits.LD6 = 1;
 
-ANSELAbits.ANSA5 = 1;
-ANSELEbits.ANSE0 = 1;
+    uint8_t keepState;
+    keepState = 1;
 
-ADCON2bits.ADFM = 1;
-ADCON2bits.ADCS = 0b110;
-ADCON2bits.ACQT = 0b110;
-ADCON0bits.ADON = 1;
+    uint8_t multiplier;
+    multiplier = 0;
 
+    while(keepState){
 
-uint16_t pot1, pot2;
-float voltage1, voltage2;
-char text[17] = "";
-uint8_t keepState = 1;
+        CCPR1L = multiplier*199/5;
 
-while(keepState){
+        if(PORTAbits.RA4){
+            _delay((unsigned long)((50)*(32E6/4000.0)));
+            if(PORTAbits.RA4){
+                while(PORTAbits.RA4);
+                if(multiplier == 5 ){
+                    multiplier = 0;
+                } else if(multiplier <5){
+                    multiplier++;
+                }
+            }
+        }
 
-    ADCON0bits.CHS = 5;
-    GODONE = 1;
-    while(GODONE);
-    pot1 = (uint16_t)((ADRESH << 8) | ADRESL);
-    voltage1 = (float)pot1 / (float)(1023) * (float)(3.3);
-
-
-    ADCON0bits.CHS = 4;
-    GODONE = 1;
-    while(GODONE);
-    pot2 = (uint16_t)((ADRESH << 8) | ADRESL);
-    voltage2 = (float)pot2 / (float)(1023) * (float)(3.3);
-
-    sprintf(text, "POT1:%.1fPOT2:%.1f", voltage1, voltage2);
-    LCD_ShowString(2, text);
-
-    if(PORTAbits.RA2){
+        if(PORTAbits.RA2){
         _delay((unsigned long)((50)*(32E6/4000.0)));
         if(PORTAbits.RA2){
             while(PORTAbits.RA2);
             keepState = 0;
         }
     }
-}
 
-return;
+
+    }
+
 }
