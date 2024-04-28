@@ -10301,6 +10301,12 @@ uint8_t keepStateGPIO;
 uint8_t GPIOIE;
 # 12 "./includes.h" 2
 
+# 1 "./ADC.h" 1
+
+
+void runADC(void);
+# 13 "./includes.h" 2
+
 
 void putch(char data);
 # 8 "main.c" 2
@@ -10334,9 +10340,9 @@ void main(void) {
     uint8_t menuI = 0;
     uint8_t setUpAgain = 0;
 
-    LCD_ShowString((char)1, "Vytvoril:       ");
-    LCD_ShowString((char)2, "David Strasak   ");
-    _delay((unsigned long)((2000)*(32E6/4000.0)));
+
+
+
 
 
     menuI = moveDisplay(menuI,0);
@@ -10362,7 +10368,8 @@ void main(void) {
                 while(PORTAbits.RA3);
                 switch(menuI){
                     case 0:
-                        LCD_Clear();
+                        LCD_ShowString((char)1, "Pozor! Had!!!   ");
+                        LCD_ShowString((char)2, "                ");
                         runGPIO();
                         setUpAgain = 1;
                         break;
@@ -10371,6 +10378,9 @@ void main(void) {
                     case 2:
                         break;
                     case 3:
+                        LCD_ShowString((char)1, "Volty na POT:   ");
+                        runADC();
+                        setUpAgain = 1;
                         break;
                     case 4:
                         LCD_ShowString((char)1, "RB0-A2, BR: 9600");
@@ -10381,8 +10391,6 @@ void main(void) {
                     case 5:
                         break;
                     case 6:
-                        break;
-                    case 7:
                         break;
                 }
             }

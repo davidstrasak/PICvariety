@@ -6,4 +6,5 @@ configs.h  \
 DAC.h  \
 menu.h  \
 GPIO.h  \
-interrupt.h 
+interrupt.h  \
+ADC.h 

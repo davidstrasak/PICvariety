@@ -10302,6 +10302,12 @@ uint8_t keepStateGPIO;
 uint8_t GPIOIE;
 # 12 "./includes.h" 2
 
+# 1 "./ADC.h" 1
+
+
+void runADC(void);
+# 13 "./includes.h" 2
+
 
 void putch(char data);
 # 9 "menu.c" 2

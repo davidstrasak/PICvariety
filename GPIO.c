@@ -79,7 +79,7 @@ void runGPIO(void){
     LED4 = 1;
     LED5 = 1;
     LED6 = 1;
-    TMR1ON = 0; //Vypnuti timeru
+    TMR1ON = 0; //Vypnuti timeru aby nedelal bordel v menu a dalsich modulech
     TMR1IE = 0;
     GPIOIE = 0; //Vypni interrupt pro GPIO funkci
     return;

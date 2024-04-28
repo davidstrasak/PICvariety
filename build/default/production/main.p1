@@ -89,13 +89,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "5 ./lcd.h
 [; ;./lcd.h: 5: void LCD_Init(void);
 [v _LCD_Init `(v ~T0 @X0 0 ef ]
-"6
-[; ;./lcd.h: 6: void LCD_ShowString(char line, char a[]);
-[v _LCD_ShowString `(v ~T0 @X0 0 ef2`uc`*uc ]
-[v F205 `(v ~T0 @X0 1 tf1`ul ]
-"20 C:\Program Files\Microchip\xc8\v2.46\pic\include\builtins.h
-[v __delay `JF205 ~T0 @X0 0 e ]
-[p i __delay ]
 "3 ./menu.h
 [; ;./menu.h: 3: uint8_t moveDisplay(uint8_t menuI, uint8_t where);
 [v _moveDisplay `(uc ~T0 @X0 0 ef2`uc`uc ]
@@ -134,7 +127,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6907
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 6907: extern volatile PORTCbits_t PORTCbits __attribute__((address(0xF82)));
 [v _PORTCbits `VS354 ~T0 @X0 0 e@3970 ]
-"6286
+[v F205 `(v ~T0 @X0 1 tf1`ul ]
+"20 C:\Program Files\Microchip\xc8\v2.46\pic\include\builtins.h
+[v __delay `JF205 ~T0 @X0 0 e ]
+[p i __delay ]
+"6286 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 6286:     struct {
 [s S332 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S332 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
@@ -193,12 +190,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6365
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 6365: extern volatile PORTAbits_t PORTAbits __attribute__((address(0xF80)));
 [v _PORTAbits `VS331 ~T0 @X0 0 e@3968 ]
-"8 ./lcd.h
-[; ;./lcd.h: 8: void LCD_Clear(void);
-[v _LCD_Clear `(v ~T0 @X0 0 ef ]
+"6 ./lcd.h
+[; ;./lcd.h: 6: void LCD_ShowString(char line, char a[]);
+[v _LCD_ShowString `(v ~T0 @X0 0 ef2`uc`*uc ]
 "3 ./GPIO.h
 [; ;./GPIO.h: 3: void runGPIO(void);
 [v _runGPIO `(v ~T0 @X0 0 ef ]
+"3 ./ADC.h
+[; ;./ADC.h: 3: void runADC(void);
+[v _runADC `(v ~T0 @X0 0 ef ]
 "3 ./DAC.h
 [; ;./DAC.h: 3: void runDAC(void);
 [v _runDAC `(v ~T0 @X0 0 ef ]
@@ -1045,15 +1045,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 36:     uint8_t setUpAgain = 0;
 [v _setUpAgain `uc ~T0 @X0 1 a ]
 [e = _setUpAgain -> -> 0 `i `uc ]
-"38
-[; ;main.c: 38:     LCD_ShowString((char)1, "Vytvoril:       ");
-[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 1C ]
-"39
-[; ;main.c: 39:     LCD_ShowString((char)2, "David Strasak   ");
-[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 2C ]
-"40
-[; ;main.c: 40:     _delay((unsigned long)((2000)*(32E6/4000.0)));
-[e ( __delay (1 -> * -> -> 2000 `i `d / .32e6 .4000.0 `ul ]
 "43
 [; ;main.c: 43:     menuI = moveDisplay(menuI,0);
 [e = _menuI ( _moveDisplay (2 , _menuI -> -> 0 `i `uc ]
@@ -1145,73 +1136,79 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 65:                     case 0:
 [e :U 878 ]
 "66
-[; ;main.c: 66:                         LCD_Clear();
-[e ( _LCD_Clear ..  ]
+[; ;main.c: 66:                         LCD_ShowString((char)1, "Pozor! Had!!!   ");
+[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 1C ]
 "67
-[; ;main.c: 67:                         runGPIO();
-[e ( _runGPIO ..  ]
+[; ;main.c: 67:                         LCD_ShowString((char)2, "                ");
+[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 2C ]
 "68
-[; ;main.c: 68:                         setUpAgain = 1;
-[e = _setUpAgain -> -> 1 `i `uc ]
+[; ;main.c: 68:                         runGPIO();
+[e ( _runGPIO ..  ]
 "69
-[; ;main.c: 69:                         break;
-[e $U 876  ]
-"70
-[; ;main.c: 70:                     case 1:
-[e :U 879 ]
-"71
-[; ;main.c: 71:                         break;
-[e $U 876  ]
-"72
-[; ;main.c: 72:                     case 2:
-[e :U 880 ]
-"73
-[; ;main.c: 73:                         break;
-[e $U 876  ]
-"74
-[; ;main.c: 74:                     case 3:
-[e :U 881 ]
-"75
-[; ;main.c: 75:                         break;
-[e $U 876  ]
-"76
-[; ;main.c: 76:                     case 4:
-[e :U 882 ]
-"77
-[; ;main.c: 77:                         LCD_ShowString((char)1, "RB0-A2, BR: 9600");
-[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 3C ]
-"78
-[; ;main.c: 78:                         LCD_ShowString((char)2, "1:tr,2:sin,3:pil");
-[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 4C ]
-"79
-[; ;main.c: 79:                         runDAC();
-[e ( _runDAC ..  ]
-"80
-[; ;main.c: 80:                         setUpAgain = 1;
+[; ;main.c: 69:                         setUpAgain = 1;
 [e = _setUpAgain -> -> 1 `i `uc ]
+"70
+[; ;main.c: 70:                         break;
+[e $U 876  ]
+"71
+[; ;main.c: 71:                     case 1:
+[e :U 879 ]
+"72
+[; ;main.c: 72:                         break;
+[e $U 876  ]
+"73
+[; ;main.c: 73:                     case 2:
+[e :U 880 ]
+"74
+[; ;main.c: 74:                         break;
+[e $U 876  ]
+"75
+[; ;main.c: 75:                     case 3:
+[e :U 881 ]
+"76
+[; ;main.c: 76:                         LCD_ShowString((char)1, "Volty na POT:   ");
+[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 3C ]
+"77
+[; ;main.c: 77:                         runADC();
+[e ( _runADC ..  ]
+"78
+[; ;main.c: 78:                         setUpAgain = 1;
+[e = _setUpAgain -> -> 1 `i `uc ]
+"79
+[; ;main.c: 79:                         break;
+[e $U 876  ]
+"80
+[; ;main.c: 80:                     case 4:
+[e :U 882 ]
 "81
-[; ;main.c: 81:                         break;
-[e $U 876  ]
+[; ;main.c: 81:                         LCD_ShowString((char)1, "RB0-A2, BR: 9600");
+[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 4C ]
 "82
-[; ;main.c: 82:                     case 5:
-[e :U 883 ]
+[; ;main.c: 82:                         LCD_ShowString((char)2, "1:tr,2:sin,3:pil");
+[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 5C ]
 "83
-[; ;main.c: 83:                         break;
-[e $U 876  ]
+[; ;main.c: 83:                         runDAC();
+[e ( _runDAC ..  ]
 "84
-[; ;main.c: 84:                     case 6:
-[e :U 884 ]
+[; ;main.c: 84:                         setUpAgain = 1;
+[e = _setUpAgain -> -> 1 `i `uc ]
 "85
 [; ;main.c: 85:                         break;
 [e $U 876  ]
 "86
-[; ;main.c: 86:                     case 7:
-[e :U 885 ]
+[; ;main.c: 86:                     case 5:
+[e :U 883 ]
 "87
 [; ;main.c: 87:                         break;
 [e $U 876  ]
 "88
-[; ;main.c: 88:                 }
+[; ;main.c: 88:                     case 6:
+[e :U 884 ]
+"89
+[; ;main.c: 89:                         break;
+[e $U 876  ]
+"90
+[; ;main.c: 90:                 }
 }
 [e $U 876  ]
 [e :U 877 ]
@@ -1222,53 +1219,53 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 4 `i 882
  , $ -> 5 `i 883
  , $ -> 6 `i 884
- , $ -> 7 `i 885
  876 ]
 [e :U 876 ]
-"89
-[; ;main.c: 89:             }
+"91
+[; ;main.c: 91:             }
 }
 [e :U 872 ]
-"91
-[; ;main.c: 91:         }
+"93
+[; ;main.c: 93:         }
 }
 [e :U 871 ]
-"92
-[; ;main.c: 92:         if(PORTAbits.RA2){
-[e $ ! != -> . . _PORTAbits 0 2 `i -> 0 `i 886  ]
-{
 "94
-[; ;main.c: 94:         }
+[; ;main.c: 94:         if(PORTAbits.RA2){
+[e $ ! != -> . . _PORTAbits 0 2 `i -> 0 `i 885  ]
+{
+"96
+[; ;main.c: 96:         }
+}
+[e :U 885 ]
+"98
+[; ;main.c: 98:         if(setUpAgain){
+[e $ ! != -> _setUpAgain `i -> 0 `i 886  ]
+{
+"99
+[; ;main.c: 99:         menuI = moveDisplay(menuI,0);
+[e = _menuI ( _moveDisplay (2 , _menuI -> -> 0 `i `uc ]
+"100
+[; ;main.c: 100:         setUpAgain = 0;
+[e = _setUpAgain -> -> 0 `i `uc ]
+"101
+[; ;main.c: 101:         }
 }
 [e :U 886 ]
-"96
-[; ;main.c: 96:         if(setUpAgain){
-[e $ ! != -> _setUpAgain `i -> 0 `i 887  ]
-{
-"97
-[; ;main.c: 97:         menuI = moveDisplay(menuI,0);
-[e = _menuI ( _moveDisplay (2 , _menuI -> -> 0 `i `uc ]
-"98
-[; ;main.c: 98:         setUpAgain = 0;
-[e = _setUpAgain -> -> 0 `i `uc ]
-"99
-[; ;main.c: 99:         }
-}
-[e :U 887 ]
-"100
-[; ;main.c: 100:     }
+"102
+[; ;main.c: 102:     }
 }
 [e :U 858 ]
 [e $U 859  ]
 [e :U 860 ]
-"101
-[; ;main.c: 101:     return;
+"103
+[; ;main.c: 103:     return;
 [e $UE 857  ]
-"102
-[; ;main.c: 102: }
+"104
+[; ;main.c: 104: }
 [e :UE 857 ]
 }
-[a 4C 49 58 116 114 44 50 58 115 105 110 44 51 58 112 105 108 0 ]
-[a 3C 82 66 48 45 65 50 44 32 66 82 58 32 57 54 48 48 0 ]
-[a 2C 68 97 118 105 100 32 83 116 114 97 115 97 107 32 32 32 0 ]
-[a 1C 86 121 116 118 111 114 105 108 58 32 32 32 32 32 32 32 0 ]
+[a 5C 49 58 116 114 44 50 58 115 105 110 44 51 58 112 105 108 0 ]
+[a 4C 82 66 48 45 65 50 44 32 66 82 58 32 57 54 48 48 0 ]
+[a 3C 86 111 108 116 121 32 110 97 32 80 79 84 58 32 32 32 0 ]
+[a 1C 80 111 122 111 114 33 32 72 97 100 33 33 33 32 32 32 0 ]
+[a 2C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]

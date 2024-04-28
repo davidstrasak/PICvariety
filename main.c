@@ -35,9 +35,9 @@ void main(void) {
     uint8_t menuI = 0;
     uint8_t setUpAgain = 0;
     
-    LCD_ShowString((char)1, "Vytvoril:       ");
-    LCD_ShowString((char)2, "David Strasak   ");
-    __delay_ms(2000);
+//    LCD_ShowString((char)1, "Vytvoril:       ");
+//    LCD_ShowString((char)2, "David Strasak   ");
+//    __delay_ms(2000);
     
     //Zobrazeni menu
     menuI = moveDisplay(menuI,0);
@@ -63,15 +63,19 @@ void main(void) {
                 while(PORTAbits.RA3);
                 switch(menuI){
                     case 0: // GPIO
-                        LCD_Clear();
+                        LCD_ShowString((char)1, "Pozor! Had!!!   ");
+                        LCD_ShowString((char)2, "                ");
                         runGPIO();
                         setUpAgain = 1;
                         break;
-                    case 1:
+                    case 1: // UART
                         break;
-                    case 2:
+                    case 2: // PWM
                         break;
-                    case 3:
+                    case 3: // ADC
+                        LCD_ShowString((char)1, "Volty na POT:   ");
+                        runADC();
+                        setUpAgain = 1;
                         break;
                     case 4: // DAC
                         LCD_ShowString((char)1, "RB0-A2, BR: 9600");
@@ -79,11 +83,9 @@ void main(void) {
                         runDAC();
                         setUpAgain = 1;
                         break;
-                    case 5:
+                    case 5: // GAME
                         break;
-                    case 6:
-                        break;
-                    case 7:
+                    case 6: // MUSIC
                         break;
                 }
             }
