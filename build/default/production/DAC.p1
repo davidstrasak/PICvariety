@@ -1162,6 +1162,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x PLLCFG  =  ON       ]
 "5
 [p x WDTEN  =  OFF       ]
+"4 ./interrupt.h
+[; ;./interrupt.h: 4: uint8_t keepStateGPIO;
+[v _keepStateGPIO `uc ~T0 @X0 1 e ]
+"5
+[; ;./interrupt.h: 5: uint8_t GPIOIE;
+[v _GPIOIE `uc ~T0 @X0 1 e ]
 "10 DAC.c
 [; ;DAC.c: 10: void runDAC(void) {
 [v _runDAC `(v ~T0 @X0 1 ef ]

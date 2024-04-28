@@ -10286,6 +10286,14 @@ uint8_t moveDisplay(uint8_t menuI, uint8_t where);
 void runGPIO(void);
 # 11 "./includes.h" 2
 
+# 1 "./interrupt.h" 1
+
+
+
+uint8_t keepStateGPIO;
+uint8_t GPIOIE;
+# 12 "./includes.h" 2
+
 
 void putch(char data);
 # 1 "lcd.c" 2

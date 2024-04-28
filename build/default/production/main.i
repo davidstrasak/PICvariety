@@ -10293,6 +10293,14 @@ uint8_t moveDisplay(uint8_t menuI, uint8_t where);
 void runGPIO(void);
 # 11 "./includes.h" 2
 
+# 1 "./interrupt.h" 1
+
+
+
+uint8_t keepStateGPIO;
+uint8_t GPIOIE;
+# 12 "./includes.h" 2
+
 
 void putch(char data);
 # 8 "main.c" 2
@@ -10326,10 +10334,9 @@ void main(void) {
     uint8_t menuI = 0;
     uint8_t setUpAgain = 0;
 
-
     LCD_ShowString((char)1, "Vytvoril:       ");
     LCD_ShowString((char)2, "David Strasak   ");
-    _delay((unsigned long)((3000)*(32E6/4000.0)));
+    _delay((unsigned long)((2000)*(32E6/4000.0)));
 
 
     menuI = moveDisplay(menuI,0);
@@ -10355,7 +10362,9 @@ void main(void) {
                 while(PORTAbits.RA3);
                 switch(menuI){
                     case 0:
+                        LCD_Clear();
                         runGPIO();
+                        setUpAgain = 1;
                         break;
                     case 1:
                         break;

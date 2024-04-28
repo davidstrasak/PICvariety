@@ -1,4 +1,4 @@
-# 1 "DAC.c"
+# 1 "globalni_promenne.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,9 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "DAC.c" 2
+# 1 "globalni_promenne.c" 2
+
+
 
 
 
@@ -10292,118 +10294,9 @@ uint8_t moveDisplay(uint8_t menuI, uint8_t where);
 void runGPIO(void);
 # 11 "./includes.h" 2
 
-# 1 "./interrupt.h" 1
 
-
+void putch(char data);
+# 9 "globalni_promenne.c" 2
 
 uint8_t keepStateGPIO;
 uint8_t GPIOIE;
-# 12 "./includes.h" 2
-
-
-void putch(char data);
-# 7 "DAC.c" 2
-
-
-
-void runDAC(void) {
-
-    TRISCbits.RC0 = 1;
-    TRISAbits.RA4 = 1;
-    TRISAbits.RA3 = 1;
-    TRISAbits.RA2 = 1;
-    ANSELAbits.ANSA3 = 0;
-    ANSELAbits.ANSA2 = 0;
-
-
-    TRISBbits.RB3 = 0;
-    TRISCbits.RC3 = 0;
-    TRISCbits.RC5 = 0;
-
-    SSP1CON1bits.SSPM = 0b0010;
-    SSP1CON1bits.CKP = 0;
-    SSP1STATbits.CKE = 1;
-    SSP1CON1bits.SSPEN = 1;
-
-
-    ANSELBbits.ANSB0 = 1;
-
-    ADCON2bits.ADFM = 0;
-    ADCON2bits.ADCS = 0b110;
-    ADCON2bits.ACQT = 0b110;
-    ADCON0bits.ADON = 1;
-
-
-    SPBRG1 = 51;
-    RCSTA1bits.SPEN = 1;
-    TXSTA1bits.SYNC = 0;
-    TXSTA1bits.TXEN = 1;
-    RCSTA1bits.CREN = 1;
-
-
-    LATBbits.LB3 = 1;
-
-    ADCON0bits.CHS = 12;
-
-    uint8_t selectModeDAC = 1;
-    uint8_t keepState;
-    keepState = 1;
-    uint8_t DACindex = 0;
-
-    while(keepState){
-        switch(selectModeDAC){
-            case 1:
-                if(DACindex<255/2){
-                    SPI_write(DACindex);
-                }
-                if(DACindex>=255/2){
-                    SPI_write(255-DACindex);
-                }
-                break;
-            case 2:
-                SPI_write((uint8_t)(255/2*sinf(2*3.14*DACindex/255)+255/2));
-                break;
-            case 3:
-                SPI_write(255 - DACindex);
-                break;
-        }
-        GODONE = 1;
-        while(GODONE);
-
-        printf("%d \r", ADRESH);
-        if(PORTCbits.RC0){
-            selectModeDAC = 1;
-        }
-        if(PORTAbits.RA4){
-            selectModeDAC = 2;
-        }
-        if(PORTAbits.RA3){
-            selectModeDAC = 3;
-        }
-        if(PORTAbits.RA2){
-            keepState = 0;
-        }
-        DACindex++;
-        _delay((unsigned long)((10)*(32E6/4000.0)));
-        }
-    return;
-}
-
-void SPI_write (uint8_t data){
-    uint8_t MSB, LSB;
-
-    MSB = (uint8_t)(0b00110000 | (data >> 4));
-    LSB = (uint8_t)(data << 4);
-
-    LATBbits.LB3 = 0;
-
-    SSP1BUF = MSB;
-    while(!SSP1IF);
-    SSP1IF = 0;
-
-    SSP1BUF = LSB;
-    while(!SSP1IF);
-    SSP1IF = 0;
-
-    LATBbits.LB3 = 1;
-}

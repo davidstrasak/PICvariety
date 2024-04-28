@@ -10293,18 +10293,28 @@ uint8_t moveDisplay(uint8_t menuI, uint8_t where);
 void runGPIO(void);
 # 11 "./includes.h" 2
 
+# 1 "./interrupt.h" 1
+
+
+
+uint8_t keepStateGPIO;
+uint8_t GPIOIE;
+# 12 "./includes.h" 2
+
 
 void putch(char data);
 # 8 "GPIO.c" 2
 
 
-    void LED1_Control(unsigned char state) { LATDbits.LD2 = state; }
-    void LED2_Control(unsigned char state) { LATDbits.LD3 = state; }
-    void LED3_Control(unsigned char state) { LATCbits.LC4 = state; }
-    void LED4_Control(unsigned char state) { LATDbits.LD4 = state; }
-    void LED5_Control(unsigned char state) { LATDbits.LD5 = state; }
-    void LED6_Control(unsigned char state) { LATDbits.LD6 = state; }
-# 31 "GPIO.c"
+void LED1_Control(unsigned char state) { LATDbits.LD2 = state; }
+void LED2_Control(unsigned char state) { LATDbits.LD3 = state; }
+void LED3_Control(unsigned char state) { LATCbits.LC4 = state; }
+void LED4_Control(unsigned char state) { LATDbits.LD4 = state; }
+void LED5_Control(unsigned char state) { LATDbits.LD5 = state; }
+void LED6_Control(unsigned char state) { LATDbits.LD6 = state; }
+
+
+
 void runGPIO(void){
 
     TRISDbits.RD2 = 0;
@@ -10325,34 +10335,39 @@ void runGPIO(void){
     ANSELAbits.ANSA2 = 0;
 
 
-    uint8_t keepState;
-    keepState = 1;
+
+    T1CONbits.TMR1CS = 0b00;
+    T1CONbits.T1CKPS = 0b11;
+    TMR1IE = 1;
+    PEIE = 1;
+    GIE = 1;
+    GPIOIE = 1;
+    TMR1IF = 1;
+    TMR1 = 0xFFFF - (25000 - 1);
+    TMR1ON = 1;
+
+
+    keepStateGPIO = 1;
     uint8_t GPIOindex;
     GPIOindex = 0;
     uint8_t GPIOreverse;
     GPIOreverse = 0;
 
     void (*LEDControl[])(unsigned char) = {LED1_Control, LED2_Control, LED3_Control, LED4_Control, LED5_Control, LED6_Control};
-
-    while(keepState){
-
     unsigned char states[] = {0b100000, 0b110000, 0b011000, 0b001100, 0b000110, 0b000011, 0b000001, 0b000011, 0b000110, 0b001100, 0b011000, 0b110000};
-    int numStates = sizeof(states) / sizeof(states[0]);
+    int numberOfStates = sizeof(states) / sizeof(states[0]);
+    uint8_t GPIOi;
+    GPIOi = 0;
 
-    for(int i = 0; i < numStates; i++) {
+    while(keepStateGPIO){
 
         for(int j = 0; j < 6; j++) {
-            (*LEDControl[j])(!((states[i] >> (5 - j)) & 0x1));
+            (*LEDControl[j])(!((states[GPIOi] >> (5 - j)) & 0x1));
         }
-        _delay((unsigned long)((500)*(32E6/4000.0)));
-    }
-
-        if(PORTAbits.RA2){
-            _delay((unsigned long)((50)*(32E6/4000.0)));
-            if(PORTAbits.RA2){
-                while(PORTAbits.RA2);
-                keepState = 0;
-            }
+        _delay((unsigned long)((400)*(32E6/4000.0)));
+        GPIOi++;
+        if(GPIOi == numberOfStates){
+            GPIOi = 0;
         }
     }
 
@@ -10363,5 +10378,8 @@ void runGPIO(void){
     LATDbits.LD4 = 1;
     LATDbits.LD5 = 1;
     LATDbits.LD6 = 1;
+    TMR1ON = 0;
+    TMR1IE = 0;
+    GPIOIE = 0;
     return;
 }

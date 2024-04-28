@@ -9,6 +9,7 @@
 #include "DAC.h"
 #include "menu.h"
 #include "GPIO.h"
+#include "interrupt.h"
 #define _XTAL_FREQ 32E6
 void putch(char data);
 #endif

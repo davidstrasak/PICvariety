@@ -16,7 +16,7 @@ void main(void) {
     ANSELAbits.ANSA3 = 0;
     ANSELAbits.ANSA2 = 0;
     
-    //Turn off LEDs so they don't shine all the time
+    //Vypnuti LEDek aby porad nesvitily
     TRISDbits.RD2 = 0;
     TRISDbits.RD3 = 0;
     TRISCbits.RC4 = 0;
@@ -30,17 +30,16 @@ void main(void) {
     LED5 = 1;
     LED6 = 1;
     
-    // Other initialising
+    // Dalsi inicializace
     LCD_Init();
     uint8_t menuI = 0;
     uint8_t setUpAgain = 0;
     
-//    LCD_Clear();
     LCD_ShowString((char)1, "Vytvoril:       ");
     LCD_ShowString((char)2, "David Strasak   ");
-    __delay_ms(3000);
+    __delay_ms(2000);
     
-    //Display menu setup
+    //Zobrazeni menu
     menuI = moveDisplay(menuI,0);
     
     while(1){
@@ -63,8 +62,10 @@ void main(void) {
             if(PORTAbits.RA3){
                 while(PORTAbits.RA3);
                 switch(menuI){
-                    case 0:
+                    case 0: // GPIO
+                        LCD_Clear();
                         runGPIO();
+                        setUpAgain = 1;
                         break;
                     case 1:
                         break;
@@ -72,7 +73,7 @@ void main(void) {
                         break;
                     case 3:
                         break;
-                    case 4:
+                    case 4: // DAC
                         LCD_ShowString((char)1, "RB0-A2, BR: 9600");
                         LCD_ShowString((char)2, "1:tr,2:sin,3:pil");
                         runDAC();

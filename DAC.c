@@ -18,7 +18,7 @@ void runDAC(void) {
     
     //SPI setup
     TRISBbits.RB3 = 0;  // Slave select
-    TRISCbits.RC3 = 0;  // Serial clock - is an output because the controller is acting as a master
+    TRISCbits.RC3 = 0;  // Serial clock - je vystup protoze MCU je master
     TRISCbits.RC5 = 0;  // Serial data out
     
     SSP1CON1bits.SSPM = 0b0010;     //Master FOSC / 64
@@ -53,7 +53,7 @@ void runDAC(void) {
     
     while(keepState){
         switch(selectModeDAC){
-            case 1:
+            case 1: // Trojuhelnik
                 if(DACindex<255/2){
                     SPI_write(DACindex);
                 }
@@ -61,10 +61,10 @@ void runDAC(void) {
                     SPI_write(255-DACindex);
                 }
                 break;
-            case 2:
+            case 2: // Sinus
                 SPI_write((uint8_t)(255/2*sin(2*3.14*DACindex/255)+255/2));
                 break;
-            case 3:
+            case 3: // Pila
                 SPI_write(255 - DACindex);
                 break;
         }
