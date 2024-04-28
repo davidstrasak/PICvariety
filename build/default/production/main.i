@@ -10326,6 +10326,12 @@ void main(void) {
     uint8_t menuI = 0;
     uint8_t setUpAgain = 0;
 
+
+    LCD_ShowString((char)1, "Vytvoril:       ");
+    LCD_ShowString((char)2, "David Strasak   ");
+    _delay((unsigned long)((3000)*(32E6/4000.0)));
+
+
     menuI = moveDisplay(menuI,0);
 
     while(1){

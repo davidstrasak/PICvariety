@@ -34,6 +34,12 @@ void main(void) {
     LCD_Init();
     uint8_t menuI = 0;
     uint8_t setUpAgain = 0;
+    
+//    LCD_Clear();
+    LCD_ShowString((char)1, "Vytvoril:       ");
+    LCD_ShowString((char)2, "David Strasak   ");
+    __delay_ms(3000);
+    
     //Display menu setup
     menuI = moveDisplay(menuI,0);
     
