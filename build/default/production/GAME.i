@@ -10508,7 +10508,6 @@ void runGAME(void){
                     GAMEround += 1;
                     randomNumber = (uint16_t)(2 + rand() / ((0x7fff) / (1023 - 2 + 1) + 1));
                     sprintf(approxText, "%u                ", randomNumber);
-                    keepStateGAME = 1;
                     LCD_ShowString((char)1, approxText);
                 } else {
                     ADCON0bits.ADON = 0;

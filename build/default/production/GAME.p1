@@ -1555,44 +1555,41 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;GAME.c: 172:                     sprintf(approxText, "%u                ", randomNumber);
 [e ( _sprintf (1 , (. , &U _approxText :s 3C -> _randomNumber `ui ]
 "173
-[; ;GAME.c: 173:                     keepStateGAME = 1;
-[e = _keepStateGAME -> -> 1 `i `uc ]
-"174
-[; ;GAME.c: 174:                     LCD_ShowString((char)1, approxText);
+[; ;GAME.c: 173:                     LCD_ShowString((char)1, approxText);
 [e ( _LCD_ShowString (2 , -> -> 1 `i `uc &U _approxText ]
-"175
-[; ;GAME.c: 175:                 } else {
+"174
+[; ;GAME.c: 174:                 } else {
 }
 [e $U 888  ]
 [e :U 887 ]
 {
-"176
-[; ;GAME.c: 176:                     ADCON0bits.ADON = 0;
+"175
+[; ;GAME.c: 175:                     ADCON0bits.ADON = 0;
 [e = . . _ADCON0bits 1 0 -> -> 0 `i `uc ]
-"177
-[; ;GAME.c: 177:                     sprintf(approxText, "Skore: %u        ", GAMEround - 1);
+"176
+[; ;GAME.c: 176:                     sprintf(approxText, "Skore: %u        ", GAMEround - 1);
 [e ( _sprintf (1 , (. , &U _approxText :s 4C - -> _GAMEround `i -> 1 `i ]
-"178
-[; ;GAME.c: 178:                     LCD_ShowString((char)1, "GAME OVER       ");
+"177
+[; ;GAME.c: 177:                     LCD_ShowString((char)1, "GAME OVER       ");
 [e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 5C ]
-"179
-[; ;GAME.c: 179:                     LCD_ShowString((char)2, approxText);
+"178
+[; ;GAME.c: 178:                     LCD_ShowString((char)2, approxText);
 [e ( _LCD_ShowString (2 , -> -> 2 `i `uc &U _approxText ]
-"180
-[; ;GAME.c: 180:                     keepStateGAME = 0;
+"179
+[; ;GAME.c: 179:                     keepStateGAME = 0;
 [e = _keepStateGAME -> -> 0 `i `uc ]
-"181
-[; ;GAME.c: 181:                     _delay((unsigned long)((2000)*(32E6/4000.0)));
+"180
+[; ;GAME.c: 180:                     _delay((unsigned long)((2000)*(32E6/4000.0)));
 [e ( __delay (1 -> * -> -> 2000 `i `d / .32e6 .4000.0 `ul ]
-"182
-[; ;GAME.c: 182:                 }
+"181
+[; ;GAME.c: 181:                 }
 }
 [e :U 888 ]
-"183
-[; ;GAME.c: 183:                 break;
+"182
+[; ;GAME.c: 182:                 break;
 [e $U 877  ]
-"184
-[; ;GAME.c: 184:         }
+"183
+[; ;GAME.c: 183:         }
 }
 [e $U 877  ]
 [e :U 878 ]
@@ -1606,46 +1603,46 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 7 `i 886
  877 ]
 [e :U 877 ]
-"185
-[; ;GAME.c: 185:     }
+"184
+[; ;GAME.c: 184:     }
 }
 [e :U 859 ]
 "72
 [; ;GAME.c: 72:     while(keepStateGAME){
 [e $ != -> _keepStateGAME `i -> 0 `i 860  ]
 [e :U 861 ]
-"188
-[; ;GAME.c: 188:     LATDbits.LD2 = 1;
+"187
+[; ;GAME.c: 187:     LATDbits.LD2 = 1;
 [e = . . _LATDbits 1 2 -> -> 1 `i `uc ]
-"189
-[; ;GAME.c: 189:     LATDbits.LD3 = 1;
+"188
+[; ;GAME.c: 188:     LATDbits.LD3 = 1;
 [e = . . _LATDbits 1 3 -> -> 1 `i `uc ]
-"190
-[; ;GAME.c: 190:     LATCbits.LC4 = 1;
+"189
+[; ;GAME.c: 189:     LATCbits.LC4 = 1;
 [e = . . _LATCbits 1 4 -> -> 1 `i `uc ]
-"191
-[; ;GAME.c: 191:     LATDbits.LD4 = 1;
+"190
+[; ;GAME.c: 190:     LATDbits.LD4 = 1;
 [e = . . _LATDbits 1 4 -> -> 1 `i `uc ]
-"192
-[; ;GAME.c: 192:     LATDbits.LD5 = 1;
+"191
+[; ;GAME.c: 191:     LATDbits.LD5 = 1;
 [e = . . _LATDbits 1 5 -> -> 1 `i `uc ]
-"193
-[; ;GAME.c: 193:     LATDbits.LD6 = 1;
+"192
+[; ;GAME.c: 192:     LATDbits.LD6 = 1;
 [e = . . _LATDbits 1 6 -> -> 1 `i `uc ]
-"194
-[; ;GAME.c: 194:     TMR1ON = 0;
+"193
+[; ;GAME.c: 193:     TMR1ON = 0;
 [e = _TMR1ON -> -> 0 `i `b ]
-"195
-[; ;GAME.c: 195:     TMR1IE = 0;
+"194
+[; ;GAME.c: 194:     TMR1IE = 0;
 [e = _TMR1IE -> -> 0 `i `b ]
-"196
-[; ;GAME.c: 196:     GAMEIE = 0;
+"195
+[; ;GAME.c: 195:     GAMEIE = 0;
 [e = _GAMEIE -> -> 0 `i `uc ]
-"198
-[; ;GAME.c: 198:     return;
+"197
+[; ;GAME.c: 197:     return;
 [e $UE 858  ]
-"199
-[; ;GAME.c: 199: }
+"198
+[; ;GAME.c: 198: }
 [e :UE 858 ]
 }
 [p f _sprintf 75498496 ]
