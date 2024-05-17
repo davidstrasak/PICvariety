@@ -10441,6 +10441,7 @@ void main(void) {
                         LCD_ShowString((char)2, "pomoci BTN4     ");
                         _delay((unsigned long)((2000)*(32E6/4000.0)));
                         LCD_ShowString((char)1, "Pripravit       ");
+                        LCD_ShowString((char)2, "                ");
                         _delay((unsigned long)((1000)*(32E6/4000.0)));
                         LCD_ShowString((char)2, "           Pozor");
                         _delay((unsigned long)((2000)*(32E6/4000.0)));

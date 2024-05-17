@@ -103,6 +103,7 @@ void main(void) {
                         LCD_ShowString((char)2, "pomoci BTN4     ");
                         __delay_ms(2000);
                         LCD_ShowString((char)1, "Pripravit       ");
+                        LCD_ShowString((char)2, "                ");
                         __delay_ms(1000);
                         LCD_ShowString((char)2, "           Pozor");
                         __delay_ms(2000);
