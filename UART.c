@@ -1,10 +1,3 @@
-/*
- * File:   UART.c
- * Author: student
- *
- * Created on 29 April 2024, 15:02
- */
-
 
 #include "includes.h"
 
@@ -12,8 +5,8 @@ void runUART(void){
     //GPIO
     TRISAbits.RA2 = 1;
     
-    ANSELC = 0x00;          // vypnuti analogovych funkci na PORTC
-    TRISD = 0x00;           // PORTD jako vystup
+    ANSELCbits.ANSC6 = 0;
+    ANSELCbits.ANSC7 = 0;
     TRISCbits.TRISC6 = 1;   // TX pin jako vstup
     TRISCbits.TRISC7 = 1;   // rx pin jako vstup
    
@@ -25,6 +18,7 @@ void runUART(void){
     TXSTA1bits.TXEN = 1;      // zapnuti TX
     RCSTA1bits.CREN = 1;      // zapnuti RX 
     
+    UARTIE = 1;
     RC1IE = 1;
     PEIE = 1;
     GIE = 1;
@@ -33,9 +27,13 @@ void runUART(void){
     
     while(keepState){        
         if(gmail.full){
-            LED1 ^= 1;
             printf("Dostal jsem %s \n",gmail.data);
             gmail.full = 0;
+            
+            for(int p = 0; p < 60; p++) {
+                gmail.data[p] = '\0';
+            }
+            
         }
         
         if(PORTAbits.RA2){

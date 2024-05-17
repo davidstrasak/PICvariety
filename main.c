@@ -33,7 +33,7 @@ void main(void) {
     
     // Dalsi inicializace
     LCD_Init();
-    uint8_t menuI = 0;
+    uint8_t menuI = 0;          //menuI je promenna co si predava index menu pokazde co ho zmenim
     uint8_t setUpAgain = 0;
     
 //    LCD_ShowString((char)1, "Vytvoril:       ");
@@ -44,21 +44,21 @@ void main(void) {
     menuI = moveDisplay(menuI,0);
     
     while(1){
-        if(PORTCbits.RC0){
+        if(PORTCbits.RC0){ //btn1
             __delay_ms(50);
             if(PORTCbits.RC0){
                 while(PORTCbits.RC0);
                 menuI = moveDisplay(menuI,2);
             }
         }
-        if(PORTAbits.RA4){
+        if(PORTAbits.RA4){ //btn2
             __delay_ms(50);
             if(PORTAbits.RA4){
                 while(PORTAbits.RA4);
                 menuI = moveDisplay(menuI,1);
             }
         }
-        if(PORTAbits.RA3){
+        if(PORTAbits.RA3){ //btn3
             __delay_ms(50);
             if(PORTAbits.RA3){
                 while(PORTAbits.RA3);
@@ -100,7 +100,7 @@ void main(void) {
             }
             
         }
-        if(PORTAbits.RA2){
+        if(PORTAbits.RA2){ //btn4
             
         }
         

@@ -19,19 +19,20 @@ void __interrupt() ISR(void){
             }
         }
 
-        TMR1 = 0xFFFF - (25000 - 1);    //Hazi interrupt kazdych 40x za sekundu
+        TMR1 = 0xFFFF - (25000 - 1);    //Hazi interrupt 40x za sekundu
         TMR1IF = 0;                     //Vynulovani flagu
     }
     
     if(RC1IE && RC1IF && UARTIE){
         char temp = RCREG1;
         static int i = 0;
-        
+                
         if(temp != '\n'){
             gmail.data[i] = temp;
             i++;
         } else {
             gmail.full = 1;
+            gmail.data[i] = '\0';
             i = 0;
         }
     }
