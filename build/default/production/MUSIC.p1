@@ -802,6 +802,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _runMUSIC ]
 [f ]
+"11
+[; ;MUSIC.c: 11:     return;
+[e $UE 858  ]
 "12
 [; ;MUSIC.c: 12: }
 [e :UE 858 ]

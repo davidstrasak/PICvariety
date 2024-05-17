@@ -97,6 +97,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "5 ./lcd.h
 [; ;./lcd.h: 5: void LCD_Init(void);
 [v _LCD_Init `(v ~T0 @X0 0 ef ]
+"6
+[; ;./lcd.h: 6: void LCD_ShowString(char line, char a[]);
+[v _LCD_ShowString `(v ~T0 @X0 0 ef2`uc`*uc ]
 "3 ./menu.h
 [; ;./menu.h: 3: uint8_t moveDisplay(uint8_t menuI, uint8_t where);
 [v _moveDisplay `(uc ~T0 @X0 0 ef2`uc`uc ]
@@ -194,9 +197,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6365
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 6365: extern volatile PORTAbits_t PORTAbits __attribute__((address(0xF80)));
 [v _PORTAbits `VS331 ~T0 @X0 0 e@3968 ]
-"6 ./lcd.h
-[; ;./lcd.h: 6: void LCD_ShowString(char line, char a[]);
-[v _LCD_ShowString `(v ~T0 @X0 0 ef2`uc`*uc ]
 "3 ./GPIO.h
 [; ;./GPIO.h: 3: void runGPIO(void);
 [v _runGPIO `(v ~T0 @X0 0 ef ]
@@ -1086,6 +1086,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 37:     uint8_t setUpAgain = 0;
 [v _setUpAgain `uc ~T0 @X0 1 a ]
 [e = _setUpAgain -> -> 0 `i `uc ]
+"39
+[; ;main.c: 39:     LCD_ShowString((char)1, "Vytvoril:       ");
+[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 1C ]
+"40
+[; ;main.c: 40:     LCD_ShowString((char)2, "David Strasak   ");
+[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 2C ]
+"41
+[; ;main.c: 41:     _delay((unsigned long)((2000)*(32E6/4000.0)));
+[e ( __delay (1 -> * -> -> 2000 `i `d / .32e6 .4000.0 `ul ]
 "44
 [; ;main.c: 44:     menuI = moveDisplay(menuI,0);
 [e = _menuI ( _moveDisplay (2 , _menuI -> -> 0 `i `uc ]
@@ -1178,10 +1187,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 879 ]
 "67
 [; ;main.c: 67:                         LCD_ShowString((char)1, "Pozor! Had!!!   ");
-[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 1C ]
+[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 3C ]
 "68
 [; ;main.c: 68:                         LCD_ShowString((char)2, "                ");
-[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 2C ]
+[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 4C ]
 "69
 [; ;main.c: 69:                         runGPIO();
 [e ( _runGPIO ..  ]
@@ -1196,10 +1205,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 880 ]
 "73
 [; ;main.c: 73:                         LCD_ShowString((char)1, "BR: 19200       ");
-[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 3C ]
+[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 5C ]
 "74
 [; ;main.c: 74:                         LCD_ShowString((char)2, "Konec - new line");
-[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 4C ]
+[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 6C ]
 "75
 [; ;main.c: 75:                         runUART();
 [e ( _runUART ..  ]
@@ -1214,10 +1223,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 881 ]
 "79
 [; ;main.c: 79:                         LCD_ShowString((char)1, "Zmacknete BTN2  ");
-[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 5C ]
+[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 7C ]
 "80
 [; ;main.c: 80:                         LCD_ShowString((char)2, "                ");
-[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 6C ]
+[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 8C ]
 "81
 [; ;main.c: 81:                         runPWM();
 [e ( _runPWM ..  ]
@@ -1232,7 +1241,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 882 ]
 "85
 [; ;main.c: 85:                         LCD_ShowString((char)1, "Volty na POTech:");
-[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 7C ]
+[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 9C ]
 "86
 [; ;main.c: 86:                         runADC();
 [e ( _runADC ..  ]
@@ -1247,10 +1256,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 883 ]
 "90
 [; ;main.c: 90:                         LCD_ShowString((char)1, "RB0-A2, BR:19200");
-[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 8C ]
+[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 10C ]
 "91
 [; ;main.c: 91:                         LCD_ShowString((char)2, "1:tr,2:sin,3:pil");
-[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 9C ]
+[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 11C ]
 "92
 [; ;main.c: 92:                         runDAC();
 [e ( _runDAC ..  ]
@@ -1265,22 +1274,22 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 884 ]
 "96
 [; ;main.c: 96:                         LCD_ShowString((char)1, "Ladeni potaku   ");
-[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 10C ]
+[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 12C ]
 "97
 [; ;main.c: 97:                         LCD_ShowString((char)2, "                ");
-[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 11C ]
+[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 13C ]
 "98
 [; ;main.c: 98:                         _delay((unsigned long)((1000)*(32E6/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / .32e6 .4000.0 `ul ]
 "99
 [; ;main.c: 99:                         LCD_ShowString((char)1, "Pripravit       ");
-[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 12C ]
+[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 14C ]
 "100
 [; ;main.c: 100:                         _delay((unsigned long)((1000)*(32E6/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / .32e6 .4000.0 `ul ]
 "101
 [; ;main.c: 101:                         LCD_ShowString((char)2, "           Pozor");
-[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 13C ]
+[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 15C ]
 "102
 [; ;main.c: 102:                         _delay((unsigned long)((2000)*(32E6/4000.0)));
 [e ( __delay (1 -> * -> -> 2000 `i `d / .32e6 .4000.0 `ul ]
@@ -1297,11 +1306,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 106:                     case 6:
 [e :U 885 ]
 "107
-[; ;main.c: 107:                         LCD_ShowString((char)1, "                ");
-[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 14C ]
+[; ;main.c: 107:                         LCD_ShowString((char)1, "Nebylo          ");
+[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 16C ]
 "108
-[; ;main.c: 108:                         LCD_ShowString((char)2, "                ");
-[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 15C ]
+[; ;main.c: 108:                         LCD_ShowString((char)2, "Implementovano  ");
+[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 17C ]
 "109
 [; ;main.c: 109:                         runMUSIC();
 [e ( _runMUSIC ..  ]
@@ -1368,18 +1377,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 126: }
 [e :UE 858 ]
 }
-[a 13C 32 32 32 32 32 32 32 32 32 32 32 80 111 122 111 114 0 ]
-[a 9C 49 58 116 114 44 50 58 115 105 110 44 51 58 112 105 108 0 ]
-[a 4C 75 111 110 101 99 32 45 32 110 101 119 32 108 105 110 101 0 ]
-[a 7C 86 111 108 116 121 32 110 97 32 80 79 84 101 99 104 58 0 ]
-[a 8C 82 66 48 45 65 50 44 32 66 82 58 49 57 50 48 48 0 ]
-[a 5C 90 109 97 99 107 110 101 116 101 32 66 84 78 50 32 32 0 ]
-[a 10C 76 97 100 101 110 105 32 112 111 116 97 107 117 32 32 32 0 ]
-[a 1C 80 111 122 111 114 33 32 72 97 100 33 33 33 32 32 32 0 ]
-[a 12C 80 114 105 112 114 97 118 105 116 32 32 32 32 32 32 32 0 ]
-[a 3C 66 82 58 32 49 57 50 48 48 32 32 32 32 32 32 32 0 ]
-[a 2C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
-[a 6C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
-[a 11C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
-[a 14C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
-[a 15C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
+[a 15C 32 32 32 32 32 32 32 32 32 32 32 80 111 122 111 114 0 ]
+[a 11C 49 58 116 114 44 50 58 115 105 110 44 51 58 112 105 108 0 ]
+[a 6C 75 111 110 101 99 32 45 32 110 101 119 32 108 105 110 101 0 ]
+[a 9C 86 111 108 116 121 32 110 97 32 80 79 84 101 99 104 58 0 ]
+[a 10C 82 66 48 45 65 50 44 32 66 82 58 49 57 50 48 48 0 ]
+[a 17C 73 109 112 108 101 109 101 110 116 111 118 97 110 111 32 32 0 ]
+[a 7C 90 109 97 99 107 110 101 116 101 32 66 84 78 50 32 32 0 ]
+[a 12C 76 97 100 101 110 105 32 112 111 116 97 107 117 32 32 32 0 ]
+[a 2C 68 97 118 105 100 32 83 116 114 97 115 97 107 32 32 32 0 ]
+[a 3C 80 111 122 111 114 33 32 72 97 100 33 33 33 32 32 32 0 ]
+[a 14C 80 114 105 112 114 97 118 105 116 32 32 32 32 32 32 32 0 ]
+[a 1C 86 121 116 118 111 114 105 108 58 32 32 32 32 32 32 32 0 ]
+[a 5C 66 82 58 32 49 57 50 48 48 32 32 32 32 32 32 32 0 ]
+[a 16C 78 101 98 121 108 111 32 32 32 32 32 32 32 32 32 32 0 ]
+[a 4C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
+[a 8C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
+[a 13C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]

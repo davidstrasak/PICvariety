@@ -10346,5 +10346,5 @@ void putch(char data);
 
 
 void runMUSIC(void){
-
+    return;
 }

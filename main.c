@@ -36,9 +36,9 @@ void main(void) {
     uint8_t menuI = 0;          //menuI je promenna co si predava index menu pokazde co ho zmenim
     uint8_t setUpAgain = 0;
     
-//    LCD_ShowString((char)1, "Vytvoril:       ");
-//    LCD_ShowString((char)2, "David Strasak   ");
-//    __delay_ms(2000);
+    LCD_ShowString((char)1, "Vytvoril:       ");
+    LCD_ShowString((char)2, "David Strasak   ");
+    __delay_ms(2000);
     
     //Zobrazeni menu
     menuI = moveDisplay(menuI,0);
@@ -104,8 +104,8 @@ void main(void) {
                         setUpAgain = 1;
                         break;
                     case 6: // MUSIC
-                        LCD_ShowString((char)1, "                ");
-                        LCD_ShowString((char)2, "                ");
+                        LCD_ShowString((char)1, "Nebylo          ");
+                        LCD_ShowString((char)2, "Implementovano  ");
                         runMUSIC();
                         setUpAgain = 1;
                         break;
