@@ -960,6 +960,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6
 [; ;./interrupt.h: 6: uint8_t UARTIE;
 [v _UARTIE `uc ~T0 @X0 1 e ]
+"7
+[; ;./interrupt.h: 7: uint8_t GAMEIE;
+[v _GAMEIE `uc ~T0 @X0 1 e ]
+"8
+[; ;./interrupt.h: 8: uint8_t GAMEtime;
+[v _GAMEtime `uc ~T0 @X0 1 e ]
 "8 ./UART.h
 [; ;./UART.h: 8: volatile mailbox gmail = {"", 0};
 [v _gmail `VS857 ~T0 @X0 1 e ]

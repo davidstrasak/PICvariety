@@ -34,16 +34,39 @@ void runGAME(void){
     
     //ADC init
     ANSELAbits.ANSA5 = 1;
-
     ADCON2bits.ADFM = 1;            //right justified
     ADCON2bits.ADCS = 0b110;        //Fosc/64
     ADCON2bits.ACQT = 0b110;        //16 TAD
     ADCON0bits.ADON = 1;            //ADC zapnout
-
     //Promenne init
     uint16_t pot1;                  // promenna pro vysledek prevodu
     char text[17] = "";             // retezec zatim prazdny
     uint8_t keepState = 1;
+    
+    //Init of the timer
+    //Timer 1
+    T1CONbits.TMR1CS = 0b00;    //Clock delenej 4 (FOSC/4)
+    T1CONbits.T1CKPS = 0b11;    //Prescaler 1:8
+    TMR1IE = 1;                 //TMR1 Interrupt enable
+    PEIE = 1;
+    GIE = 1;
+    GAMEIE = 1;
+    TMR1IF = 1;
+    TMR1 = 0xFFFF - (62500 - 1);    //Hazi interrupt 4x za sekundu
+    TMR1ON = 1;                 //Tenhle bit je tak dulezitej, ze ma vlastni definovane makro
+    //Other inits
+    keepState = 1;
+    GAMEtime = 0;
+    uint8_t GAMEround = 1;
+    uint8_t GAMEpart = 0;
+    uint8_t GAMEdivider = 0;
+    char approxText[17] = "";
+    
+    //Actual game initialisation
+    uint16_t randomNumber = 2 + rand() / (RAND_MAX / (1023 - 2 + 1) + 1);
+    sprintf(approxText, "%u                ", randomNumber);
+    LCD_ShowString(1, approxText);
+    
 
     while(keepState){
         //Cteni prvniho potaku
@@ -54,7 +77,87 @@ void runGAME(void){
 
         sprintf(text, "%hu             ", pot1);
         LCD_ShowString(2, text);
-
+        
+        switch(GAMEround){
+            case 1:
+                GAMEdivider = 33;
+                break;
+            case 2:
+                GAMEdivider = 24;
+                break;
+            default:
+                GAMEdivider = 18;
+                break;
+        }
+        
+        GAMEpart = GAMEtime/GAMEdivider;
+        switch(GAMEpart){
+            case 0:
+                LED1 = 1;
+                LED2 = 1;
+                LED3 = 1;
+                LED4 = 1;
+                LED5 = 1;
+                LED6 = 1;
+                break;
+            case 1:
+                LED1 = 0;
+                LED2 = 1;
+                LED3 = 1;
+                LED4 = 1;
+                LED5 = 1;
+                LED6 = 1;
+                break;
+            case 2:
+                LED1 = 0;
+                LED2 = 0;
+                LED3 = 1;
+                LED4 = 1;
+                LED5 = 1;
+                LED6 = 1;
+                break;
+            case 3:
+                LED1 = 0;
+                LED2 = 0;
+                LED3 = 0;
+                LED4 = 1;
+                LED5 = 1;
+                LED6 = 1;
+                break;
+            case 4:
+                LED1 = 0;
+                LED2 = 0;
+                LED3 = 0;
+                LED4 = 0;
+                LED5 = 1;
+                LED6 = 1;
+                break;
+            case 5:
+                LED1 = 0;
+                LED2 = 0;
+                LED3 = 0;
+                LED4 = 0;
+                LED5 = 0;
+                LED6 = 1;
+                break;
+            case 6:
+                LED1 = 0;
+                LED2 = 0;
+                LED3 = 0;
+                LED4 = 0;
+                LED5 = 0;
+                LED6 = 0;
+                break;
+            case 7:
+                GAMEtime = 0;
+                GAMEround += 1;
+                randomNumber = 2 + rand() / (RAND_MAX / (1023 - 2 + 1) + 1);
+                sprintf(approxText, "%u                ", randomNumber);
+                LCD_ShowString(1, approxText);
+                
+                break;
+        }
+        
         if(PORTAbits.RA2){  //Kontrola drzeni pinu s debouncingem
             __delay_ms(50);
             if(PORTAbits.RA2){

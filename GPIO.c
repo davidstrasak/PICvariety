@@ -51,15 +51,11 @@ void runGPIO(void){
     GIE = 1;
     GPIOIE = 1;
     TMR1IF = 1;
-    TMR1 = 0xFFFF - (25000 - 1);    //Hazi interrupt kazdych 40x za sekundu
+    TMR1 = 0xFFFF - (25000 - 1);    //Hazi interrupt 10x za sekundu
     TMR1ON = 1;                 //Tenhle bit je tak dulezitej, ze ma vlastni definovane makro
     
     //Other inits
     keepStateGPIO = 1;      //Je inicializovane globalne
-    uint8_t GPIOindex;
-    GPIOindex = 0;
-    uint8_t GPIOreverse;
-    GPIOreverse = 0;
     
     void (*LEDControl[])(unsigned char) = {LED1_Control, LED2_Control, LED3_Control, LED4_Control, LED5_Control, LED6_Control};
     unsigned char states[] = {0b100000, 0b110000, 0b011000, 0b001100, 0b000110, 0b000011, 0b000001, 0b000011, 0b000110, 0b001100, 0b011000, 0b110000};

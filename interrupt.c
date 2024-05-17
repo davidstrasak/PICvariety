@@ -19,7 +19,14 @@ void __interrupt() ISR(void){
             }
         }
 
-        TMR1 = 0xFFFF - (25000 - 1);    //Hazi interrupt 40x za sekundu
+        TMR1 = 0xFFFF - (25000 - 1);    //Hazi interrupt 10x za sekundu
+        TMR1IF = 0;                     //Vynulovani flagu
+    }
+    
+    if(TMR1IE && TMR1IF && GAMEIE){
+        GAMEtime += 1;
+        
+        TMR1 = 0xFFFF - (62500 - 1);    //Hazi interrupt 4x za sekundu
         TMR1IF = 0;                     //Vynulovani flagu
     }
     
@@ -36,4 +43,6 @@ void __interrupt() ISR(void){
             i = 0;
         }
     }
+    
+    
 }   

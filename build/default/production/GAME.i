@@ -9880,6 +9880,7 @@ char *ctermid(char *);
 char *tempnam(const char *, const char *);
 # 5 "./includes.h" 2
 
+
 # 1 "D:\\MPLABX\\Compiler\\pic\\include\\c99\\math.h" 1 3
 # 15 "D:\\MPLABX\\Compiler\\pic\\include\\c99\\math.h" 3
 # 1 "D:\\MPLABX\\Compiler\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -10252,7 +10253,7 @@ double jn(int, double);
 double y0(double);
 double y1(double);
 double yn(int, double);
-# 6 "./includes.h" 2
+# 7 "./includes.h" 2
 
 # 1 "./lcd.h" 1
 
@@ -10264,7 +10265,7 @@ void LCD_ShowString(char line, char a[]);
 static void LCD_Send(unsigned char data);
 void LCD_Clear(void);
 void LCD_Reset(void);
-# 7 "./includes.h" 2
+# 8 "./includes.h" 2
 
 # 1 "./configs.h" 1
 
@@ -10272,26 +10273,26 @@ void LCD_Reset(void);
 #pragma config FOSC = HSMP
 #pragma config PLLCFG = ON
 #pragma config WDTEN = OFF
-# 8 "./includes.h" 2
+# 9 "./includes.h" 2
 
 # 1 "./DAC.h" 1
 
 
 void runDAC(void);
 void SPI_write (uint8_t data);
-# 9 "./includes.h" 2
+# 10 "./includes.h" 2
 
 # 1 "./menu.h" 1
 
 
 uint8_t moveDisplay(uint8_t menuI, uint8_t where);
-# 10 "./includes.h" 2
+# 11 "./includes.h" 2
 
 # 1 "./GPIO.h" 1
 
 
 void runGPIO(void);
-# 11 "./includes.h" 2
+# 12 "./includes.h" 2
 
 # 1 "./interrupt.h" 1
 
@@ -10300,19 +10301,21 @@ void runGPIO(void);
 uint8_t keepStateGPIO;
 uint8_t GPIOIE;
 uint8_t UARTIE;
-# 12 "./includes.h" 2
+uint8_t GAMEIE;
+uint8_t GAMEtime;
+# 13 "./includes.h" 2
 
 # 1 "./ADC.h" 1
 
 
 void runADC(void);
-# 13 "./includes.h" 2
+# 14 "./includes.h" 2
 
 # 1 "./PWM.h" 1
 
 
 void runPWM(void);
-# 14 "./includes.h" 2
+# 15 "./includes.h" 2
 
 # 1 "./UART.h" 1
 
@@ -10323,19 +10326,19 @@ typedef struct{
     char full;
 } mailbox;
 volatile mailbox gmail = {"", 0};
-# 15 "./includes.h" 2
+# 16 "./includes.h" 2
 
 # 1 "./GAME.h" 1
 
 
 void runGAME(void);
-# 16 "./includes.h" 2
+# 17 "./includes.h" 2
 
 # 1 "./MUSIC.h" 1
 
 
 void runMUSIC(void);
-# 17 "./includes.h" 2
+# 18 "./includes.h" 2
 
 
 void putch(char data);
@@ -10369,16 +10372,39 @@ void runGAME(void){
 
 
     ANSELAbits.ANSA5 = 1;
-
     ADCON2bits.ADFM = 1;
     ADCON2bits.ADCS = 0b110;
     ADCON2bits.ACQT = 0b110;
     ADCON0bits.ADON = 1;
 
-
     uint16_t pot1;
     char text[17] = "";
     uint8_t keepState = 1;
+
+
+
+    T1CONbits.TMR1CS = 0b00;
+    T1CONbits.T1CKPS = 0b11;
+    TMR1IE = 1;
+    PEIE = 1;
+    GIE = 1;
+    GAMEIE = 1;
+    TMR1IF = 1;
+    TMR1 = 0xFFFF - (62500 - 1);
+    TMR1ON = 1;
+
+    keepState = 1;
+    GAMEtime = 0;
+    uint8_t GAMEround = 1;
+    uint8_t GAMEpart = 0;
+    uint8_t GAMEdivider = 0;
+    char approxText[17] = "";
+
+
+    uint16_t randomNumber = 2 + rand() / ((0x7fff) / (1023 - 2 + 1) + 1);
+    sprintf(approxText, "%u                ", randomNumber);
+    LCD_ShowString(1, approxText);
+
 
     while(keepState){
 
@@ -10389,6 +10415,86 @@ void runGAME(void){
 
         sprintf(text, "%hu             ", pot1);
         LCD_ShowString(2, text);
+
+        switch(GAMEround){
+            case 1:
+                GAMEdivider = 33;
+                break;
+            case 2:
+                GAMEdivider = 24;
+                break;
+            default:
+                GAMEdivider = 18;
+                break;
+        }
+
+        GAMEpart = GAMEtime/GAMEdivider;
+        switch(GAMEpart){
+            case 0:
+                LATDbits.LD2 = 1;
+                LATDbits.LD3 = 1;
+                LATCbits.LC4 = 1;
+                LATDbits.LD4 = 1;
+                LATDbits.LD5 = 1;
+                LATDbits.LD6 = 1;
+                break;
+            case 1:
+                LATDbits.LD2 = 0;
+                LATDbits.LD3 = 1;
+                LATCbits.LC4 = 1;
+                LATDbits.LD4 = 1;
+                LATDbits.LD5 = 1;
+                LATDbits.LD6 = 1;
+                break;
+            case 2:
+                LATDbits.LD2 = 0;
+                LATDbits.LD3 = 0;
+                LATCbits.LC4 = 1;
+                LATDbits.LD4 = 1;
+                LATDbits.LD5 = 1;
+                LATDbits.LD6 = 1;
+                break;
+            case 3:
+                LATDbits.LD2 = 0;
+                LATDbits.LD3 = 0;
+                LATCbits.LC4 = 0;
+                LATDbits.LD4 = 1;
+                LATDbits.LD5 = 1;
+                LATDbits.LD6 = 1;
+                break;
+            case 4:
+                LATDbits.LD2 = 0;
+                LATDbits.LD3 = 0;
+                LATCbits.LC4 = 0;
+                LATDbits.LD4 = 0;
+                LATDbits.LD5 = 1;
+                LATDbits.LD6 = 1;
+                break;
+            case 5:
+                LATDbits.LD2 = 0;
+                LATDbits.LD3 = 0;
+                LATCbits.LC4 = 0;
+                LATDbits.LD4 = 0;
+                LATDbits.LD5 = 0;
+                LATDbits.LD6 = 1;
+                break;
+            case 6:
+                LATDbits.LD2 = 0;
+                LATDbits.LD3 = 0;
+                LATCbits.LC4 = 0;
+                LATDbits.LD4 = 0;
+                LATDbits.LD5 = 0;
+                LATDbits.LD6 = 0;
+                break;
+            case 7:
+                GAMEtime = 0;
+                GAMEround += 1;
+                randomNumber = 2 + rand() / ((0x7fff) / (1023 - 2 + 1) + 1);
+                sprintf(approxText, "%u                ", randomNumber);
+                LCD_ShowString(1, approxText);
+
+                break;
+        }
 
         if(PORTAbits.RA2){
             _delay((unsigned long)((50)*(32E6/4000.0)));
