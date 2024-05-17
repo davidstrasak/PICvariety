@@ -47,15 +47,15 @@ void main(void) {
         if(PORTCbits.RC0){ //btn1
             __delay_ms(50);
             if(PORTCbits.RC0){
-                while(PORTCbits.RC0);
                 menuI = moveDisplay(menuI,2);
+                while(PORTCbits.RC0);
             }
         }
         if(PORTAbits.RA4){ //btn2
             __delay_ms(50);
             if(PORTAbits.RA4){
-                while(PORTAbits.RA4);
                 menuI = moveDisplay(menuI,1);
+                while(PORTAbits.RA4);
             }
         }
         if(PORTAbits.RA3){ //btn3
@@ -93,8 +93,16 @@ void main(void) {
                         setUpAgain = 1;
                         break;
                     case 5: // GAME
+                        LCD_ShowString((char)1, "                ");
+                        LCD_ShowString((char)2, "                ");
+                        runGAME();
+                        setUpAgain = 1;
                         break;
                     case 6: // MUSIC
+                        LCD_ShowString((char)1, "                ");
+                        LCD_ShowString((char)2, "                ");
+                        runMUSIC();
+                        setUpAgain = 1;
                         break;
                 }
             }

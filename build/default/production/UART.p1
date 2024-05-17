@@ -1027,31 +1027,31 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;UART.c: 30:             char reversed[31];
 [v _reversed `uc ~T0 @X0 -> 31 `i a ]
 "31
-[; ;UART.c: 31:             int len = strlen(gmail.data);
-[v _len `i ~T0 @X0 1 a ]
-[e = _len -> ( _strlen (1 -> &U . _gmail 0 `*Cuc `i ]
+[; ;UART.c: 31:             size_t len = strlen((const char*)gmail.data);
+[v _len `ui ~T0 @X0 1 a ]
+[e = _len ( _strlen (1 -> &U . _gmail 0 `*Cuc ]
 "33
-[; ;UART.c: 33:             for(int i = 0; i < len; i++) {
+[; ;UART.c: 33:             for(size_t i = 0; i < len; i++) {
 {
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
+[v _i `ui ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `ui ]
 [e $U 866  ]
 [e :U 863 ]
 {
 "34
 [; ;UART.c: 34:                 reversed[i] = gmail.data[len - 1 - i];
-[e = *U + &U _reversed * -> -> _i `ui `ux -> -> # *U &U _reversed `ui `ux *U + &U . _gmail 0 * -> -> - - _len -> 1 `i _i `ui `ux -> -> # *U &U . _gmail 0 `ui `ux ]
+[e = *U + &U _reversed * -> _i `ux -> -> # *U &U _reversed `ui `ux *U + &U . _gmail 0 * -> - - _len -> -> 1 `i `ui _i `ux -> -> # *U &U . _gmail 0 `ui `ux ]
 "35
 [; ;UART.c: 35:             }
 }
-[e ++ _i -> 1 `i ]
+[e ++ _i -> -> 1 `i `ui ]
 [e :U 866 ]
 [e $ < _i _len 863  ]
 [e :U 864 ]
 }
 "36
 [; ;UART.c: 36:             reversed[len] = '\0';
-[e = *U + &U _reversed * -> -> _len `ui `ux -> -> # *U &U _reversed `ui `ux -> -> 0 `ui `uc ]
+[e = *U + &U _reversed * -> _len `ux -> -> # *U &U _reversed `ui `ux -> -> 0 `ui `uc ]
 "37
 [; ;UART.c: 37:             printf("%s \n", reversed);
 [e ( _printf , (. :s 1C &U _reversed ]

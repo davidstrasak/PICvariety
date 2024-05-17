@@ -933,8 +933,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _temp -> _RCREG1 `uc ]
 "28
 [; ;interrupt.c: 28:         static int i = 0;
-[v F6960 `i ~T0 @X0 1 s i ]
-[i F6960
+[v F6962 `i ~T0 @X0 1 s i ]
+[i F6962
 -> 0 `i
 ]
 "30
@@ -943,10 +943,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "31
 [; ;interrupt.c: 31:             gmail.data[i] = temp;
-[e = *U + &U . _gmail 0 * -> -> F6960 `ui `ux -> -> # *U &U . _gmail 0 `ui `ux _temp ]
+[e = *U + &U . _gmail 0 * -> -> F6962 `ui `ux -> -> # *U &U . _gmail 0 `ui `ux _temp ]
 "32
 [; ;interrupt.c: 32:             i++;
-[e ++ F6960 -> 1 `i ]
+[e ++ F6962 -> 1 `i ]
 "33
 [; ;interrupt.c: 33:         } else {
 }
@@ -958,10 +958,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . _gmail 1 -> -> 1 `i `uc ]
 "35
 [; ;interrupt.c: 35:             gmail.data[i] = '\0';
-[e = *U + &U . _gmail 0 * -> -> F6960 `ui `ux -> -> # *U &U . _gmail 0 `ui `ux -> -> 0 `ui `uc ]
+[e = *U + &U . _gmail 0 * -> -> F6962 `ui `ux -> -> # *U &U . _gmail 0 `ui `ux -> -> 0 `ui `uc ]
 "36
 [; ;interrupt.c: 36:             i = 0;
-[e = F6960 -> 0 `i ]
+[e = F6962 -> 0 `i ]
 "37
 [; ;interrupt.c: 37:         }
 }

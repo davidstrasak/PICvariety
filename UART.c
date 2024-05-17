@@ -28,9 +28,9 @@ void runUART(void){
     while(keepState){        
         if(gmail.full){
             char reversed[31];
-            int len = strlen(gmail.data);
+            size_t len = strlen((const char*)gmail.data);
 
-            for(int i = 0; i < len; i++) {
+            for(size_t i = 0; i < len; i++) {
                 reversed[i] = gmail.data[len - 1 - i];
             }
             reversed[len] = '\0';

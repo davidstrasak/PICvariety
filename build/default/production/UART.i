@@ -10319,6 +10319,18 @@ typedef struct{
 volatile mailbox gmail = {"", 0};
 # 15 "./includes.h" 2
 
+# 1 "./GAME.h" 1
+
+
+void runGAME(void);
+# 16 "./includes.h" 2
+
+# 1 "./MUSIC.h" 1
+
+
+void runMUSIC(void);
+# 17 "./includes.h" 2
+
 
 void putch(char data);
 # 2 "UART.c" 2
@@ -10351,9 +10363,9 @@ void runUART(void){
     while(keepState){
         if(gmail.full){
             char reversed[31];
-            int len = strlen(gmail.data);
+            size_t len = strlen((const char*)gmail.data);
 
-            for(int i = 0; i < len; i++) {
+            for(size_t i = 0; i < len; i++) {
                 reversed[i] = gmail.data[len - 1 - i];
             }
             reversed[len] = '\0';

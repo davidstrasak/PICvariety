@@ -976,8 +976,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ADC.c: 26: float voltage1, voltage2;
 [v _voltage1 `f ~T0 @X0 1 a ]
 [v _voltage2 `f ~T0 @X0 1 a ]
-[v F6963 `uc ~T0 @X0 -> 17 `i s ]
-[i F6963
+[v F6965 `uc ~T0 @X0 -> 17 `i s ]
+[i F6965
 :U ..
 "27
 [; ;ADC.c: 27: char text[17] = "";
@@ -985,7 +985,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _text `uc ~T0 @X0 -> 17 `i a ]
-[e = _text F6963 ]
+[e = _text F6965 ]
 "28
 [; ;ADC.c: 28: uint8_t keepState = 1;
 [v _keepState `uc ~T0 @X0 1 a ]

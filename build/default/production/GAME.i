@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "GAME.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "D:\\MPLABX\\Compiler\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
+# 1 "GAME.c" 2
 
 
 
@@ -10339,118 +10339,9 @@ void runMUSIC(void);
 
 
 void putch(char data);
-# 8 "main.c" 2
+# 8 "GAME.c" 2
 
 
-void main(void) {
-    _delay((unsigned long)((100)*(32E6/4000.0)));
+void runGAME(void){
 
-    TRISCbits.RC0 = 1;
-    TRISAbits.RA4 = 1;
-    TRISAbits.RA3 = 1;
-    TRISAbits.RA2 = 1;
-    ANSELAbits.ANSA3 = 0;
-    ANSELAbits.ANSA2 = 0;
-
-
-    TRISDbits.RD2 = 0;
-    TRISDbits.RD3 = 0;
-    TRISCbits.RC4 = 0;
-    TRISDbits.RD4 = 0;
-    TRISDbits.RD5 = 0;
-    TRISDbits.RD6 = 0;
-    LATDbits.LD2 = 1;
-    LATDbits.LD3 = 1;
-    LATCbits.LC4 = 1;
-    LATDbits.LD4 = 1;
-    LATDbits.LD5 = 1;
-    LATDbits.LD6 = 1;
-
-
-    LCD_Init();
-    uint8_t menuI = 0;
-    uint8_t setUpAgain = 0;
-
-
-
-
-
-
-    menuI = moveDisplay(menuI,0);
-
-    while(1){
-        if(PORTCbits.RC0){
-            _delay((unsigned long)((50)*(32E6/4000.0)));
-            if(PORTCbits.RC0){
-                menuI = moveDisplay(menuI,2);
-                while(PORTCbits.RC0);
-            }
-        }
-        if(PORTAbits.RA4){
-            _delay((unsigned long)((50)*(32E6/4000.0)));
-            if(PORTAbits.RA4){
-                menuI = moveDisplay(menuI,1);
-                while(PORTAbits.RA4);
-            }
-        }
-        if(PORTAbits.RA3){
-            _delay((unsigned long)((50)*(32E6/4000.0)));
-            if(PORTAbits.RA3){
-                while(PORTAbits.RA3);
-                switch(menuI){
-                    case 0:
-                        LCD_ShowString((char)1, "Pozor! Had!!!   ");
-                        LCD_ShowString((char)2, "                ");
-                        runGPIO();
-                        setUpAgain = 1;
-                        break;
-                    case 1:
-                        LCD_ShowString((char)1, "BR: 19200       ");
-                        LCD_ShowString((char)2, "Konec - new line");
-                        runUART();
-                        setUpAgain = 1;
-                        break;
-                    case 2:
-                        LCD_ShowString((char)1, "Zmacknete BTN2  ");
-                        LCD_ShowString((char)2, "                ");
-                        runPWM();
-                        setUpAgain = 1;
-                        break;
-                    case 3:
-                        LCD_ShowString((char)1, "Volty na POTech:");
-                        runADC();
-                        setUpAgain = 1;
-                        break;
-                    case 4:
-                        LCD_ShowString((char)1, "RB0-A2, BR:19200");
-                        LCD_ShowString((char)2, "1:tr,2:sin,3:pil");
-                        runDAC();
-                        setUpAgain = 1;
-                        break;
-                    case 5:
-                        LCD_ShowString((char)1, "                ");
-                        LCD_ShowString((char)2, "                ");
-                        runGAME();
-                        setUpAgain = 1;
-                        break;
-                    case 6:
-                        LCD_ShowString((char)1, "                ");
-                        LCD_ShowString((char)2, "                ");
-                        runMUSIC();
-                        setUpAgain = 1;
-                        break;
-                }
-            }
-
-        }
-        if(PORTAbits.RA2){
-
-        }
-
-        if(setUpAgain){
-        menuI = moveDisplay(menuI,0);
-        setUpAgain = 0;
-        }
-    }
-    return;
 }

@@ -9,4 +9,6 @@ GPIO.h  \
 interrupt.h  \
 ADC.h  \
 PWM.h  \
-UART.h 
+UART.h  \
+GAME.h  \
+MUSIC.h 

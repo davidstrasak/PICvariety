@@ -13,6 +13,8 @@
 #include "ADC.h"
 #include "PWM.h"
 #include "UART.h"
+#include "GAME.h"
+#include "MUSIC.h"
 #define _XTAL_FREQ 32E6
 void putch(char data);
 #endif

@@ -10325,6 +10325,18 @@ typedef struct{
 volatile mailbox gmail = {"", 0};
 # 15 "./includes.h" 2
 
+# 1 "./GAME.h" 1
+
+
+void runGAME(void);
+# 16 "./includes.h" 2
+
+# 1 "./MUSIC.h" 1
+
+
+void runMUSIC(void);
+# 17 "./includes.h" 2
+
 
 void putch(char data);
 # 8 "GPIO.c" 2

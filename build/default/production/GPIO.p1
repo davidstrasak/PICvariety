@@ -152,8 +152,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "20331
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 20331: extern volatile __bit TMR1ON __attribute__((address(0x7E68)));
 [v _TMR1ON `Vb ~T0 @X0 0 e@32360 ]
-[v F6974 `(v ~T0 @X0 0 tf1`uc ]
-[v F6989 `(v ~T0 @X0 0 tf1`uc ]
+[v F6976 `(v ~T0 @X0 0 tf1`uc ]
+[v F6991 `(v ~T0 @X0 0 tf1`uc ]
 [v F205 `(v ~T0 @X0 1 tf1`ul ]
 "20 D:\MPLABX\Compiler\pic\include\builtins.h
 [v __delay `JF205 ~T0 @X0 0 e ]
@@ -1113,8 +1113,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "62
 [; ;GPIO.c: 62:     GPIOreverse = 0;
 [e = _GPIOreverse -> -> 0 `i `uc ]
-[v F6973 `*F6974 ~T0 @X0 -> 6 `i s ]
-[i F6973
+[v F6975 `*F6976 ~T0 @X0 -> 6 `i s ]
+[i F6975
 :U ..
 "64
 [; ;GPIO.c: 64:     void (*LEDControl[])(unsigned char) = {LED1_Control, LED2_Control, LED3_Control, LED4_Control, LED5_Control, LED6_Control};
@@ -1126,10 +1126,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 &U _LED6_Control
 ..
 ]
-[v _LEDControl `*F6989 ~T0 @X0 -> 6 `i a ]
-[e = _LEDControl F6973 ]
-[v F6991 `uc ~T0 @X0 -> 12 `i s ]
-[i F6991
+[v _LEDControl `*F6991 ~T0 @X0 -> 6 `i a ]
+[e = _LEDControl F6975 ]
+[v F6993 `uc ~T0 @X0 -> 12 `i s ]
+[i F6993
 :U ..
 "65
 [; ;GPIO.c: 65:     unsigned char states[] = {0b100000, 0b110000, 0b011000, 0b001100, 0b000110, 0b000011, 0b000001, 0b000011, 0b000110, 0b001100, 0b011000, 0b110000};
@@ -1148,7 +1148,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _states `uc ~T0 @X0 -> 12 `i a ]
-[e = _states F6991 ]
+[e = _states F6993 ]
 "66
 [; ;GPIO.c: 66:     int numberOfStates = sizeof(states) / sizeof(states[0]);
 [v _numberOfStates `i ~T0 @X0 1 a ]

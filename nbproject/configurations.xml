@@ -14,6 +14,8 @@
       <itemPath>ADC.h</itemPath>
       <itemPath>PWM.h</itemPath>
       <itemPath>UART.h</itemPath>
+      <itemPath>GAME.h</itemPath>
+      <itemPath>MUSIC.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -37,6 +39,8 @@
       <itemPath>ADC.c</itemPath>
       <itemPath>PWM.c</itemPath>
       <itemPath>UART.c</itemPath>
+      <itemPath>GAME.c</itemPath>
+      <itemPath>MUSIC.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -189,6 +193,7 @@
         <property key="event.recorder.debugger.behavior" value="Running"/>
         <property key="event.recorder.enabled" value="false"/>
         <property key="event.recorder.scvd.files" value=""/>
+        <property key="firmware.download.all" value="false"/>
         <property key="hwtoolclock.frcindebug" value="false"/>
         <property key="lastid" value=""/>
         <property key="memories.aux" value="false"/>
