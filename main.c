@@ -7,7 +7,8 @@
 
 #include "includes.h"
 
-void main(void) {    
+void main(void) {
+    __delay_ms(100);
     // Menu GPIO
     TRISCbits.RC0 = 1;
     TRISAbits.RA4 = 1;
@@ -69,6 +70,10 @@ void main(void) {
                         setUpAgain = 1;
                         break;
                     case 1: // UART
+                        LCD_ShowString((char)1, "BR: 19200       ");
+                        LCD_ShowString((char)2, "Konec - new line");
+                        runUART();
+                        setUpAgain = 1;
                         break;
                     case 2: // PWM
                         LCD_ShowString((char)1, "Zmacknete BTN2  ");
@@ -77,12 +82,12 @@ void main(void) {
                         setUpAgain = 1;
                         break;
                     case 3: // ADC
-                        LCD_ShowString((char)1, "Volty na POT:   ");
+                        LCD_ShowString((char)1, "Volty na POTech:");
                         runADC();
                         setUpAgain = 1;
                         break;
                     case 4: // DAC
-                        LCD_ShowString((char)1, "RB0-A2, BR: 9600");
+                        LCD_ShowString((char)1, "RB0-A2, BR:19200");
                         LCD_ShowString((char)2, "1:tr,2:sin,3:pil");
                         runDAC();
                         setUpAgain = 1;

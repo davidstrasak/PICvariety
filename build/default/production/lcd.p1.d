@@ -8,4 +8,5 @@ menu.h  \
 GPIO.h  \
 interrupt.h  \
 ADC.h  \
-PWM.h 
+PWM.h  \
+UART.h 

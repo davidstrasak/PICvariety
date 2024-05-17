@@ -68,7 +68,11 @@ void runPWM(void){
         }
     }
         
-        
-    }
 
+    }
+    // Uklizeni nastaveni do menu
+    CCP1CONbits.CCP1M = 0b0000;
+    TMR2ON = 0;
+    TMR2IE = 0;
+    return;
 }

@@ -24,6 +24,12 @@ void runGPIO(void){
     TRISDbits.RD4 = 0;
     TRISDbits.RD5 = 0;
     TRISDbits.RD6 = 0;
+    ANSELDbits.ANSD2 = 0;
+    ANSELDbits.ANSD3 = 0;
+    ANSELCbits.ANSC4 = 0;
+    ANSELDbits.ANSD4 = 0;
+    ANSELDbits.ANSD5 = 0;
+    ANSELDbits.ANSD6 = 0;
     LED1 = 1;
     LED2 = 1;
     LED3 = 1;
@@ -34,6 +40,7 @@ void runGPIO(void){
     //Init of buttons
     TRISAbits.RA2 = 1;
     ANSELAbits.ANSA2 = 0;
+    
     
     //Init of the timer
     //Timer 1
@@ -72,7 +79,7 @@ void runGPIO(void){
         }
     }
     
-    //Zpatky ke vypnuti ledek
+    // Uklizeni nastaveni do menu
     LED1 = 1;
     LED2 = 1;
     LED3 = 1;

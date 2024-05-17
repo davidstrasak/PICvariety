@@ -35,7 +35,7 @@ void runDAC(void) {
     ADCON0bits.ADON = 1;            //ADC zapnout
 
     /*baudrate*/
-    SPBRG1 = 51;                // (32_000_000 / (64 * 9600)) - 1
+    SPBRG1 = 25;                // (32_000_000 / (64 * 19200)) - 1
     RCSTA1bits.SPEN = 1;        // zapnuti UART
     TXSTA1bits.SYNC = 0;        // nastaveni asynchroniho modu
     TXSTA1bits.TXEN = 1;        // zapnuti TX
@@ -55,10 +55,10 @@ void runDAC(void) {
         switch(selectModeDAC){
             case 1: // Trojuhelnik
                 if(DACindex<255/2){
-                    SPI_write(DACindex);
+                    SPI_write((uint8_t)(1.9*DACindex));
                 }
                 if(DACindex>=255/2){
-                    SPI_write(255-DACindex);
+                    SPI_write((uint8_t)(1.9*(255-DACindex)));
                 }
                 break;
             case 2: // Sinus

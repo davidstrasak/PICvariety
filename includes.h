@@ -12,6 +12,7 @@
 #include "interrupt.h"
 #include "ADC.h"
 #include "PWM.h"
+#include "UART.h"
 #define _XTAL_FREQ 32E6
 void putch(char data);
 #endif

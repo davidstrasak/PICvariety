@@ -53,6 +53,9 @@ while(keepState){
         }
     }
 }
+
+// Uklizeni
+ADCON0bits.ADON = 0;
     
 return;
 }
