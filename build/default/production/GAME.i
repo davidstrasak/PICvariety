@@ -10344,4 +10344,63 @@ void putch(char data);
 
 void runGAME(void){
 
+    TRISDbits.RD2 = 0;
+    TRISDbits.RD3 = 0;
+    TRISCbits.RC4 = 0;
+    TRISDbits.RD4 = 0;
+    TRISDbits.RD5 = 0;
+    TRISDbits.RD6 = 0;
+    ANSELDbits.ANSD2 = 0;
+    ANSELDbits.ANSD3 = 0;
+    ANSELCbits.ANSC4 = 0;
+    ANSELDbits.ANSD4 = 0;
+    ANSELDbits.ANSD5 = 0;
+    ANSELDbits.ANSD6 = 0;
+    LATDbits.LD2 = 1;
+    LATDbits.LD3 = 1;
+    LATCbits.LC4 = 1;
+    LATDbits.LD4 = 1;
+    LATDbits.LD5 = 1;
+    LATDbits.LD6 = 1;
+
+
+    TRISAbits.RA2 = 1;
+    ANSELAbits.ANSA2 = 0;
+
+
+    ANSELAbits.ANSA5 = 1;
+
+    ADCON2bits.ADFM = 1;
+    ADCON2bits.ADCS = 0b110;
+    ADCON2bits.ACQT = 0b110;
+    ADCON0bits.ADON = 1;
+
+
+    uint16_t pot1;
+    char text[17] = "";
+    uint8_t keepState = 1;
+
+    while(keepState){
+
+        ADCON0bits.CHS = 5;
+        GODONE = 1;
+        while(GODONE);
+        pot1 = (uint16_t)((ADRESH << 8) | ADRESL);
+
+        sprintf(text, "%hu             ", pot1);
+        LCD_ShowString(2, text);
+
+        if(PORTAbits.RA2){
+            _delay((unsigned long)((50)*(32E6/4000.0)));
+            if(PORTAbits.RA2){
+                while(PORTAbits.RA2);
+                keepState = 0;
+            }
+        }
+    }
+
+
+    ADCON0bits.ADON = 0;
+
+    return;
 }
