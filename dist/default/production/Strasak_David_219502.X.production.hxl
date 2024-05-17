@@ -1,7 +1,7 @@
 ### HEXMate logfile and output summary ###
 
 ### Command-line arguments ###
- C:\Users\David\AppData\Local\Temp\xcAsci8.\driver_tmp_3.o
+ C:\Users\David\AppData\Local\Temp\xcAscdk.\driver_tmp_3.o
  -Odist/default/production\Strasak_David_219502.X.production.hex
  -logfile=dist/default/production\Strasak_David_219502.X.production.hxl
  -addressing=1
@@ -9,19 +9,19 @@
 
 ### Memory Usage ###
  Input file ranges:
-  0h - 3h		(C:\Users\David\AppData\Local\Temp\xcAsci8.\driver_tmp_3.o)
-  8h - 48DBh		(C:\Users\David\AppData\Local\Temp\xcAsci8.\driver_tmp_3.o)
-  FED6h - FFFEh		(C:\Users\David\AppData\Local\Temp\xcAsci8.\driver_tmp_3.o)
-  300000h - 300003h		(C:\Users\David\AppData\Local\Temp\xcAsci8.\driver_tmp_3.o)
+  0h - 3h		(C:\Users\David\AppData\Local\Temp\xcAscdk.\driver_tmp_3.o)
+  8h - 4977h		(C:\Users\David\AppData\Local\Temp\xcAscdk.\driver_tmp_3.o)
+  FEE2h - FFFEh		(C:\Users\David\AppData\Local\Temp\xcAscdk.\driver_tmp_3.o)
+  300000h - 300003h		(C:\Users\David\AppData\Local\Temp\xcAscdk.\driver_tmp_3.o)
  Unused ranges:
   4h - 7h
-  48DCh - FED5h
+  4978h - FEE1h
   FFFFh - 2FFFFFh
 
 ### Hex Memory Map ###
  Legend:
   -- = Unused memory
-  H1 = Input file             (C:\Users\David\AppData\Local\Temp\xcAsci8.\driver_tmp_3.o)
+  H1 = Input file             (C:\Users\David\AppData\Local\Temp\xcAscdk.\driver_tmp_3.o)
 ----------------------------------------------------------
          | 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
 ----------------------------------------------------------
@@ -1190,10 +1190,19 @@
 000048A0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000048B0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000048C0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-000048D0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- --
+000048D0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+000048E0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+000048F0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00004900 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00004910 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00004920 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00004930 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00004940 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00004950 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00004960 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00004970 | H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- -- -- -- -- --
 ----------------------------------------------------------
-0000FED0 | -- -- -- -- -- -- H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-0000FEE0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+0000FEE0 | -- -- H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 0000FEF0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 0000FF00 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 0000FF10 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1

@@ -10319,7 +10319,7 @@ void runPWM(void);
 
 void runUART(void);
 typedef struct{
-    char data[60];
+    char data[31];
     char full;
 } mailbox;
 volatile mailbox gmail = {"", 0};

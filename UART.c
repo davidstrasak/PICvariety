@@ -27,10 +27,18 @@ void runUART(void){
     
     while(keepState){        
         if(gmail.full){
-            printf("Dostal jsem %s \n",gmail.data);
+            char reversed[31];
+            int len = strlen(gmail.data);
+
+            for(int i = 0; i < len; i++) {
+                reversed[i] = gmail.data[len - 1 - i];
+            }
+            reversed[len] = '\0';
+            printf("%s \n", reversed);
+            
             gmail.full = 0;
             
-            for(int p = 0; p < 60; p++) {
+            for(int p = 0; p < 31; p++) {
                 gmail.data[p] = '\0';
             }
             
