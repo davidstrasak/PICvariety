@@ -3,12 +3,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./UART.h: 4: typedef struct{
 [s S857 `uc -> 31 `i `uc 1 ]
 [n S857 . data full ]
-"20589 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 20589: extern volatile __bit TX1IF __attribute__((address(0x7CF4)));
-[v _TX1IF `Vb ~T0 @X0 0 e@31988 ]
-"11210
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 11210: extern volatile unsigned char TXREG1 __attribute__((address(0xFAD)));
-[v _TXREG1 `Vuc ~T0 @X0 0 e@4013 ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 54: __asm("ANSELA equ 0F38h");
 [; <" ANSELA equ 0F38h ;# ">
@@ -802,24 +796,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ..
 ]
-"11 putch.c
-[; ;putch.c: 11: void putch(char data){
-[v _putch `(v ~T0 @X0 1 ef1`uc ]
+"10 MUSIC.c
+[; ;MUSIC.c: 10: void runMUSIC(void){
+[v _runMUSIC `(v ~T0 @X0 1 ef ]
 {
-[e :U _putch ]
-[v _data `uc ~T0 @X0 1 r1 ]
+[e :U _runMUSIC ]
 [f ]
 "12
-[; ;putch.c: 12:     while(!TX1IF);
-[e $U 859  ]
-[e :U 860 ]
-[e :U 859 ]
-[e $ ! _TX1IF 860  ]
-[e :U 861 ]
-"13
-[; ;putch.c: 13:     TXREG1 = data;
-[e = _TXREG1 -> _data `uc ]
-"14
-[; ;putch.c: 14: }
+[; ;MUSIC.c: 12: }
 [e :UE 858 ]
 }

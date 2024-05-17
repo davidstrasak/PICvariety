@@ -41,7 +41,7 @@ void runGAME(void){
     //Promenne init
     uint16_t pot1;                  // promenna pro vysledek prevodu
     char text[17] = "";             // retezec zatim prazdny
-    uint8_t keepState = 1;
+    uint8_t keepStateGAME;
     
     //Init of the timer
     //Timer 1
@@ -55,38 +55,45 @@ void runGAME(void){
     TMR1 = 0xFFFF - (62500 - 1);    //Hazi interrupt 4x za sekundu
     TMR1ON = 1;                 //Tenhle bit je tak dulezitej, ze ma vlastni definovane makro
     //Other inits
-    keepState = 1;
     GAMEtime = 0;
     uint8_t GAMEround = 1;
     uint8_t GAMEpart = 0;
     uint8_t GAMEdivider = 0;
-    char approxText[17] = "";
+    char approxText[25] = "";
     
     //Actual game initialisation
-    uint16_t randomNumber = 2 + rand() / (RAND_MAX / (1023 - 2 + 1) + 1);
+    uint16_t randomNumber;
+    randomNumber = (uint16_t)(2 + rand() / (RAND_MAX / (1023 - 2 + 1) + 1));
     sprintf(approxText, "%u                ", randomNumber);
-    LCD_ShowString(1, approxText);
+    LCD_ShowString((char)1, approxText);
+    keepStateGAME = 1;
     
 
-    while(keepState){
+    while(keepStateGAME){
         //Cteni prvniho potaku
-        ADCON0bits.CHS = 5;                         // kanal AN5
+        ADCON0bits.CHS = 4;                         // kanal AN4
         GODONE = 1;                                 // spustit aproximaci
         while(GODONE);                              // cekam nez je hotovo
         pot1 = (uint16_t)((ADRESH << 8) | ADRESL);  // cteni vysledku
 
         sprintf(text, "%hu             ", pot1);
-        LCD_ShowString(2, text);
+        LCD_ShowString((char)2, text);
         
         switch(GAMEround){
             case 1:
-                GAMEdivider = 33;
+                GAMEdivider = 26;
                 break;
             case 2:
                 GAMEdivider = 24;
                 break;
-            default:
+            case 3:
                 GAMEdivider = 18;
+                break;
+            case 4:
+                GAMEdivider = 16;
+                break;
+            default:
+                GAMEdivider = 15;
                 break;
         }
         
@@ -150,11 +157,20 @@ void runGAME(void){
                 break;
             case 7:
                 GAMEtime = 0;
-                GAMEround += 1;
-                randomNumber = 2 + rand() / (RAND_MAX / (1023 - 2 + 1) + 1);
-                sprintf(approxText, "%u                ", randomNumber);
-                LCD_ShowString(1, approxText);
-                
+                if(pot1 >= randomNumber - 2 && pot1 <= randomNumber + 2){ // Cislo musi byt v intervalu do 1 od randomNumber (me se to ladi blbe)
+                    GAMEround += 1;
+                    randomNumber = (uint16_t)(2 + rand() / (RAND_MAX / (1023 - 2 + 1) + 1));
+                    sprintf(approxText, "%u                ", randomNumber);
+                    keepStateGAME = 1;      //sprintf mi z nejakyho duvodu meni tuhle promennou, takze si ji musim znovu definovat. Asi pretekl.
+                    LCD_ShowString((char)1, approxText);
+                } else {
+                    ADCON0bits.ADON = 0;
+                    sprintf(approxText, "Skore: %u        ", GAMEround - 1);
+                    LCD_ShowString((char)1, "GAME OVER       ");
+                    LCD_ShowString((char)2, approxText);
+                    keepStateGAME = 0;
+                    __delay_ms(2000);
+                }
                 break;
         }
         
@@ -162,13 +178,21 @@ void runGAME(void){
             __delay_ms(50);
             if(PORTAbits.RA2){
                 while(PORTAbits.RA2);
-                keepState = 0;
+                keepStateGAME = 0;
             }
         }
     }
 
     // Uklizeni
-    ADCON0bits.ADON = 0;
+    LED1 = 1;
+    LED2 = 1;
+    LED3 = 1;
+    LED4 = 1;
+    LED5 = 1;
+    LED6 = 1;
+    TMR1ON = 0; //Vypnuti timeru aby nedelal bordel v menu a dalsich modulech
+    TMR1IE = 0;
+    GAMEIE = 0; //Vypni interrupt pro GAME funkci
 
     return;
 }

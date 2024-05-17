@@ -1,8 +1,11 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "4 ./UART.h
 [; ;./UART.h: 4: typedef struct{
-[s S857 `uc -> 10 `i `uc 1 ]
+[s S857 `uc -> 31 `i `uc 1 ]
 [n S857 . data full ]
+"8 ./lcd.h
+[; ;./lcd.h: 8: void LCD_Clear(void);
+[v _LCD_Clear `(v ~T0 @X0 0 ef ]
 "121 D:\MPLABX\Compiler\pic\include\c99\stdio.h
 [; ;D:\MPLABX\Compiler\pic\include\c99\stdio.h: 121: int sprintf(char *restrict, const char *restrict, ...);
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
@@ -783,17 +786,22 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6
 [; ;./interrupt.h: 6: uint8_t UARTIE;
 [v _UARTIE `uc ~T0 @X0 1 e ]
+"7
+[; ;./interrupt.h: 7: uint8_t GAMEIE;
+[v _GAMEIE `uc ~T0 @X0 1 e ]
+"8
+[; ;./interrupt.h: 8: uint8_t GAMEtime;
+[v _GAMEtime `uc ~T0 @X0 1 e ]
 "8 ./UART.h
-[; ;./UART.h: 8: volatile mailbox gmail = {0,0,0};
+[; ;./UART.h: 8: volatile mailbox gmail = {"", 0};
 [v _gmail `VS857 ~T0 @X0 1 e ]
 [i _gmail
 :U ..
 :U ..
 :U ..
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
+-> 0 `c
 ..
+-> -> 0 `i `uc
 ..
 ..
 ]
@@ -805,8 +813,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _menuI `uc ~T0 @X0 1 r1 ]
 [v _where `uc ~T0 @X0 1 r2 ]
 [f ]
-[v F6961 `*uc ~T0 @X0 -> 8 `i s ]
-[i F6961
+"12
+[; ;menu.c: 12:     LCD_Clear();
+[e ( _LCD_Clear ..  ]
+[v F6965 `*uc ~T0 @X0 -> 8 `i s ]
+[i F6965
 :U ..
 "13
 [; ;menu.c: 13:     char* menuItems[] = {"GPIO", "UART", "PWM", "ADC", "DAC", "GAME", "MUSIC", ""};
@@ -821,7 +832,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _menuItems `*uc ~T0 @X0 -> 8 `i a ]
-[e = _menuItems F6961 ]
+[e = _menuItems F6965 ]
 "14
 [; ;menu.c: 14:     switch (where){
 [e $U 860  ]

@@ -10379,7 +10379,7 @@ void runGAME(void){
 
     uint16_t pot1;
     char text[17] = "";
-    uint8_t keepState = 1;
+    uint8_t keepStateGAME;
 
 
 
@@ -10393,38 +10393,45 @@ void runGAME(void){
     TMR1 = 0xFFFF - (62500 - 1);
     TMR1ON = 1;
 
-    keepState = 1;
     GAMEtime = 0;
     uint8_t GAMEround = 1;
     uint8_t GAMEpart = 0;
     uint8_t GAMEdivider = 0;
-    char approxText[17] = "";
+    char approxText[25] = "";
 
 
-    uint16_t randomNumber = 2 + rand() / ((0x7fff) / (1023 - 2 + 1) + 1);
+    uint16_t randomNumber;
+    randomNumber = (uint16_t)(2 + rand() / ((0x7fff) / (1023 - 2 + 1) + 1));
     sprintf(approxText, "%u                ", randomNumber);
-    LCD_ShowString(1, approxText);
+    LCD_ShowString((char)1, approxText);
+    keepStateGAME = 1;
 
 
-    while(keepState){
+    while(keepStateGAME){
 
-        ADCON0bits.CHS = 5;
+        ADCON0bits.CHS = 4;
         GODONE = 1;
         while(GODONE);
         pot1 = (uint16_t)((ADRESH << 8) | ADRESL);
 
         sprintf(text, "%hu             ", pot1);
-        LCD_ShowString(2, text);
+        LCD_ShowString((char)2, text);
 
         switch(GAMEround){
             case 1:
-                GAMEdivider = 33;
+                GAMEdivider = 26;
                 break;
             case 2:
                 GAMEdivider = 24;
                 break;
-            default:
+            case 3:
                 GAMEdivider = 18;
+                break;
+            case 4:
+                GAMEdivider = 16;
+                break;
+            default:
+                GAMEdivider = 15;
                 break;
         }
 
@@ -10488,11 +10495,20 @@ void runGAME(void){
                 break;
             case 7:
                 GAMEtime = 0;
-                GAMEround += 1;
-                randomNumber = 2 + rand() / ((0x7fff) / (1023 - 2 + 1) + 1);
-                sprintf(approxText, "%u                ", randomNumber);
-                LCD_ShowString(1, approxText);
-
+                if(pot1 >= randomNumber - 2 && pot1 <= randomNumber + 2){
+                    GAMEround += 1;
+                    randomNumber = (uint16_t)(2 + rand() / ((0x7fff) / (1023 - 2 + 1) + 1));
+                    sprintf(approxText, "%u                ", randomNumber);
+                    keepStateGAME = 1;
+                    LCD_ShowString((char)1, approxText);
+                } else {
+                    ADCON0bits.ADON = 0;
+                    sprintf(approxText, "Skore: %u        ", GAMEround - 1);
+                    LCD_ShowString((char)1, "GAME OVER       ");
+                    LCD_ShowString((char)2, approxText);
+                    keepStateGAME = 0;
+                    _delay((unsigned long)((2000)*(32E6/4000.0)));
+                }
                 break;
         }
 
@@ -10500,13 +10516,21 @@ void runGAME(void){
             _delay((unsigned long)((50)*(32E6/4000.0)));
             if(PORTAbits.RA2){
                 while(PORTAbits.RA2);
-                keepState = 0;
+                keepStateGAME = 0;
             }
         }
     }
 
 
-    ADCON0bits.ADON = 0;
+    LATDbits.LD2 = 1;
+    LATDbits.LD3 = 1;
+    LATCbits.LC4 = 1;
+    LATDbits.LD4 = 1;
+    LATDbits.LD5 = 1;
+    LATDbits.LD6 = 1;
+    TMR1ON = 0;
+    TMR1IE = 0;
+    GAMEIE = 0;
 
     return;
 }

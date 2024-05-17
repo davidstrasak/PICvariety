@@ -1,7 +1,7 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "4 ./UART.h
 [; ;./UART.h: 4: typedef struct{
-[s S857 `uc -> 10 `i `uc 1 ]
+[s S857 `uc -> 31 `i `uc 1 ]
 [n S857 . data full ]
 [t ~ __interrupt . k ]
 [t T1 __interrupt ]
@@ -860,17 +860,22 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6
 [; ;./interrupt.h: 6: uint8_t UARTIE;
 [v _UARTIE `uc ~T0 @X0 1 e ]
+"7
+[; ;./interrupt.h: 7: uint8_t GAMEIE;
+[v _GAMEIE `uc ~T0 @X0 1 e ]
+"8
+[; ;./interrupt.h: 8: uint8_t GAMEtime;
+[v _GAMEtime `uc ~T0 @X0 1 e ]
 "8 ./UART.h
-[; ;./UART.h: 8: volatile mailbox gmail = {0,0,0};
+[; ;./UART.h: 8: volatile mailbox gmail = {"", 0};
 [v _gmail `VS857 ~T0 @X0 1 e ]
 [i _gmail
 :U ..
 :U ..
 :U ..
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
+-> 0 `c
 ..
+-> -> 0 `i `uc
 ..
 ..
 ]
@@ -925,50 +930,70 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 859 ]
 "26
-[; ;interrupt.c: 26:     if(RC1IE && RC1IF && UARTIE){
-[e $ ! && && _RC1IE _RC1IF != -> _UARTIE `i -> 0 `i 865  ]
+[; ;interrupt.c: 26:     if(TMR1IE && TMR1IF && GAMEIE){
+[e $ ! && && _TMR1IE _TMR1IF != -> _GAMEIE `i -> 0 `i 865  ]
 {
 "27
-[; ;interrupt.c: 27:         char temp = RCREG1;
-[v _temp `uc ~T0 @X0 1 a ]
-[e = _temp -> _RCREG1 `uc ]
-"28
-[; ;interrupt.c: 28:         static int i = 0;
-[v F6960 `i ~T0 @X0 1 s i ]
-[i F6960
--> 0 `i
-]
+[; ;interrupt.c: 27:         GAMEtime += 1;
+[e =+ _GAMEtime -> -> 1 `i `uc ]
+"29
+[; ;interrupt.c: 29:         TMR1 = 0xFFFF - (62500 - 1);
+[e = _TMR1 -> - -> -> 65535 `ui `l - -> 62500 `l -> -> 1 `i `l `us ]
 "30
-[; ;interrupt.c: 30:         if(temp != '\n'){
-[e $ ! != -> _temp `ui -> 10 `ui 866  ]
-{
+[; ;interrupt.c: 30:         TMR1IF = 0;
+[e = _TMR1IF -> -> 0 `i `b ]
 "31
-[; ;interrupt.c: 31:             gmail.data[i] = temp;
-[e = *U + &U . _gmail 0 * -> -> F6960 `ui `ux -> -> # *U &U . _gmail 0 `ui `ux _temp ]
-"32
-[; ;interrupt.c: 32:             i++;
-[e ++ F6960 -> 1 `i ]
-"33
-[; ;interrupt.c: 33:         } else {
-}
-[e $U 867  ]
-[e :U 866 ]
-{
-"34
-[; ;interrupt.c: 34:             gmail.full = 1;
-[e = . _gmail 1 -> -> 1 `i `uc ]
-"35
-[; ;interrupt.c: 35:             i = 0;
-[e = F6960 -> 0 `i ]
-"36
-[; ;interrupt.c: 36:         }
-}
-[e :U 867 ]
-"37
-[; ;interrupt.c: 37:     }
+[; ;interrupt.c: 31:     }
 }
 [e :U 865 ]
+"33
+[; ;interrupt.c: 33:     if(RC1IE && RC1IF && UARTIE){
+[e $ ! && && _RC1IE _RC1IF != -> _UARTIE `i -> 0 `i 866  ]
+{
+"34
+[; ;interrupt.c: 34:         char temp = RCREG1;
+[v _temp `uc ~T0 @X0 1 a ]
+[e = _temp -> _RCREG1 `uc ]
+"35
+[; ;interrupt.c: 35:         static int i = 0;
+[v F6964 `i ~T0 @X0 1 s i ]
+[i F6964
+-> 0 `i
+]
+"37
+[; ;interrupt.c: 37:         if(temp != '\n'){
+[e $ ! != -> _temp `ui -> 10 `ui 867  ]
+{
 "38
-[; ;interrupt.c: 38: }
+[; ;interrupt.c: 38:             gmail.data[i] = temp;
+[e = *U + &U . _gmail 0 * -> -> F6964 `ui `ux -> -> # *U &U . _gmail 0 `ui `ux _temp ]
+"39
+[; ;interrupt.c: 39:             i++;
+[e ++ F6964 -> 1 `i ]
+"40
+[; ;interrupt.c: 40:         } else {
+}
+[e $U 868  ]
+[e :U 867 ]
+{
+"41
+[; ;interrupt.c: 41:             gmail.full = 1;
+[e = . _gmail 1 -> -> 1 `i `uc ]
+"42
+[; ;interrupt.c: 42:             gmail.data[i] = '\0';
+[e = *U + &U . _gmail 0 * -> -> F6964 `ui `ux -> -> # *U &U . _gmail 0 `ui `ux -> -> 0 `ui `uc ]
+"43
+[; ;interrupt.c: 43:             i = 0;
+[e = F6964 -> 0 `i ]
+"44
+[; ;interrupt.c: 44:         }
+}
+[e :U 868 ]
+"45
+[; ;interrupt.c: 45:     }
+}
+[e :U 866 ]
+"48
+[; ;interrupt.c: 48: }
 [e :UE 858 ]
 }

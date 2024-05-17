@@ -1,7 +1,7 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "4 ./UART.h
 [; ;./UART.h: 4: typedef struct{
-[s S857 `uc -> 10 `i `uc 1 ]
+[s S857 `uc -> 31 `i `uc 1 ]
 [n S857 . data full ]
 [p mainexit ]
 [v F205 `(v ~T0 @X0 1 tf1`ul ]
@@ -212,6 +212,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3 ./DAC.h
 [; ;./DAC.h: 3: void runDAC(void);
 [v _runDAC `(v ~T0 @X0 0 ef ]
+"3 ./GAME.h
+[; ;./GAME.h: 3: void runGAME(void);
+[v _runGAME `(v ~T0 @X0 0 ef ]
+"3 ./MUSIC.h
+[; ;./MUSIC.h: 3: void runMUSIC(void);
+[v _runMUSIC `(v ~T0 @X0 0 ef ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 54: __asm("ANSELA equ 0F38h");
 [; <" ANSELA equ 0F38h ;# ">
@@ -986,17 +992,22 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6
 [; ;./interrupt.h: 6: uint8_t UARTIE;
 [v _UARTIE `uc ~T0 @X0 1 e ]
+"7
+[; ;./interrupt.h: 7: uint8_t GAMEIE;
+[v _GAMEIE `uc ~T0 @X0 1 e ]
+"8
+[; ;./interrupt.h: 8: uint8_t GAMEtime;
+[v _GAMEtime `uc ~T0 @X0 1 e ]
 "8 ./UART.h
-[; ;./UART.h: 8: volatile mailbox gmail = {0,0,0};
+[; ;./UART.h: 8: volatile mailbox gmail = {"", 0};
 [v _gmail `VS857 ~T0 @X0 1 e ]
 [i _gmail
 :U ..
 :U ..
 :U ..
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
+-> 0 `c
 ..
+-> -> 0 `i `uc
 ..
 ..
 ]
@@ -1094,15 +1105,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! != -> . . _PORTCbits 0 0 `i -> 0 `i 863  ]
 {
 "50
-[; ;main.c: 50:                 while(PORTCbits.RC0);
+[; ;main.c: 50:                 menuI = moveDisplay(menuI,2);
+[e = _menuI ( _moveDisplay (2 , _menuI -> -> 2 `i `uc ]
+"51
+[; ;main.c: 51:                 while(PORTCbits.RC0);
 [e $U 864  ]
 [e :U 865 ]
 [e :U 864 ]
 [e $ != -> . . _PORTCbits 0 0 `i -> 0 `i 865  ]
 [e :U 866 ]
-"51
-[; ;main.c: 51:                 menuI = moveDisplay(menuI,2);
-[e = _menuI ( _moveDisplay (2 , _menuI -> -> 2 `i `uc ]
 "52
 [; ;main.c: 52:             }
 }
@@ -1123,15 +1134,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! != -> . . _PORTAbits 0 4 `i -> 0 `i 868  ]
 {
 "57
-[; ;main.c: 57:                 while(PORTAbits.RA4);
+[; ;main.c: 57:                 menuI = moveDisplay(menuI,1);
+[e = _menuI ( _moveDisplay (2 , _menuI -> -> 1 `i `uc ]
+"58
+[; ;main.c: 58:                 while(PORTAbits.RA4);
 [e $U 869  ]
 [e :U 870 ]
 [e :U 869 ]
 [e $ != -> . . _PORTAbits 0 4 `i -> 0 `i 870  ]
 [e :U 871 ]
-"58
-[; ;main.c: 58:                 menuI = moveDisplay(menuI,1);
-[e = _menuI ( _moveDisplay (2 , _menuI -> -> 1 `i `uc ]
 "59
 [; ;main.c: 59:             }
 }
@@ -1253,16 +1264,55 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 95:                     case 5:
 [e :U 884 ]
 "96
-[; ;main.c: 96:                         break;
-[e $U 877  ]
+[; ;main.c: 96:                         LCD_ShowString((char)1, "Ladeni potaku   ");
+[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 10C ]
 "97
-[; ;main.c: 97:                     case 6:
-[e :U 885 ]
+[; ;main.c: 97:                         LCD_ShowString((char)2, "                ");
+[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 11C ]
 "98
-[; ;main.c: 98:                         break;
-[e $U 877  ]
+[; ;main.c: 98:                         _delay((unsigned long)((1000)*(32E6/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / .32e6 .4000.0 `ul ]
 "99
-[; ;main.c: 99:                 }
+[; ;main.c: 99:                         LCD_ShowString((char)1, "Pripravit       ");
+[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 12C ]
+"100
+[; ;main.c: 100:                         _delay((unsigned long)((1000)*(32E6/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / .32e6 .4000.0 `ul ]
+"101
+[; ;main.c: 101:                         LCD_ShowString((char)2, "           Pozor");
+[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 13C ]
+"102
+[; ;main.c: 102:                         _delay((unsigned long)((2000)*(32E6/4000.0)));
+[e ( __delay (1 -> * -> -> 2000 `i `d / .32e6 .4000.0 `ul ]
+"103
+[; ;main.c: 103:                         runGAME();
+[e ( _runGAME ..  ]
+"104
+[; ;main.c: 104:                         setUpAgain = 1;
+[e = _setUpAgain -> -> 1 `i `uc ]
+"105
+[; ;main.c: 105:                         break;
+[e $U 877  ]
+"106
+[; ;main.c: 106:                     case 6:
+[e :U 885 ]
+"107
+[; ;main.c: 107:                         LCD_ShowString((char)1, "                ");
+[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 14C ]
+"108
+[; ;main.c: 108:                         LCD_ShowString((char)2, "                ");
+[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 15C ]
+"109
+[; ;main.c: 109:                         runMUSIC();
+[e ( _runMUSIC ..  ]
+"110
+[; ;main.c: 110:                         setUpAgain = 1;
+[e = _setUpAgain -> -> 1 `i `uc ]
+"111
+[; ;main.c: 111:                         break;
+[e $U 877  ]
+"112
+[; ;main.c: 112:                 }
 }
 [e $U 877  ]
 [e :U 878 ]
@@ -1275,55 +1325,61 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 6 `i 885
  877 ]
 [e :U 877 ]
-"100
-[; ;main.c: 100:             }
+"113
+[; ;main.c: 113:             }
 }
 [e :U 873 ]
-"102
-[; ;main.c: 102:         }
+"115
+[; ;main.c: 115:         }
 }
 [e :U 872 ]
-"103
-[; ;main.c: 103:         if(PORTAbits.RA2){
+"116
+[; ;main.c: 116:         if(PORTAbits.RA2){
 [e $ ! != -> . . _PORTAbits 0 2 `i -> 0 `i 886  ]
 {
-"105
-[; ;main.c: 105:         }
+"118
+[; ;main.c: 118:         }
 }
 [e :U 886 ]
-"107
-[; ;main.c: 107:         if(setUpAgain){
+"120
+[; ;main.c: 120:         if(setUpAgain){
 [e $ ! != -> _setUpAgain `i -> 0 `i 887  ]
 {
-"108
-[; ;main.c: 108:         menuI = moveDisplay(menuI,0);
+"121
+[; ;main.c: 121:         menuI = moveDisplay(menuI,0);
 [e = _menuI ( _moveDisplay (2 , _menuI -> -> 0 `i `uc ]
-"109
-[; ;main.c: 109:         setUpAgain = 0;
+"122
+[; ;main.c: 122:         setUpAgain = 0;
 [e = _setUpAgain -> -> 0 `i `uc ]
-"110
-[; ;main.c: 110:         }
+"123
+[; ;main.c: 123:         }
 }
 [e :U 887 ]
-"111
-[; ;main.c: 111:     }
+"124
+[; ;main.c: 124:     }
 }
 [e :U 859 ]
 [e $U 860  ]
 [e :U 861 ]
-"112
-[; ;main.c: 112:     return;
+"125
+[; ;main.c: 125:     return;
 [e $UE 858  ]
-"113
-[; ;main.c: 113: }
+"126
+[; ;main.c: 126: }
 [e :UE 858 ]
 }
+[a 13C 32 32 32 32 32 32 32 32 32 32 32 80 111 122 111 114 0 ]
 [a 9C 49 58 116 114 44 50 58 115 105 110 44 51 58 112 105 108 0 ]
 [a 4C 75 111 110 101 99 32 45 32 110 101 119 32 108 105 110 101 0 ]
 [a 7C 86 111 108 116 121 32 110 97 32 80 79 84 101 99 104 58 0 ]
 [a 8C 82 66 48 45 65 50 44 32 66 82 58 49 57 50 48 48 0 ]
 [a 5C 90 109 97 99 107 110 101 116 101 32 66 84 78 50 32 32 0 ]
+[a 10C 76 97 100 101 110 105 32 112 111 116 97 107 117 32 32 32 0 ]
 [a 1C 80 111 122 111 114 33 32 72 97 100 33 33 33 32 32 32 0 ]
+[a 12C 80 114 105 112 114 97 118 105 116 32 32 32 32 32 32 32 0 ]
 [a 3C 66 82 58 32 49 57 50 48 48 32 32 32 32 32 32 32 0 ]
 [a 2C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
 [a 6C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
+[a 11C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
+[a 14C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
+[a 15C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]

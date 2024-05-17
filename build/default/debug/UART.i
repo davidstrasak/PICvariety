@@ -9874,6 +9874,7 @@ char *ctermid(char *);
 char *tempnam(const char *, const char *);
 # 5 "./includes.h" 2
 
+
 # 1 "D:\\MPLABX\\Compiler\\pic\\include\\c99\\math.h" 1 3
 # 15 "D:\\MPLABX\\Compiler\\pic\\include\\c99\\math.h" 3
 # 1 "D:\\MPLABX\\Compiler\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -10246,7 +10247,7 @@ double jn(int, double);
 double y0(double);
 double y1(double);
 double yn(int, double);
-# 6 "./includes.h" 2
+# 7 "./includes.h" 2
 
 # 1 "./lcd.h" 1
 
@@ -10258,7 +10259,7 @@ void LCD_ShowString(char line, char a[]);
 static void LCD_Send(unsigned char data);
 void LCD_Clear(void);
 void LCD_Reset(void);
-# 7 "./includes.h" 2
+# 8 "./includes.h" 2
 
 # 1 "./configs.h" 1
 
@@ -10266,26 +10267,26 @@ void LCD_Reset(void);
 #pragma config FOSC = HSMP
 #pragma config PLLCFG = ON
 #pragma config WDTEN = OFF
-# 8 "./includes.h" 2
+# 9 "./includes.h" 2
 
 # 1 "./DAC.h" 1
 
 
 void runDAC(void);
 void SPI_write (uint8_t data);
-# 9 "./includes.h" 2
+# 10 "./includes.h" 2
 
 # 1 "./menu.h" 1
 
 
 uint8_t moveDisplay(uint8_t menuI, uint8_t where);
-# 10 "./includes.h" 2
+# 11 "./includes.h" 2
 
 # 1 "./GPIO.h" 1
 
 
 void runGPIO(void);
-# 11 "./includes.h" 2
+# 12 "./includes.h" 2
 
 # 1 "./interrupt.h" 1
 
@@ -10294,30 +10295,44 @@ void runGPIO(void);
 uint8_t keepStateGPIO;
 uint8_t GPIOIE;
 uint8_t UARTIE;
-# 12 "./includes.h" 2
+uint8_t GAMEIE;
+uint8_t GAMEtime;
+# 13 "./includes.h" 2
 
 # 1 "./ADC.h" 1
 
 
 void runADC(void);
-# 13 "./includes.h" 2
+# 14 "./includes.h" 2
 
 # 1 "./PWM.h" 1
 
 
 void runPWM(void);
-# 14 "./includes.h" 2
+# 15 "./includes.h" 2
 
 # 1 "./UART.h" 1
 
 
 void runUART(void);
 typedef struct{
-    char data[10];
+    char data[31];
     char full;
 } mailbox;
-volatile mailbox gmail = {0,0,0};
-# 15 "./includes.h" 2
+volatile mailbox gmail = {"", 0};
+# 16 "./includes.h" 2
+
+# 1 "./GAME.h" 1
+
+
+void runGAME(void);
+# 17 "./includes.h" 2
+
+# 1 "./MUSIC.h" 1
+
+
+void runMUSIC(void);
+# 18 "./includes.h" 2
 
 
 void putch(char data);
@@ -10328,8 +10343,8 @@ void runUART(void){
 
     TRISAbits.RA2 = 1;
 
-    ANSELC = 0x00;
-    TRISD = 0x00;
+    ANSELCbits.ANSC6 = 0;
+    ANSELCbits.ANSC7 = 0;
     TRISCbits.TRISC6 = 1;
     TRISCbits.TRISC7 = 1;
 
@@ -10350,9 +10365,21 @@ void runUART(void){
 
     while(keepState){
         if(gmail.full){
-            LATDbits.LD2 ^= 1;
-            printf("Dostal jsem %s \n",gmail.data);
+            char reversed[31];
+            size_t len = strlen((const char*)gmail.data);
+
+            for(size_t i = 0; i < len; i++) {
+                reversed[i] = gmail.data[len - 1 - i];
+            }
+            reversed[len] = '\0';
+            printf("%s \n", reversed);
+
             gmail.full = 0;
+
+            for(int p = 0; p < 31; p++) {
+                gmail.data[p] = '\0';
+            }
+
         }
 
         if(PORTAbits.RA2){
@@ -10366,12 +10393,12 @@ void runUART(void){
     }
 
 
-
-
-
+    RCSTA1bits.SPEN = 0;
+    TXSTA1bits.TXEN = 0;
+    RCSTA1bits.CREN = 0;
     UARTIE = 0;
-
-
-
+    RC1IE = 0;
+    PEIE = 0;
+    GIE = 0;
     return;
 }

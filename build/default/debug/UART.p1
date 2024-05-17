@@ -1,7 +1,7 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "4 ./UART.h
 [; ;./UART.h: 4: typedef struct{
-[s S857 `uc -> 10 `i `uc 1 ]
+[s S857 `uc -> 31 `i `uc 1 ]
 [n S857 . data full ]
 "8071 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 8071:     struct {
@@ -18,12 +18,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 "8092
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 8092: extern volatile TRISAbits_t TRISAbits __attribute__((address(0xF92)));
 [v _TRISAbits `VS394 ~T0 @X0 0 e@3986 ]
-"147
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 147: extern volatile unsigned char ANSELC __attribute__((address(0xF3A)));
-[v _ANSELC `Vuc ~T0 @X0 0 e@3898 ]
-"8726
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 8726: extern volatile unsigned char TRISD __attribute__((address(0xF95)));
-[v _TRISD `Vuc ~T0 @X0 0 e@3989 ]
+"153
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 153:     struct {
+[s S11 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S11 . . ANSC2 ANSC3 ANSC4 ANSC5 ANSC6 ANSC7 ]
+"152
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 152: typedef union {
+[u S10 `S11 1 ]
+[n S10 . . ]
+"163
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 163: extern volatile ANSELCbits_t ANSELCbits __attribute__((address(0xF3A)));
+[v _ANSELCbits `VS10 ~T0 @X0 0 e@3898 ]
 "8515
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 8515:     struct {
 [s S407 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -101,21 +106,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "18495
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 18495: extern volatile __bit GIE __attribute__((address(0x7F97)));
 [v _GIE `Vb ~T0 @X0 0 e@32663 ]
-"7902
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 7902:     struct {
-[s S389 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S389 . LATD0 LATD1 LATD2 LATD3 LATD4 LATD5 LATD6 LATD7 ]
-"7912
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 7912:     struct {
-[s S390 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S390 . LD0 LD1 LD2 LD3 LD4 LD5 LD6 LD7 ]
-"7901
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 7901: typedef union {
-[u S388 `S389 1 `S390 1 ]
-[n S388 . . . ]
-"7923
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 7923: extern volatile LATDbits_t LATDbits __attribute__((address(0xF8C)));
-[v _LATDbits `VS388 ~T0 @X0 0 e@3980 ]
+"54 D:\MPLABX\Compiler\pic\include\c99\string.h
+[; ;D:\MPLABX\Compiler\pic\include\c99\string.h: 54: size_t strlen (const char *);
+[v _strlen `(ui ~T0 @X0 0 ef1`*Cuc ]
 "117 D:\MPLABX\Compiler\pic\include\c99\stdio.h
 [; ;D:\MPLABX\Compiler\pic\include\c99\stdio.h: 117: int printf(const char *restrict, ...);
 [v _printf `(i ~T0 @X0 0 ev`*Cuc ]
@@ -956,17 +949,22 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6
 [; ;./interrupt.h: 6: uint8_t UARTIE;
 [v _UARTIE `uc ~T0 @X0 1 e ]
+"7
+[; ;./interrupt.h: 7: uint8_t GAMEIE;
+[v _GAMEIE `uc ~T0 @X0 1 e ]
+"8
+[; ;./interrupt.h: 8: uint8_t GAMEtime;
+[v _GAMEtime `uc ~T0 @X0 1 e ]
 "8 ./UART.h
-[; ;./UART.h: 8: volatile mailbox gmail = {0,0,0};
+[; ;./UART.h: 8: volatile mailbox gmail = {"", 0};
 [v _gmail `VS857 ~T0 @X0 1 e ]
 [i _gmail
 :U ..
 :U ..
 :U ..
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
+-> 0 `c
 ..
+-> -> 0 `i `uc
 ..
 ..
 ]
@@ -980,11 +978,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;UART.c: 6:     TRISAbits.RA2 = 1;
 [e = . . _TRISAbits 1 2 -> -> 1 `i `uc ]
 "8
-[; ;UART.c: 8:     ANSELC = 0x00;
-[e = _ANSELC -> -> 0 `i `uc ]
+[; ;UART.c: 8:     ANSELCbits.ANSC6 = 0;
+[e = . . _ANSELCbits 0 5 -> -> 0 `i `uc ]
 "9
-[; ;UART.c: 9:     TRISD = 0x00;
-[e = _TRISD -> -> 0 `i `uc ]
+[; ;UART.c: 9:     ANSELCbits.ANSC7 = 0;
+[e = . . _ANSELCbits 0 6 -> -> 0 `i `uc ]
 "10
 [; ;UART.c: 10:     TRISCbits.TRISC6 = 1;
 [e = . . _TRISCbits 0 6 -> -> 1 `i `uc ]
@@ -1032,64 +1030,127 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! != -> . _gmail 1 `i -> 0 `i 862  ]
 {
 "30
-[; ;UART.c: 30:             LATDbits.LD2 ^= 1;
-[e =^ . . _LATDbits 1 2 -> -> 1 `i `Vuc ]
+[; ;UART.c: 30:             char reversed[31];
+[v _reversed `uc ~T0 @X0 -> 31 `i a ]
 "31
-[; ;UART.c: 31:             printf("Dostal jsem %s \n",gmail.data);
-[e ( _printf , (. :s 1C &U . _gmail 0 ]
-"32
-[; ;UART.c: 32:             gmail.full = 0;
-[e = . _gmail 1 -> -> 0 `i `uc ]
+[; ;UART.c: 31:             size_t len = strlen((const char*)gmail.data);
+[v _len `ui ~T0 @X0 1 a ]
+[e = _len ( _strlen (1 -> &U . _gmail 0 `*Cuc ]
 "33
-[; ;UART.c: 33:         }
+[; ;UART.c: 33:             for(size_t i = 0; i < len; i++) {
+{
+[v _i `ui ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `ui ]
+[e $U 866  ]
+[e :U 863 ]
+{
+"34
+[; ;UART.c: 34:                 reversed[i] = gmail.data[len - 1 - i];
+[e = *U + &U _reversed * -> _i `ux -> -> # *U &U _reversed `ui `ux *U + &U . _gmail 0 * -> - - _len -> -> 1 `i `ui _i `ux -> -> # *U &U . _gmail 0 `ui `ux ]
+"35
+[; ;UART.c: 35:             }
+}
+[e ++ _i -> -> 1 `i `ui ]
+[e :U 866 ]
+[e $ < _i _len 863  ]
+[e :U 864 ]
+}
+"36
+[; ;UART.c: 36:             reversed[len] = '\0';
+[e = *U + &U _reversed * -> _len `ux -> -> # *U &U _reversed `ui `ux -> -> 0 `ui `uc ]
+"37
+[; ;UART.c: 37:             printf("%s \n", reversed);
+[e ( _printf , (. :s 1C &U _reversed ]
+"39
+[; ;UART.c: 39:             gmail.full = 0;
+[e = . _gmail 1 -> -> 0 `i `uc ]
+"41
+[; ;UART.c: 41:             for(int p = 0; p < 31; p++) {
+{
+[v _p `i ~T0 @X0 1 a ]
+[e = _p -> 0 `i ]
+[e $ < _p -> 31 `i 867  ]
+[e $U 868  ]
+[e :U 867 ]
+{
+"42
+[; ;UART.c: 42:                 gmail.data[p] = '\0';
+[e = *U + &U . _gmail 0 * -> -> _p `ui `ux -> -> # *U &U . _gmail 0 `ui `ux -> -> 0 `ui `uc ]
+"43
+[; ;UART.c: 43:             }
+}
+[e ++ _p -> 1 `i ]
+[e $ < _p -> 31 `i 867  ]
+[e :U 868 ]
+}
+"45
+[; ;UART.c: 45:         }
 }
 [e :U 862 ]
-"35
-[; ;UART.c: 35:         if(PORTAbits.RA2){
-[e $ ! != -> . . _PORTAbits 0 2 `i -> 0 `i 863  ]
+"47
+[; ;UART.c: 47:         if(PORTAbits.RA2){
+[e $ ! != -> . . _PORTAbits 0 2 `i -> 0 `i 870  ]
 {
-"36
-[; ;UART.c: 36:             _delay((unsigned long)((50)*(32E6/4000.0)));
+"48
+[; ;UART.c: 48:             _delay((unsigned long)((50)*(32E6/4000.0)));
 [e ( __delay (1 -> * -> -> 50 `i `d / .32e6 .4000.0 `ul ]
-"37
-[; ;UART.c: 37:             if(PORTAbits.RA2){
-[e $ ! != -> . . _PORTAbits 0 2 `i -> 0 `i 864  ]
+"49
+[; ;UART.c: 49:             if(PORTAbits.RA2){
+[e $ ! != -> . . _PORTAbits 0 2 `i -> 0 `i 871  ]
 {
-"38
-[; ;UART.c: 38:                 while(PORTAbits.RA2);
-[e $U 865  ]
-[e :U 866 ]
-[e :U 865 ]
-[e $ != -> . . _PORTAbits 0 2 `i -> 0 `i 866  ]
-[e :U 867 ]
-"39
-[; ;UART.c: 39:                 keepState = 0;
+"50
+[; ;UART.c: 50:                 while(PORTAbits.RA2);
+[e $U 872  ]
+[e :U 873 ]
+[e :U 872 ]
+[e $ != -> . . _PORTAbits 0 2 `i -> 0 `i 873  ]
+[e :U 874 ]
+"51
+[; ;UART.c: 51:                 keepState = 0;
 [e = _keepState -> -> 0 `i `uc ]
-"40
-[; ;UART.c: 40:             }
+"52
+[; ;UART.c: 52:             }
 }
-[e :U 864 ]
-"41
-[; ;UART.c: 41:         }
+[e :U 871 ]
+"53
+[; ;UART.c: 53:         }
 }
-[e :U 863 ]
-"43
-[; ;UART.c: 43:     }
+[e :U 870 ]
+"55
+[; ;UART.c: 55:     }
 }
 [e :U 859 ]
 "28
 [; ;UART.c: 28:     while(keepState){
 [e $ != -> _keepState `i -> 0 `i 860  ]
 [e :U 861 ]
-"49
-[; ;UART.c: 49:     UARTIE = 0;
+"58
+[; ;UART.c: 58:     RCSTA1bits.SPEN = 0;
+[e = . . _RCSTA1bits 0 7 -> -> 0 `i `uc ]
+"59
+[; ;UART.c: 59:     TXSTA1bits.TXEN = 0;
+[e = . . _TXSTA1bits 0 5 -> -> 0 `i `uc ]
+"60
+[; ;UART.c: 60:     RCSTA1bits.CREN = 0;
+[e = . . _RCSTA1bits 0 4 -> -> 0 `i `uc ]
+"61
+[; ;UART.c: 61:     UARTIE = 0;
 [e = _UARTIE -> -> 0 `i `uc ]
-"53
-[; ;UART.c: 53:     return;
+"62
+[; ;UART.c: 62:     RC1IE = 0;
+[e = _RC1IE -> -> 0 `i `b ]
+"63
+[; ;UART.c: 63:     PEIE = 0;
+[e = _PEIE -> -> 0 `i `b ]
+"64
+[; ;UART.c: 64:     GIE = 0;
+[e = _GIE -> -> 0 `i `b ]
+"65
+[; ;UART.c: 65:     return;
 [e $UE 858  ]
-"54
-[; ;UART.c: 54: }
+"66
+[; ;UART.c: 66: }
 [e :UE 858 ]
 }
 [p f _printf 8650752 ]
-[a 1C 68 111 115 116 97 108 32 106 115 101 109 32 37 115 32 10 0 ]
+[a 1C 37 115 32 10 0 ]

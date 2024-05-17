@@ -10431,8 +10431,13 @@ void main(void) {
                         setUpAgain = 1;
                         break;
                     case 5:
-                        LCD_ShowString((char)1, "                ");
+                        LCD_ShowString((char)1, "Ladeni potaku   ");
                         LCD_ShowString((char)2, "                ");
+                        _delay((unsigned long)((1000)*(32E6/4000.0)));
+                        LCD_ShowString((char)1, "Pripravit       ");
+                        _delay((unsigned long)((1000)*(32E6/4000.0)));
+                        LCD_ShowString((char)2, "           Pozor");
+                        _delay((unsigned long)((2000)*(32E6/4000.0)));
                         runGAME();
                         setUpAgain = 1;
                         break;

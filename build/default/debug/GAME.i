@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "GAME.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "D:\\MPLABX\\Compiler\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
+# 1 "GAME.c" 2
 
 
 
@@ -10342,19 +10342,10 @@ void runMUSIC(void);
 
 
 void putch(char data);
-# 8 "main.c" 2
+# 8 "GAME.c" 2
 
 
-void main(void) {
-    _delay((unsigned long)((100)*(32E6/4000.0)));
-
-    TRISCbits.RC0 = 1;
-    TRISAbits.RA4 = 1;
-    TRISAbits.RA3 = 1;
-    TRISAbits.RA2 = 1;
-    ANSELAbits.ANSA3 = 0;
-    ANSELAbits.ANSA2 = 0;
-
+void runGAME(void){
 
     TRISDbits.RD2 = 0;
     TRISDbits.RD3 = 0;
@@ -10362,6 +10353,12 @@ void main(void) {
     TRISDbits.RD4 = 0;
     TRISDbits.RD5 = 0;
     TRISDbits.RD6 = 0;
+    ANSELDbits.ANSD2 = 0;
+    ANSELDbits.ANSD3 = 0;
+    ANSELCbits.ANSC4 = 0;
+    ANSELDbits.ANSD4 = 0;
+    ANSELDbits.ANSD5 = 0;
+    ANSELDbits.ANSD6 = 0;
     LATDbits.LD2 = 1;
     LATDbits.LD3 = 1;
     LATCbits.LC4 = 1;
@@ -10370,95 +10367,170 @@ void main(void) {
     LATDbits.LD6 = 1;
 
 
-    LCD_Init();
-    uint8_t menuI = 0;
-    uint8_t setUpAgain = 0;
+    TRISAbits.RA2 = 1;
+    ANSELAbits.ANSA2 = 0;
+
+
+    ANSELAbits.ANSA5 = 1;
+    ADCON2bits.ADFM = 1;
+    ADCON2bits.ADCS = 0b110;
+    ADCON2bits.ACQT = 0b110;
+    ADCON0bits.ADON = 1;
+
+    uint16_t pot1;
+    char text[17] = "";
+    uint8_t keepStateGAME;
+    keepStateGAME = 1;
 
 
 
+    T1CONbits.TMR1CS = 0b00;
+    T1CONbits.T1CKPS = 0b11;
+    TMR1IE = 1;
+    PEIE = 1;
+    GIE = 1;
+    GAMEIE = 1;
+    TMR1IF = 1;
+    TMR1 = 0xFFFF - (62500 - 1);
+    TMR1ON = 1;
+
+    GAMEtime = 0;
+    uint8_t GAMEround = 1;
+    uint8_t GAMEpart = 0;
+    uint8_t GAMEdivider = 0;
+    char approxText[17] = "";
 
 
+    uint16_t randomNumber;
+    randomNumber = (uint16_t)(2 + rand() / ((0x7fff) / (1023 - 2 + 1) + 1));
+    sprintf(approxText, "%u                ", randomNumber);
+    LCD_ShowString((char)1, approxText);
 
-    menuI = moveDisplay(menuI,0);
 
-    while(1){
-        if(PORTCbits.RC0){
-            _delay((unsigned long)((50)*(32E6/4000.0)));
-            if(PORTCbits.RC0){
-                menuI = moveDisplay(menuI,2);
-                while(PORTCbits.RC0);
-            }
+    while(keepStateGAME){
+
+        ADCON0bits.CHS = 5;
+        GODONE = 1;
+        while(GODONE);
+        pot1 = (uint16_t)((ADRESH << 8) | ADRESL);
+
+        sprintf(text, "%hu             ", pot1);
+        LCD_ShowString((char)2, text);
+
+        switch(GAMEround){
+            case 1:
+                GAMEdivider = 33;
+                break;
+            case 2:
+                GAMEdivider = 24;
+                break;
+            case 3:
+                GAMEdivider = 18;
+                break;
+            case 4:
+                GAMEdivider = 16;
+                break;
+            default:
+                GAMEdivider = 15;
+                break;
         }
-        if(PORTAbits.RA4){
-            _delay((unsigned long)((50)*(32E6/4000.0)));
-            if(PORTAbits.RA4){
-                menuI = moveDisplay(menuI,1);
-                while(PORTAbits.RA4);
-            }
-        }
-        if(PORTAbits.RA3){
-            _delay((unsigned long)((50)*(32E6/4000.0)));
-            if(PORTAbits.RA3){
-                while(PORTAbits.RA3);
-                switch(menuI){
-                    case 0:
-                        LCD_ShowString((char)1, "Pozor! Had!!!   ");
-                        LCD_ShowString((char)2, "                ");
-                        runGPIO();
-                        setUpAgain = 1;
-                        break;
-                    case 1:
-                        LCD_ShowString((char)1, "BR: 19200       ");
-                        LCD_ShowString((char)2, "Konec - new line");
-                        runUART();
-                        setUpAgain = 1;
-                        break;
-                    case 2:
-                        LCD_ShowString((char)1, "Zmacknete BTN2  ");
-                        LCD_ShowString((char)2, "                ");
-                        runPWM();
-                        setUpAgain = 1;
-                        break;
-                    case 3:
-                        LCD_ShowString((char)1, "Volty na POTech:");
-                        runADC();
-                        setUpAgain = 1;
-                        break;
-                    case 4:
-                        LCD_ShowString((char)1, "RB0-A2, BR:19200");
-                        LCD_ShowString((char)2, "1:tr,2:sin,3:pil");
-                        runDAC();
-                        setUpAgain = 1;
-                        break;
-                    case 5:
-                        LCD_ShowString((char)1, "Ladeni potaku   ");
-                        LCD_ShowString((char)2, "                ");
-                        _delay((unsigned long)((1000)*(32E6/4000.0)));
-                        LCD_ShowString((char)1, "Pripravit       ");
-                        _delay((unsigned long)((1000)*(32E6/4000.0)));
-                        LCD_ShowString((char)2, "           Pozor");
-                        _delay((unsigned long)((2000)*(32E6/4000.0)));
-                        runGAME();
-                        setUpAgain = 1;
-                        break;
-                    case 6:
-                        LCD_ShowString((char)1, "                ");
-                        LCD_ShowString((char)2, "                ");
-                        runMUSIC();
-                        setUpAgain = 1;
-                        break;
+
+        GAMEpart = GAMEtime/GAMEdivider;
+        switch(GAMEpart){
+            case 0:
+                LATDbits.LD2 = 1;
+                LATDbits.LD3 = 1;
+                LATCbits.LC4 = 1;
+                LATDbits.LD4 = 1;
+                LATDbits.LD5 = 1;
+                LATDbits.LD6 = 1;
+                break;
+            case 1:
+                LATDbits.LD2 = 0;
+                LATDbits.LD3 = 1;
+                LATCbits.LC4 = 1;
+                LATDbits.LD4 = 1;
+                LATDbits.LD5 = 1;
+                LATDbits.LD6 = 1;
+                break;
+            case 2:
+                LATDbits.LD2 = 0;
+                LATDbits.LD3 = 0;
+                LATCbits.LC4 = 1;
+                LATDbits.LD4 = 1;
+                LATDbits.LD5 = 1;
+                LATDbits.LD6 = 1;
+                break;
+            case 3:
+                LATDbits.LD2 = 0;
+                LATDbits.LD3 = 0;
+                LATCbits.LC4 = 0;
+                LATDbits.LD4 = 1;
+                LATDbits.LD5 = 1;
+                LATDbits.LD6 = 1;
+                break;
+            case 4:
+                LATDbits.LD2 = 0;
+                LATDbits.LD3 = 0;
+                LATCbits.LC4 = 0;
+                LATDbits.LD4 = 0;
+                LATDbits.LD5 = 1;
+                LATDbits.LD6 = 1;
+                break;
+            case 5:
+                LATDbits.LD2 = 0;
+                LATDbits.LD3 = 0;
+                LATCbits.LC4 = 0;
+                LATDbits.LD4 = 0;
+                LATDbits.LD5 = 0;
+                LATDbits.LD6 = 1;
+                break;
+            case 6:
+                LATDbits.LD2 = 0;
+                LATDbits.LD3 = 0;
+                LATCbits.LC4 = 0;
+                LATDbits.LD4 = 0;
+                LATDbits.LD5 = 0;
+                LATDbits.LD6 = 0;
+                break;
+            case 7:
+                GAMEtime = 0;
+                if(pot1 >= randomNumber - 2 && pot1 <= randomNumber + 2){
+                    GAMEround += 1;
+                    randomNumber = (uint16_t)(2 + rand() / ((0x7fff) / (1023 - 2 + 1) + 1));
+                    sprintf(approxText, "%u                ", randomNumber);
+                    keepStateGAME = 1;
+                    LCD_ShowString((char)1, approxText);
+                } else {
+                    ADCON0bits.ADON = 0;
+                    sprintf(approxText, "Skore: %u        ", GAMEround);
+                    LCD_ShowString((char)1, "GAME OVER       ");
+                    LCD_ShowString((char)2, approxText);
+                    keepStateGAME = 0;
+                    _delay((unsigned long)((2000)*(32E6/4000.0)));
                 }
-            }
-
+                break;
         }
+
         if(PORTAbits.RA2){
-
-        }
-
-        if(setUpAgain){
-        menuI = moveDisplay(menuI,0);
-        setUpAgain = 0;
+            _delay((unsigned long)((50)*(32E6/4000.0)));
+            if(PORTAbits.RA2){
+                while(PORTAbits.RA2);
+                keepStateGAME = 0;
+            }
         }
     }
+
+
+    LATDbits.LD2 = 1;
+    LATDbits.LD3 = 1;
+    LATCbits.LC4 = 1;
+    LATDbits.LD4 = 1;
+    LATDbits.LD5 = 1;
+    LATDbits.LD6 = 1;
+    TMR1ON = 0;
+    TMR1IE = 0;
+    GAMEIE = 0;
+
     return;
 }

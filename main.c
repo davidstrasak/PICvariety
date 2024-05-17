@@ -93,8 +93,13 @@ void main(void) {
                         setUpAgain = 1;
                         break;
                     case 5: // GAME
-                        LCD_ShowString((char)1, "                ");
+                        LCD_ShowString((char)1, "Ladeni potaku   ");
                         LCD_ShowString((char)2, "                ");
+                        __delay_ms(1000);
+                        LCD_ShowString((char)1, "Pripravit       ");
+                        __delay_ms(1000);
+                        LCD_ShowString((char)2, "           Pozor");
+                        __delay_ms(2000);
                         runGAME();
                         setUpAgain = 1;
                         break;

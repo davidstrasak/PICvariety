@@ -1238,6 +1238,46 @@ static void stoa(FILE *fp, char *s)
 
 
 }
+
+
+
+static void utoa(FILE *fp, vfpf_uint_t d)
+{
+    int i, w;
+
+ int p;
+# 1017 "D:\\MPLABX\\Compiler\\pic\\sources\\c99\\common\\doprnt.c"
+    p = (0 <= prec) ? prec : 1;
+
+    w = width;
+
+
+    i = sizeof(dbuf) - 1;
+    dbuf[i] = '\0';
+    while (i && (d != 0
+
+    || (0 < p)
+
+
+
+
+
+
+    )) {
+        --i;
+        dbuf[i] = '0' + (d % 10);
+
+        --p;
+
+
+
+        --w;
+        d = d / 10;
+    }
+
+
+    return (void) pad(fp, &dbuf[i], w);
+}
 # 1157 "D:\\MPLABX\\Compiler\\pic\\sources\\c99\\common\\doprnt.c"
 static int
 read_prec_or_width (const char **fmt, va_list *ap) {
@@ -1310,15 +1350,89 @@ vfpfcnvrt(FILE *fp, char *fmt[], va_list ap)
   }
 # 1291 "D:\\MPLABX\\Compiler\\pic\\sources\\c99\\common\\doprnt.c"
   cp = *fmt;
-# 1361 "D:\\MPLABX\\Compiler\\pic\\sources\\c99\\common\\doprnt.c"
+
+  c = *cp;
+  switch(c) {
+
+
+   case 'h':
+    cp++;
+
+
+
+
+
+
+    break;
+# 1335 "D:\\MPLABX\\Compiler\\pic\\sources\\c99\\common\\doprnt.c"
+   case 'u':
+
+
+   case 'i':
+   case 'd':
+# 1350 "D:\\MPLABX\\Compiler\\pic\\sources\\c99\\common\\doprnt.c"
+    c = 'i';
+    break;
+   default :
+    c = 0;
+    break;
+  }
+
+
+
+
+
   if (*cp == 'd' || *cp == 'i') {
-# 1404 "D:\\MPLABX\\Compiler\\pic\\sources\\c99\\common\\doprnt.c"
-   convarg.sint = (vfpf_sint_t)(int)(*(int *)__va_arg(*(int **)ap, (int)0));
+
+   switch (c) {
+    case 'i':
+     convarg.sint = (vfpf_sint_t)(int)(*(int *)__va_arg(*(int **)ap, (int)0));
+     break;
+
+    case 'h':
+     convarg.sint = (vfpf_sint_t)(short)(*(int *)__va_arg(*(int **)ap, (int)0));
+     break;
+# 1402 "D:\\MPLABX\\Compiler\\pic\\sources\\c99\\common\\doprnt.c"
+   }
+
+
 
    *fmt = cp+1;
 # 1432 "D:\\MPLABX\\Compiler\\pic\\sources\\c99\\common\\doprnt.c"
    return (void) dtoa(fp, convarg.sint);
 
+  }
+
+
+
+
+  if (0
+# 1450 "D:\\MPLABX\\Compiler\\pic\\sources\\c99\\common\\doprnt.c"
+    || *cp == 'u'
+
+    ) {
+
+   switch (c) {
+    case 'i':
+     convarg.uint = (vfpf_uint_t)(unsigned int)(*(unsigned int *)__va_arg(*(unsigned int **)ap, (unsigned int)0));
+     break;
+
+    case 'h':
+     convarg.uint = (vfpf_uint_t)(unsigned short)(*(unsigned int *)__va_arg(*(unsigned int **)ap, (unsigned int)0));
+     break;
+# 1493 "D:\\MPLABX\\Compiler\\pic\\sources\\c99\\common\\doprnt.c"
+   }
+
+
+
+   *fmt = cp+1;
+   switch (*cp) {
+# 1523 "D:\\MPLABX\\Compiler\\pic\\sources\\c99\\common\\doprnt.c"
+    case 'u':
+# 1542 "D:\\MPLABX\\Compiler\\pic\\sources\\c99\\common\\doprnt.c"
+     return (void) utoa(fp, convarg.uint);
+# 1589 "D:\\MPLABX\\Compiler\\pic\\sources\\c99\\common\\doprnt.c"
+   }
   }
 # 1656 "D:\\MPLABX\\Compiler\\pic\\sources\\c99\\common\\doprnt.c"
   done = 0;
