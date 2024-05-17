@@ -1282,38 +1282,38 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 98:                         _delay((unsigned long)((1000)*(32E6/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / .32e6 .4000.0 `ul ]
 "99
-[; ;main.c: 99:                         LCD_ShowString((char)1, "Pripravit       ");
+[; ;main.c: 99:                         LCD_ShowString((char)1, "Hybej pomoci    ");
 [e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 14C ]
 "100
-[; ;main.c: 100:                         _delay((unsigned long)((1000)*(32E6/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / .32e6 .4000.0 `ul ]
-"101
-[; ;main.c: 101:                         LCD_ShowString((char)2, "           Pozor");
+[; ;main.c: 100:                         LCD_ShowString((char)2, "POT1            ");
 [e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 15C ]
-"102
-[; ;main.c: 102:                         _delay((unsigned long)((2000)*(32E6/4000.0)));
+"101
+[; ;main.c: 101:                         _delay((unsigned long)((2000)*(32E6/4000.0)));
 [e ( __delay (1 -> * -> -> 2000 `i `d / .32e6 .4000.0 `ul ]
-"103
-[; ;main.c: 103:                         runGAME();
-[e ( _runGAME ..  ]
-"104
-[; ;main.c: 104:                         setUpAgain = 1;
-[e = _setUpAgain -> -> 1 `i `uc ]
-"105
-[; ;main.c: 105:                         break;
-[e $U 877  ]
-"106
-[; ;main.c: 106:                     case 6:
-[e :U 885 ]
-"107
-[; ;main.c: 107:                         LCD_ShowString((char)1, "Nebylo          ");
+"102
+[; ;main.c: 102:                         LCD_ShowString((char)1, "Zrychli to      ");
 [e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 16C ]
-"108
-[; ;main.c: 108:                         LCD_ShowString((char)2, "Implementovano  ");
+"103
+[; ;main.c: 103:                         LCD_ShowString((char)2, "pomoci BTN4     ");
 [e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 17C ]
+"104
+[; ;main.c: 104:                         _delay((unsigned long)((2000)*(32E6/4000.0)));
+[e ( __delay (1 -> * -> -> 2000 `i `d / .32e6 .4000.0 `ul ]
+"105
+[; ;main.c: 105:                         LCD_ShowString((char)1, "Pripravit       ");
+[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 18C ]
+"106
+[; ;main.c: 106:                         _delay((unsigned long)((1000)*(32E6/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / .32e6 .4000.0 `ul ]
+"107
+[; ;main.c: 107:                         LCD_ShowString((char)2, "           Pozor");
+[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 19C ]
+"108
+[; ;main.c: 108:                         _delay((unsigned long)((2000)*(32E6/4000.0)));
+[e ( __delay (1 -> * -> -> 2000 `i `d / .32e6 .4000.0 `ul ]
 "109
-[; ;main.c: 109:                         runMUSIC();
-[e ( _runMUSIC ..  ]
+[; ;main.c: 109:                         runGAME();
+[e ( _runGAME ..  ]
 "110
 [; ;main.c: 110:                         setUpAgain = 1;
 [e = _setUpAgain -> -> 1 `i `uc ]
@@ -1321,7 +1321,28 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 111:                         break;
 [e $U 877  ]
 "112
-[; ;main.c: 112:                 }
+[; ;main.c: 112:                     case 6:
+[e :U 885 ]
+"113
+[; ;main.c: 113:                         LCD_ShowString((char)1, "Nebylo          ");
+[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 20C ]
+"114
+[; ;main.c: 114:                         LCD_ShowString((char)2, "Implementovano  ");
+[e ( _LCD_ShowString (2 , -> -> 2 `i `uc :s 21C ]
+"115
+[; ;main.c: 115:                         _delay((unsigned long)((2000)*(32E6/4000.0)));
+[e ( __delay (1 -> * -> -> 2000 `i `d / .32e6 .4000.0 `ul ]
+"116
+[; ;main.c: 116:                         runMUSIC();
+[e ( _runMUSIC ..  ]
+"117
+[; ;main.c: 117:                         setUpAgain = 1;
+[e = _setUpAgain -> -> 1 `i `uc ]
+"118
+[; ;main.c: 118:                         break;
+[e $U 877  ]
+"119
+[; ;main.c: 119:                 }
 }
 [e $U 877  ]
 [e :U 878 ]
@@ -1334,63 +1355,67 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 6 `i 885
  877 ]
 [e :U 877 ]
-"113
-[; ;main.c: 113:             }
+"120
+[; ;main.c: 120:             }
 }
 [e :U 873 ]
-"115
-[; ;main.c: 115:         }
+"122
+[; ;main.c: 122:         }
 }
 [e :U 872 ]
-"116
-[; ;main.c: 116:         if(PORTAbits.RA2){
+"123
+[; ;main.c: 123:         if(PORTAbits.RA2){
 [e $ ! != -> . . _PORTAbits 0 2 `i -> 0 `i 886  ]
 {
-"118
-[; ;main.c: 118:         }
+"125
+[; ;main.c: 125:         }
 }
 [e :U 886 ]
-"120
-[; ;main.c: 120:         if(setUpAgain){
+"127
+[; ;main.c: 127:         if(setUpAgain){
 [e $ ! != -> _setUpAgain `i -> 0 `i 887  ]
 {
-"121
-[; ;main.c: 121:         menuI = moveDisplay(menuI,0);
+"128
+[; ;main.c: 128:         menuI = moveDisplay(menuI,0);
 [e = _menuI ( _moveDisplay (2 , _menuI -> -> 0 `i `uc ]
-"122
-[; ;main.c: 122:         setUpAgain = 0;
+"129
+[; ;main.c: 129:         setUpAgain = 0;
 [e = _setUpAgain -> -> 0 `i `uc ]
-"123
-[; ;main.c: 123:         }
+"130
+[; ;main.c: 130:         }
 }
 [e :U 887 ]
-"124
-[; ;main.c: 124:     }
+"131
+[; ;main.c: 131:     }
 }
 [e :U 859 ]
 [e $U 860  ]
 [e :U 861 ]
-"125
-[; ;main.c: 125:     return;
+"132
+[; ;main.c: 132:     return;
 [e $UE 858  ]
-"126
-[; ;main.c: 126: }
+"133
+[; ;main.c: 133: }
 [e :UE 858 ]
 }
-[a 15C 32 32 32 32 32 32 32 32 32 32 32 80 111 122 111 114 0 ]
+[a 19C 32 32 32 32 32 32 32 32 32 32 32 80 111 122 111 114 0 ]
 [a 11C 49 58 116 114 44 50 58 115 105 110 44 51 58 112 105 108 0 ]
 [a 6C 75 111 110 101 99 32 45 32 110 101 119 32 108 105 110 101 0 ]
 [a 9C 86 111 108 116 121 32 110 97 32 80 79 84 101 99 104 58 0 ]
 [a 10C 82 66 48 45 65 50 44 32 66 82 58 49 57 50 48 48 0 ]
-[a 17C 73 109 112 108 101 109 101 110 116 111 118 97 110 111 32 32 0 ]
+[a 21C 73 109 112 108 101 109 101 110 116 111 118 97 110 111 32 32 0 ]
 [a 7C 90 109 97 99 107 110 101 116 101 32 66 84 78 50 32 32 0 ]
 [a 12C 76 97 100 101 110 105 32 112 111 116 97 107 117 32 32 32 0 ]
 [a 2C 68 97 118 105 100 32 83 116 114 97 115 97 107 32 32 32 0 ]
 [a 3C 80 111 122 111 114 33 32 72 97 100 33 33 33 32 32 32 0 ]
-[a 14C 80 114 105 112 114 97 118 105 116 32 32 32 32 32 32 32 0 ]
+[a 14C 72 121 98 101 106 32 112 111 109 111 99 105 32 32 32 32 0 ]
+[a 17C 112 111 109 111 99 105 32 66 84 78 52 32 32 32 32 32 0 ]
+[a 16C 90 114 121 99 104 108 105 32 116 111 32 32 32 32 32 32 0 ]
+[a 18C 80 114 105 112 114 97 118 105 116 32 32 32 32 32 32 32 0 ]
 [a 1C 86 121 116 118 111 114 105 108 58 32 32 32 32 32 32 32 0 ]
 [a 5C 66 82 58 32 49 57 50 48 48 32 32 32 32 32 32 32 0 ]
-[a 16C 78 101 98 121 108 111 32 32 32 32 32 32 32 32 32 32 0 ]
+[a 20C 78 101 98 121 108 111 32 32 32 32 32 32 32 32 32 32 0 ]
+[a 15C 80 79 84 49 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
 [a 4C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
 [a 8C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
 [a 13C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]

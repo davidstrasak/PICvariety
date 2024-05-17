@@ -98,6 +98,15 @@ void runGAME(void){
         }
         
         GAMEpart = GAMEtime/GAMEdivider;
+        
+        if(PORTAbits.RA2){  //Kontrola drzeni pinu s debouncingem
+            __delay_ms(50);
+            if(PORTAbits.RA2){
+                while(PORTAbits.RA2);
+                GAMEpart = 7;
+            }
+        }
+        
         switch(GAMEpart){
             case 0:
                 LED1 = 1;
@@ -172,14 +181,6 @@ void runGAME(void){
                     __delay_ms(2000);
                 }
                 break;
-        }
-        
-        if(PORTAbits.RA2){  //Kontrola drzeni pinu s debouncingem
-            __delay_ms(50);
-            if(PORTAbits.RA2){
-                while(PORTAbits.RA2);
-                keepStateGAME = 0;
-            }
         }
     }
 

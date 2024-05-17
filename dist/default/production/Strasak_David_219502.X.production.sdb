@@ -921,7 +921,7 @@
 [v main@menuI menuI `uc  1 a 1 157 ]
 "37
 [v main@setUpAgain setUpAgain `uc  1 a 1 156 ]
-"126
+"127
 } 0
 "4 D:\OneDrive - VUT\C Projects\Strasak_David_219502.X\UART.c
 [v _runUART runUART `(v  1 e 1 0 ]
@@ -1037,11 +1037,11 @@
 [v runGAME@GAMEdivider GAMEdivider `uc  1 a 1 45 ]
 "59
 [v runGAME@GAMEround GAMEround `uc  1 a 1 44 ]
-"44
-[v runGAME@keepStateGAME keepStateGAME `uc  1 a 1 43 ]
 "60
-[v runGAME@GAMEpart GAMEpart `uc  1 a 1 42 ]
-"198
+[v runGAME@GAMEpart GAMEpart `uc  1 a 1 43 ]
+"44
+[v runGAME@keepStateGAME keepStateGAME `uc  1 a 1 42 ]
+"199
 } 0
 "11 D:\MPLABX\Compiler\pic\sources\c99\common\rand.c
 [v _rand rand `(i  1 e 2 0 ]

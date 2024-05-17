@@ -96,6 +96,12 @@ void main(void) {
                         LCD_ShowString((char)1, "Ladeni potaku   ");
                         LCD_ShowString((char)2, "                ");
                         __delay_ms(1000);
+                        LCD_ShowString((char)1, "Hybej pomoci    ");
+                        LCD_ShowString((char)2, "POT1            ");
+                        __delay_ms(2000);
+                        LCD_ShowString((char)1, "Zrychli to      ");
+                        LCD_ShowString((char)2, "pomoci BTN4     ");
+                        __delay_ms(2000);
                         LCD_ShowString((char)1, "Pripravit       ");
                         __delay_ms(1000);
                         LCD_ShowString((char)2, "           Pozor");
@@ -106,6 +112,7 @@ void main(void) {
                     case 6: // MUSIC
                         LCD_ShowString((char)1, "Nebylo          ");
                         LCD_ShowString((char)2, "Implementovano  ");
+                        __delay_ms(2000);
                         runMUSIC();
                         setUpAgain = 1;
                         break;

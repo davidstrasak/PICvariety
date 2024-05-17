@@ -10436,6 +10436,15 @@ void runGAME(void){
         }
 
         GAMEpart = GAMEtime/GAMEdivider;
+
+        if(PORTAbits.RA2){
+            _delay((unsigned long)((50)*(32E6/4000.0)));
+            if(PORTAbits.RA2){
+                while(PORTAbits.RA2);
+                GAMEpart = 7;
+            }
+        }
+
         switch(GAMEpart){
             case 0:
                 LATDbits.LD2 = 1;
@@ -10510,14 +10519,6 @@ void runGAME(void){
                     _delay((unsigned long)((2000)*(32E6/4000.0)));
                 }
                 break;
-        }
-
-        if(PORTAbits.RA2){
-            _delay((unsigned long)((50)*(32E6/4000.0)));
-            if(PORTAbits.RA2){
-                while(PORTAbits.RA2);
-                keepStateGAME = 0;
-            }
         }
     }
 

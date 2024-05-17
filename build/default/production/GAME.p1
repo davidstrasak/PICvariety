@@ -224,11 +224,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13743
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 13743: extern volatile unsigned char ADRESL __attribute__((address(0xFC3)));
 [v _ADRESL `Vuc ~T0 @X0 0 e@4035 ]
-[v F205 `(v ~T0 @X0 1 tf1`ul ]
-"20 D:\MPLABX\Compiler\pic\include\builtins.h
-[v __delay `JF205 ~T0 @X0 0 e ]
-[p i __delay ]
-"6286 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h
+"6286
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 6286:     struct {
 [s S332 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S332 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
@@ -287,6 +283,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6365
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 6365: extern volatile PORTAbits_t PORTAbits __attribute__((address(0xF80)));
 [v _PORTAbits `VS331 ~T0 @X0 0 e@3968 ]
+[v F205 `(v ~T0 @X0 1 tf1`ul ]
+"20 D:\MPLABX\Compiler\pic\include\builtins.h
+[v __delay `JF205 ~T0 @X0 0 e ]
+[p i __delay ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 54: __asm("ANSELA equ 0F38h");
 [; <" ANSELA equ 0F38h ;# ">
@@ -1334,318 +1334,318 @@ Version 4.0 HI-TECH Software Intermediate Code
 "100
 [; ;GAME.c: 100:         GAMEpart = GAMEtime/GAMEdivider;
 [e = _GAMEpart -> / -> _GAMEtime `i -> _GAMEdivider `i `uc ]
-"101
-[; ;GAME.c: 101:         switch(GAMEpart){
-[e $U 873  ]
-{
 "102
-[; ;GAME.c: 102:             case 0:
-[e :U 874 ]
+[; ;GAME.c: 102:         if(PORTAbits.RA2){
+[e $ ! != -> . . _PORTAbits 0 2 `i -> 0 `i 872  ]
+{
 "103
-[; ;GAME.c: 103:                 LATDbits.LD2 = 1;
-[e = . . _LATDbits 1 2 -> -> 1 `i `uc ]
-"104
-[; ;GAME.c: 104:                 LATDbits.LD3 = 1;
-[e = . . _LATDbits 1 3 -> -> 1 `i `uc ]
-"105
-[; ;GAME.c: 105:                 LATCbits.LC4 = 1;
-[e = . . _LATCbits 1 4 -> -> 1 `i `uc ]
-"106
-[; ;GAME.c: 106:                 LATDbits.LD4 = 1;
-[e = . . _LATDbits 1 4 -> -> 1 `i `uc ]
-"107
-[; ;GAME.c: 107:                 LATDbits.LD5 = 1;
-[e = . . _LATDbits 1 5 -> -> 1 `i `uc ]
-"108
-[; ;GAME.c: 108:                 LATDbits.LD6 = 1;
-[e = . . _LATDbits 1 6 -> -> 1 `i `uc ]
-"109
-[; ;GAME.c: 109:                 break;
-[e $U 872  ]
-"110
-[; ;GAME.c: 110:             case 1:
-[e :U 875 ]
-"111
-[; ;GAME.c: 111:                 LATDbits.LD2 = 0;
-[e = . . _LATDbits 1 2 -> -> 0 `i `uc ]
-"112
-[; ;GAME.c: 112:                 LATDbits.LD3 = 1;
-[e = . . _LATDbits 1 3 -> -> 1 `i `uc ]
-"113
-[; ;GAME.c: 113:                 LATCbits.LC4 = 1;
-[e = . . _LATCbits 1 4 -> -> 1 `i `uc ]
-"114
-[; ;GAME.c: 114:                 LATDbits.LD4 = 1;
-[e = . . _LATDbits 1 4 -> -> 1 `i `uc ]
-"115
-[; ;GAME.c: 115:                 LATDbits.LD5 = 1;
-[e = . . _LATDbits 1 5 -> -> 1 `i `uc ]
-"116
-[; ;GAME.c: 116:                 LATDbits.LD6 = 1;
-[e = . . _LATDbits 1 6 -> -> 1 `i `uc ]
-"117
-[; ;GAME.c: 117:                 break;
-[e $U 872  ]
-"118
-[; ;GAME.c: 118:             case 2:
-[e :U 876 ]
-"119
-[; ;GAME.c: 119:                 LATDbits.LD2 = 0;
-[e = . . _LATDbits 1 2 -> -> 0 `i `uc ]
-"120
-[; ;GAME.c: 120:                 LATDbits.LD3 = 0;
-[e = . . _LATDbits 1 3 -> -> 0 `i `uc ]
-"121
-[; ;GAME.c: 121:                 LATCbits.LC4 = 1;
-[e = . . _LATCbits 1 4 -> -> 1 `i `uc ]
-"122
-[; ;GAME.c: 122:                 LATDbits.LD4 = 1;
-[e = . . _LATDbits 1 4 -> -> 1 `i `uc ]
-"123
-[; ;GAME.c: 123:                 LATDbits.LD5 = 1;
-[e = . . _LATDbits 1 5 -> -> 1 `i `uc ]
-"124
-[; ;GAME.c: 124:                 LATDbits.LD6 = 1;
-[e = . . _LATDbits 1 6 -> -> 1 `i `uc ]
-"125
-[; ;GAME.c: 125:                 break;
-[e $U 872  ]
-"126
-[; ;GAME.c: 126:             case 3:
-[e :U 877 ]
-"127
-[; ;GAME.c: 127:                 LATDbits.LD2 = 0;
-[e = . . _LATDbits 1 2 -> -> 0 `i `uc ]
-"128
-[; ;GAME.c: 128:                 LATDbits.LD3 = 0;
-[e = . . _LATDbits 1 3 -> -> 0 `i `uc ]
-"129
-[; ;GAME.c: 129:                 LATCbits.LC4 = 0;
-[e = . . _LATCbits 1 4 -> -> 0 `i `uc ]
-"130
-[; ;GAME.c: 130:                 LATDbits.LD4 = 1;
-[e = . . _LATDbits 1 4 -> -> 1 `i `uc ]
-"131
-[; ;GAME.c: 131:                 LATDbits.LD5 = 1;
-[e = . . _LATDbits 1 5 -> -> 1 `i `uc ]
-"132
-[; ;GAME.c: 132:                 LATDbits.LD6 = 1;
-[e = . . _LATDbits 1 6 -> -> 1 `i `uc ]
-"133
-[; ;GAME.c: 133:                 break;
-[e $U 872  ]
-"134
-[; ;GAME.c: 134:             case 4:
-[e :U 878 ]
-"135
-[; ;GAME.c: 135:                 LATDbits.LD2 = 0;
-[e = . . _LATDbits 1 2 -> -> 0 `i `uc ]
-"136
-[; ;GAME.c: 136:                 LATDbits.LD3 = 0;
-[e = . . _LATDbits 1 3 -> -> 0 `i `uc ]
-"137
-[; ;GAME.c: 137:                 LATCbits.LC4 = 0;
-[e = . . _LATCbits 1 4 -> -> 0 `i `uc ]
-"138
-[; ;GAME.c: 138:                 LATDbits.LD4 = 0;
-[e = . . _LATDbits 1 4 -> -> 0 `i `uc ]
-"139
-[; ;GAME.c: 139:                 LATDbits.LD5 = 1;
-[e = . . _LATDbits 1 5 -> -> 1 `i `uc ]
-"140
-[; ;GAME.c: 140:                 LATDbits.LD6 = 1;
-[e = . . _LATDbits 1 6 -> -> 1 `i `uc ]
-"141
-[; ;GAME.c: 141:                 break;
-[e $U 872  ]
-"142
-[; ;GAME.c: 142:             case 5:
-[e :U 879 ]
-"143
-[; ;GAME.c: 143:                 LATDbits.LD2 = 0;
-[e = . . _LATDbits 1 2 -> -> 0 `i `uc ]
-"144
-[; ;GAME.c: 144:                 LATDbits.LD3 = 0;
-[e = . . _LATDbits 1 3 -> -> 0 `i `uc ]
-"145
-[; ;GAME.c: 145:                 LATCbits.LC4 = 0;
-[e = . . _LATCbits 1 4 -> -> 0 `i `uc ]
-"146
-[; ;GAME.c: 146:                 LATDbits.LD4 = 0;
-[e = . . _LATDbits 1 4 -> -> 0 `i `uc ]
-"147
-[; ;GAME.c: 147:                 LATDbits.LD5 = 0;
-[e = . . _LATDbits 1 5 -> -> 0 `i `uc ]
-"148
-[; ;GAME.c: 148:                 LATDbits.LD6 = 1;
-[e = . . _LATDbits 1 6 -> -> 1 `i `uc ]
-"149
-[; ;GAME.c: 149:                 break;
-[e $U 872  ]
-"150
-[; ;GAME.c: 150:             case 6:
-[e :U 880 ]
-"151
-[; ;GAME.c: 151:                 LATDbits.LD2 = 0;
-[e = . . _LATDbits 1 2 -> -> 0 `i `uc ]
-"152
-[; ;GAME.c: 152:                 LATDbits.LD3 = 0;
-[e = . . _LATDbits 1 3 -> -> 0 `i `uc ]
-"153
-[; ;GAME.c: 153:                 LATCbits.LC4 = 0;
-[e = . . _LATCbits 1 4 -> -> 0 `i `uc ]
-"154
-[; ;GAME.c: 154:                 LATDbits.LD4 = 0;
-[e = . . _LATDbits 1 4 -> -> 0 `i `uc ]
-"155
-[; ;GAME.c: 155:                 LATDbits.LD5 = 0;
-[e = . . _LATDbits 1 5 -> -> 0 `i `uc ]
-"156
-[; ;GAME.c: 156:                 LATDbits.LD6 = 0;
-[e = . . _LATDbits 1 6 -> -> 0 `i `uc ]
-"157
-[; ;GAME.c: 157:                 break;
-[e $U 872  ]
-"158
-[; ;GAME.c: 158:             case 7:
-[e :U 881 ]
-"159
-[; ;GAME.c: 159:                 GAMEtime = 0;
-[e = _GAMEtime -> -> 0 `i `uc ]
-"160
-[; ;GAME.c: 160:                 if(pot1 >= randomNumber - 2 && pot1 <= randomNumber + 2){
-[e $ ! && >= -> _pot1 `ui - -> _randomNumber `ui -> -> 2 `i `ui <= -> _pot1 `ui + -> _randomNumber `ui -> -> 2 `i `ui 882  ]
-{
-"161
-[; ;GAME.c: 161:                     GAMEround += 1;
-[e =+ _GAMEround -> -> 1 `i `uc ]
-"162
-[; ;GAME.c: 162:                     randomNumber = (uint16_t)(2 + rand() / ((0x7fff) / (1023 - 2 + 1) + 1));
-[e = _randomNumber -> + -> 2 `i / ( _rand ..  + / -> 32767 `i + - -> 1023 `i -> 2 `i -> 1 `i -> 1 `i `us ]
-"163
-[; ;GAME.c: 163:                     sprintf(approxText, "%u                ", randomNumber);
-[e ( _sprintf (1 , (. , &U _approxText :s 3C -> _randomNumber `ui ]
-"164
-[; ;GAME.c: 164:                     keepStateGAME = 1;
-[e = _keepStateGAME -> -> 1 `i `uc ]
-"165
-[; ;GAME.c: 165:                     LCD_ShowString((char)1, approxText);
-[e ( _LCD_ShowString (2 , -> -> 1 `i `uc &U _approxText ]
-"166
-[; ;GAME.c: 166:                 } else {
-}
-[e $U 883  ]
-[e :U 882 ]
-{
-"167
-[; ;GAME.c: 167:                     ADCON0bits.ADON = 0;
-[e = . . _ADCON0bits 1 0 -> -> 0 `i `uc ]
-"168
-[; ;GAME.c: 168:                     sprintf(approxText, "Skore: %u        ", GAMEround - 1);
-[e ( _sprintf (1 , (. , &U _approxText :s 4C - -> _GAMEround `i -> 1 `i ]
-"169
-[; ;GAME.c: 169:                     LCD_ShowString((char)1, "GAME OVER       ");
-[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 5C ]
-"170
-[; ;GAME.c: 170:                     LCD_ShowString((char)2, approxText);
-[e ( _LCD_ShowString (2 , -> -> 2 `i `uc &U _approxText ]
-"171
-[; ;GAME.c: 171:                     keepStateGAME = 0;
-[e = _keepStateGAME -> -> 0 `i `uc ]
-"172
-[; ;GAME.c: 172:                     _delay((unsigned long)((2000)*(32E6/4000.0)));
-[e ( __delay (1 -> * -> -> 2000 `i `d / .32e6 .4000.0 `ul ]
-"173
-[; ;GAME.c: 173:                 }
-}
-[e :U 883 ]
-"174
-[; ;GAME.c: 174:                 break;
-[e $U 872  ]
-"175
-[; ;GAME.c: 175:         }
-}
-[e $U 872  ]
-[e :U 873 ]
-[e [\ _GAMEpart , $ -> 0 `i 874
- , $ -> 1 `i 875
- , $ -> 2 `i 876
- , $ -> 3 `i 877
- , $ -> 4 `i 878
- , $ -> 5 `i 879
- , $ -> 6 `i 880
- , $ -> 7 `i 881
- 872 ]
-[e :U 872 ]
-"177
-[; ;GAME.c: 177:         if(PORTAbits.RA2){
-[e $ ! != -> . . _PORTAbits 0 2 `i -> 0 `i 884  ]
-{
-"178
-[; ;GAME.c: 178:             _delay((unsigned long)((50)*(32E6/4000.0)));
+[; ;GAME.c: 103:             _delay((unsigned long)((50)*(32E6/4000.0)));
 [e ( __delay (1 -> * -> -> 50 `i `d / .32e6 .4000.0 `ul ]
-"179
-[; ;GAME.c: 179:             if(PORTAbits.RA2){
-[e $ ! != -> . . _PORTAbits 0 2 `i -> 0 `i 885  ]
+"104
+[; ;GAME.c: 104:             if(PORTAbits.RA2){
+[e $ ! != -> . . _PORTAbits 0 2 `i -> 0 `i 873  ]
 {
-"180
-[; ;GAME.c: 180:                 while(PORTAbits.RA2);
-[e $U 886  ]
-[e :U 887 ]
-[e :U 886 ]
-[e $ != -> . . _PORTAbits 0 2 `i -> 0 `i 887  ]
-[e :U 888 ]
-"181
-[; ;GAME.c: 181:                 keepStateGAME = 0;
-[e = _keepStateGAME -> -> 0 `i `uc ]
-"182
-[; ;GAME.c: 182:             }
+"105
+[; ;GAME.c: 105:                 while(PORTAbits.RA2);
+[e $U 874  ]
+[e :U 875 ]
+[e :U 874 ]
+[e $ != -> . . _PORTAbits 0 2 `i -> 0 `i 875  ]
+[e :U 876 ]
+"106
+[; ;GAME.c: 106:                 GAMEpart = 7;
+[e = _GAMEpart -> -> 7 `i `uc ]
+"107
+[; ;GAME.c: 107:             }
 }
-[e :U 885 ]
-"183
-[; ;GAME.c: 183:         }
+[e :U 873 ]
+"108
+[; ;GAME.c: 108:         }
 }
+[e :U 872 ]
+"110
+[; ;GAME.c: 110:         switch(GAMEpart){
+[e $U 878  ]
+{
+"111
+[; ;GAME.c: 111:             case 0:
+[e :U 879 ]
+"112
+[; ;GAME.c: 112:                 LATDbits.LD2 = 1;
+[e = . . _LATDbits 1 2 -> -> 1 `i `uc ]
+"113
+[; ;GAME.c: 113:                 LATDbits.LD3 = 1;
+[e = . . _LATDbits 1 3 -> -> 1 `i `uc ]
+"114
+[; ;GAME.c: 114:                 LATCbits.LC4 = 1;
+[e = . . _LATCbits 1 4 -> -> 1 `i `uc ]
+"115
+[; ;GAME.c: 115:                 LATDbits.LD4 = 1;
+[e = . . _LATDbits 1 4 -> -> 1 `i `uc ]
+"116
+[; ;GAME.c: 116:                 LATDbits.LD5 = 1;
+[e = . . _LATDbits 1 5 -> -> 1 `i `uc ]
+"117
+[; ;GAME.c: 117:                 LATDbits.LD6 = 1;
+[e = . . _LATDbits 1 6 -> -> 1 `i `uc ]
+"118
+[; ;GAME.c: 118:                 break;
+[e $U 877  ]
+"119
+[; ;GAME.c: 119:             case 1:
+[e :U 880 ]
+"120
+[; ;GAME.c: 120:                 LATDbits.LD2 = 0;
+[e = . . _LATDbits 1 2 -> -> 0 `i `uc ]
+"121
+[; ;GAME.c: 121:                 LATDbits.LD3 = 1;
+[e = . . _LATDbits 1 3 -> -> 1 `i `uc ]
+"122
+[; ;GAME.c: 122:                 LATCbits.LC4 = 1;
+[e = . . _LATCbits 1 4 -> -> 1 `i `uc ]
+"123
+[; ;GAME.c: 123:                 LATDbits.LD4 = 1;
+[e = . . _LATDbits 1 4 -> -> 1 `i `uc ]
+"124
+[; ;GAME.c: 124:                 LATDbits.LD5 = 1;
+[e = . . _LATDbits 1 5 -> -> 1 `i `uc ]
+"125
+[; ;GAME.c: 125:                 LATDbits.LD6 = 1;
+[e = . . _LATDbits 1 6 -> -> 1 `i `uc ]
+"126
+[; ;GAME.c: 126:                 break;
+[e $U 877  ]
+"127
+[; ;GAME.c: 127:             case 2:
+[e :U 881 ]
+"128
+[; ;GAME.c: 128:                 LATDbits.LD2 = 0;
+[e = . . _LATDbits 1 2 -> -> 0 `i `uc ]
+"129
+[; ;GAME.c: 129:                 LATDbits.LD3 = 0;
+[e = . . _LATDbits 1 3 -> -> 0 `i `uc ]
+"130
+[; ;GAME.c: 130:                 LATCbits.LC4 = 1;
+[e = . . _LATCbits 1 4 -> -> 1 `i `uc ]
+"131
+[; ;GAME.c: 131:                 LATDbits.LD4 = 1;
+[e = . . _LATDbits 1 4 -> -> 1 `i `uc ]
+"132
+[; ;GAME.c: 132:                 LATDbits.LD5 = 1;
+[e = . . _LATDbits 1 5 -> -> 1 `i `uc ]
+"133
+[; ;GAME.c: 133:                 LATDbits.LD6 = 1;
+[e = . . _LATDbits 1 6 -> -> 1 `i `uc ]
+"134
+[; ;GAME.c: 134:                 break;
+[e $U 877  ]
+"135
+[; ;GAME.c: 135:             case 3:
+[e :U 882 ]
+"136
+[; ;GAME.c: 136:                 LATDbits.LD2 = 0;
+[e = . . _LATDbits 1 2 -> -> 0 `i `uc ]
+"137
+[; ;GAME.c: 137:                 LATDbits.LD3 = 0;
+[e = . . _LATDbits 1 3 -> -> 0 `i `uc ]
+"138
+[; ;GAME.c: 138:                 LATCbits.LC4 = 0;
+[e = . . _LATCbits 1 4 -> -> 0 `i `uc ]
+"139
+[; ;GAME.c: 139:                 LATDbits.LD4 = 1;
+[e = . . _LATDbits 1 4 -> -> 1 `i `uc ]
+"140
+[; ;GAME.c: 140:                 LATDbits.LD5 = 1;
+[e = . . _LATDbits 1 5 -> -> 1 `i `uc ]
+"141
+[; ;GAME.c: 141:                 LATDbits.LD6 = 1;
+[e = . . _LATDbits 1 6 -> -> 1 `i `uc ]
+"142
+[; ;GAME.c: 142:                 break;
+[e $U 877  ]
+"143
+[; ;GAME.c: 143:             case 4:
+[e :U 883 ]
+"144
+[; ;GAME.c: 144:                 LATDbits.LD2 = 0;
+[e = . . _LATDbits 1 2 -> -> 0 `i `uc ]
+"145
+[; ;GAME.c: 145:                 LATDbits.LD3 = 0;
+[e = . . _LATDbits 1 3 -> -> 0 `i `uc ]
+"146
+[; ;GAME.c: 146:                 LATCbits.LC4 = 0;
+[e = . . _LATCbits 1 4 -> -> 0 `i `uc ]
+"147
+[; ;GAME.c: 147:                 LATDbits.LD4 = 0;
+[e = . . _LATDbits 1 4 -> -> 0 `i `uc ]
+"148
+[; ;GAME.c: 148:                 LATDbits.LD5 = 1;
+[e = . . _LATDbits 1 5 -> -> 1 `i `uc ]
+"149
+[; ;GAME.c: 149:                 LATDbits.LD6 = 1;
+[e = . . _LATDbits 1 6 -> -> 1 `i `uc ]
+"150
+[; ;GAME.c: 150:                 break;
+[e $U 877  ]
+"151
+[; ;GAME.c: 151:             case 5:
 [e :U 884 ]
+"152
+[; ;GAME.c: 152:                 LATDbits.LD2 = 0;
+[e = . . _LATDbits 1 2 -> -> 0 `i `uc ]
+"153
+[; ;GAME.c: 153:                 LATDbits.LD3 = 0;
+[e = . . _LATDbits 1 3 -> -> 0 `i `uc ]
+"154
+[; ;GAME.c: 154:                 LATCbits.LC4 = 0;
+[e = . . _LATCbits 1 4 -> -> 0 `i `uc ]
+"155
+[; ;GAME.c: 155:                 LATDbits.LD4 = 0;
+[e = . . _LATDbits 1 4 -> -> 0 `i `uc ]
+"156
+[; ;GAME.c: 156:                 LATDbits.LD5 = 0;
+[e = . . _LATDbits 1 5 -> -> 0 `i `uc ]
+"157
+[; ;GAME.c: 157:                 LATDbits.LD6 = 1;
+[e = . . _LATDbits 1 6 -> -> 1 `i `uc ]
+"158
+[; ;GAME.c: 158:                 break;
+[e $U 877  ]
+"159
+[; ;GAME.c: 159:             case 6:
+[e :U 885 ]
+"160
+[; ;GAME.c: 160:                 LATDbits.LD2 = 0;
+[e = . . _LATDbits 1 2 -> -> 0 `i `uc ]
+"161
+[; ;GAME.c: 161:                 LATDbits.LD3 = 0;
+[e = . . _LATDbits 1 3 -> -> 0 `i `uc ]
+"162
+[; ;GAME.c: 162:                 LATCbits.LC4 = 0;
+[e = . . _LATCbits 1 4 -> -> 0 `i `uc ]
+"163
+[; ;GAME.c: 163:                 LATDbits.LD4 = 0;
+[e = . . _LATDbits 1 4 -> -> 0 `i `uc ]
+"164
+[; ;GAME.c: 164:                 LATDbits.LD5 = 0;
+[e = . . _LATDbits 1 5 -> -> 0 `i `uc ]
+"165
+[; ;GAME.c: 165:                 LATDbits.LD6 = 0;
+[e = . . _LATDbits 1 6 -> -> 0 `i `uc ]
+"166
+[; ;GAME.c: 166:                 break;
+[e $U 877  ]
+"167
+[; ;GAME.c: 167:             case 7:
+[e :U 886 ]
+"168
+[; ;GAME.c: 168:                 GAMEtime = 0;
+[e = _GAMEtime -> -> 0 `i `uc ]
+"169
+[; ;GAME.c: 169:                 if(pot1 >= randomNumber - 2 && pot1 <= randomNumber + 2){
+[e $ ! && >= -> _pot1 `ui - -> _randomNumber `ui -> -> 2 `i `ui <= -> _pot1 `ui + -> _randomNumber `ui -> -> 2 `i `ui 887  ]
+{
+"170
+[; ;GAME.c: 170:                     GAMEround += 1;
+[e =+ _GAMEround -> -> 1 `i `uc ]
+"171
+[; ;GAME.c: 171:                     randomNumber = (uint16_t)(2 + rand() / ((0x7fff) / (1023 - 2 + 1) + 1));
+[e = _randomNumber -> + -> 2 `i / ( _rand ..  + / -> 32767 `i + - -> 1023 `i -> 2 `i -> 1 `i -> 1 `i `us ]
+"172
+[; ;GAME.c: 172:                     sprintf(approxText, "%u                ", randomNumber);
+[e ( _sprintf (1 , (. , &U _approxText :s 3C -> _randomNumber `ui ]
+"173
+[; ;GAME.c: 173:                     keepStateGAME = 1;
+[e = _keepStateGAME -> -> 1 `i `uc ]
+"174
+[; ;GAME.c: 174:                     LCD_ShowString((char)1, approxText);
+[e ( _LCD_ShowString (2 , -> -> 1 `i `uc &U _approxText ]
+"175
+[; ;GAME.c: 175:                 } else {
+}
+[e $U 888  ]
+[e :U 887 ]
+{
+"176
+[; ;GAME.c: 176:                     ADCON0bits.ADON = 0;
+[e = . . _ADCON0bits 1 0 -> -> 0 `i `uc ]
+"177
+[; ;GAME.c: 177:                     sprintf(approxText, "Skore: %u        ", GAMEround - 1);
+[e ( _sprintf (1 , (. , &U _approxText :s 4C - -> _GAMEround `i -> 1 `i ]
+"178
+[; ;GAME.c: 178:                     LCD_ShowString((char)1, "GAME OVER       ");
+[e ( _LCD_ShowString (2 , -> -> 1 `i `uc :s 5C ]
+"179
+[; ;GAME.c: 179:                     LCD_ShowString((char)2, approxText);
+[e ( _LCD_ShowString (2 , -> -> 2 `i `uc &U _approxText ]
+"180
+[; ;GAME.c: 180:                     keepStateGAME = 0;
+[e = _keepStateGAME -> -> 0 `i `uc ]
+"181
+[; ;GAME.c: 181:                     _delay((unsigned long)((2000)*(32E6/4000.0)));
+[e ( __delay (1 -> * -> -> 2000 `i `d / .32e6 .4000.0 `ul ]
+"182
+[; ;GAME.c: 182:                 }
+}
+[e :U 888 ]
+"183
+[; ;GAME.c: 183:                 break;
+[e $U 877  ]
 "184
-[; ;GAME.c: 184:     }
+[; ;GAME.c: 184:         }
+}
+[e $U 877  ]
+[e :U 878 ]
+[e [\ _GAMEpart , $ -> 0 `i 879
+ , $ -> 1 `i 880
+ , $ -> 2 `i 881
+ , $ -> 3 `i 882
+ , $ -> 4 `i 883
+ , $ -> 5 `i 884
+ , $ -> 6 `i 885
+ , $ -> 7 `i 886
+ 877 ]
+[e :U 877 ]
+"185
+[; ;GAME.c: 185:     }
 }
 [e :U 859 ]
 "72
 [; ;GAME.c: 72:     while(keepStateGAME){
 [e $ != -> _keepStateGAME `i -> 0 `i 860  ]
 [e :U 861 ]
-"187
-[; ;GAME.c: 187:     LATDbits.LD2 = 1;
-[e = . . _LATDbits 1 2 -> -> 1 `i `uc ]
 "188
-[; ;GAME.c: 188:     LATDbits.LD3 = 1;
-[e = . . _LATDbits 1 3 -> -> 1 `i `uc ]
+[; ;GAME.c: 188:     LATDbits.LD2 = 1;
+[e = . . _LATDbits 1 2 -> -> 1 `i `uc ]
 "189
-[; ;GAME.c: 189:     LATCbits.LC4 = 1;
-[e = . . _LATCbits 1 4 -> -> 1 `i `uc ]
+[; ;GAME.c: 189:     LATDbits.LD3 = 1;
+[e = . . _LATDbits 1 3 -> -> 1 `i `uc ]
 "190
-[; ;GAME.c: 190:     LATDbits.LD4 = 1;
-[e = . . _LATDbits 1 4 -> -> 1 `i `uc ]
+[; ;GAME.c: 190:     LATCbits.LC4 = 1;
+[e = . . _LATCbits 1 4 -> -> 1 `i `uc ]
 "191
-[; ;GAME.c: 191:     LATDbits.LD5 = 1;
-[e = . . _LATDbits 1 5 -> -> 1 `i `uc ]
+[; ;GAME.c: 191:     LATDbits.LD4 = 1;
+[e = . . _LATDbits 1 4 -> -> 1 `i `uc ]
 "192
-[; ;GAME.c: 192:     LATDbits.LD6 = 1;
-[e = . . _LATDbits 1 6 -> -> 1 `i `uc ]
+[; ;GAME.c: 192:     LATDbits.LD5 = 1;
+[e = . . _LATDbits 1 5 -> -> 1 `i `uc ]
 "193
-[; ;GAME.c: 193:     TMR1ON = 0;
-[e = _TMR1ON -> -> 0 `i `b ]
+[; ;GAME.c: 193:     LATDbits.LD6 = 1;
+[e = . . _LATDbits 1 6 -> -> 1 `i `uc ]
 "194
-[; ;GAME.c: 194:     TMR1IE = 0;
-[e = _TMR1IE -> -> 0 `i `b ]
+[; ;GAME.c: 194:     TMR1ON = 0;
+[e = _TMR1ON -> -> 0 `i `b ]
 "195
-[; ;GAME.c: 195:     GAMEIE = 0;
+[; ;GAME.c: 195:     TMR1IE = 0;
+[e = _TMR1IE -> -> 0 `i `b ]
+"196
+[; ;GAME.c: 196:     GAMEIE = 0;
 [e = _GAMEIE -> -> 0 `i `uc ]
-"197
-[; ;GAME.c: 197:     return;
-[e $UE 858  ]
 "198
-[; ;GAME.c: 198: }
+[; ;GAME.c: 198:     return;
+[e $UE 858  ]
+"199
+[; ;GAME.c: 199: }
 [e :UE 858 ]
 }
 [p f _sprintf 75498496 ]
